@@ -12,7 +12,7 @@ The `<UpdateAvatarCard />` component is a pre-built UI element for users to easi
 Here's how to include the `<UpdateAvatarCard />` component within your custom settings page. If you don't provide an `avatar.upload` function, the component will store the avatar image as a base64 string in database.
 
 ```tsx
-import { UpdateAvatarCard } from "@daveyplate/better-auth-ui"
+import { UpdateAvatarCard } from "better-auth-ui"
 
 export default function CustomSettings() {
     return (
@@ -28,7 +28,7 @@ You can optionally provide `avatar.upload` prop within your [`AuthUIProvider`](.
 ```tsx title="providers.tsx"
 "use client"
 
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import Link from "next/link"

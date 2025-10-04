@@ -7,16 +7,16 @@ icon: "InstantDB"
 
 ## Prerequisites
 
-Set up your project with the [@daveyplate/better-auth-instantdb](https://github.com/daveyplate/better-auth-instantdb) package.
+Set up your project with the [better-auth-instantdb](https://github.com/StackProviders/better-auth-instantdb) package.
 
 ## Integration with Auth UI Providers
 
 You can pass the InstantDB hooks and mutators to both the `AuthUIProvider` and `AuthUIProviderTanstack` components:
 
 ```tsx
-import { useInstantAuth } from "@daveyplate/better-auth-instantdb"
-import { useInstantOptions } from "@daveyplate/better-auth-ui/instantdb"
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { useInstantAuth } from "better-auth-instantdb"
+import { useInstantOptions } from "better-auth-ui/instantdb"
+import { AuthUIProvider } from "better-auth-ui"
 import { useSession } from "@/lib/auth-client"
 import { db } from "@/lib/db"
 

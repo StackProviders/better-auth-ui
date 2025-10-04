@@ -9,7 +9,7 @@ Useful for wrapping pages or routes that require users to be signed in.
 ## Usage
 
 ```tsx
-import { RedirectToSignIn, SignedIn } from "@daveyplate/better-auth-ui"
+import { RedirectToSignIn, SignedIn } from "better-auth-ui"
 
 export default function ProtectedPage() {
     return (
@@ -29,7 +29,7 @@ export default function ProtectedPage() {
 Here's a practical example of enforcing authentication for private routes:
 
 ```tsx title="PrivateRoute.tsx"
-import { RedirectToSignIn, SignedIn } from "@daveyplate/better-auth-ui"
+import { RedirectToSignIn, SignedIn } from "better-auth-ui"
 
 export default function PrivateRoute({ children }: { children: React.ReactNode }) {
   return (

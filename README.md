@@ -1,4 +1,4 @@
-# @daveyplate/better-auth-ui
+# better-auth-ui
 
 <picture>
     <source srcset="docs/public/better-auth-ui-promo-dark.png" media="(prefers-color-scheme: dark)">

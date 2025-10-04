@@ -4,19 +4,19 @@ icon: NextJs
 ---
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
-This guide covers integrating `@daveyplate/better-auth-ui` into your Next.js project.
+This guide covers integrating `better-auth-ui` into your Next.js project.
 
 ## Starter Project
 
 Want to skip the installation? Check out the starter here:
 
-- App Router: [GitHub](https://github.com/daveyplate/better-auth-nextjs-starter) - [Demo](https://nextjs.better-auth-starter.com)
+- App Router: [GitHub](https://github.com/StackProviders/better-auth-nextjs-starter) - [Demo](https://nextjs.better-auth-starter.com)
 
-- Pages Router:  [GitHub](https://github.com/daveyplate/better-auth-nextjs-pages-starter) - [Demo](https://nextjs-pages.better-auth-starter.com)
+- Pages Router:  [GitHub](https://github.com/StackProviders/better-auth-nextjs-pages-starter) - [Demo](https://nextjs-pages.better-auth-starter.com)
 
 ## App Router
 
-Follow these steps to set up `@daveyplate/better-auth-ui` in your [Next.js](https://nextjs.org) project using the **App Router**:
+Follow these steps to set up `better-auth-ui` in your [Next.js](https://nextjs.org) project using the **App Router**:
 
 <Steps>
 <Step>
@@ -27,7 +27,7 @@ The first step is to set up the [`<AuthUIProvider />`](/components/auth-ui-provi
 ```tsx title="app/providers.tsx"
 "use client"
 
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import type { ReactNode } from "react"
@@ -84,8 +84,8 @@ The [`<AuthUIProvider />`](/components/auth-ui-provider) can be fully customized
 Create a dynamic route segment for authentication views in `app/auth/[authView]/page.tsx`.
 
 ```tsx title="app/auth/[path]/page.tsx"
-import { AuthView } from "@daveyplate/better-auth-ui"
-import { authViewPaths } from "@daveyplate/better-auth-ui/server"
+import { AuthView } from "better-auth-ui"
+import { authViewPaths } from "better-auth-ui/server"
 
 export const dynamicParams = false
 
@@ -125,8 +125,8 @@ Ensure that any links to the authentication process utilize these routes accordi
 ### Account Pages
 
 ```tsx title="app/account/[path]/page.tsx"
-import { AccountView } from "@daveyplate/better-auth-ui"
-import { accountViewPaths } from "@daveyplate/better-auth-ui/server"
+import { AccountView } from "better-auth-ui"
+import { accountViewPaths } from "better-auth-ui/server"
 
 export const dynamicParams = false
 
@@ -149,8 +149,8 @@ export default async function AccountPage({ params }: { params: Promise<{ path: 
 ### Organization Pages
 
 ```tsx title="app/organization/[path]/page.tsx"
-import { OrganizationView } from "@daveyplate/better-auth-ui"
-import { organizationViewPaths } from "@daveyplate/better-auth-ui/server"
+import { OrganizationView } from "better-auth-ui"
+import { organizationViewPaths } from "better-auth-ui/server"
 
 export const dynamicParams = false
 
@@ -172,8 +172,8 @@ export default async function OrganizationPage({ params }: { params: Promise<{ p
 If you prefer slug-based org URLs, set `organization={{ pathMode: "slug", basePath: "/organization", slug: currentSlug }}` in the `AuthUIProvider` and structure your routes accordingly:
 
 ```tsx title="app/organization/[slug]/[path]/page.tsx"
-import { OrganizationView } from "@daveyplate/better-auth-ui"
-import { organizationViewPaths } from "@daveyplate/better-auth-ui/server"
+import { OrganizationView } from "better-auth-ui"
+import { organizationViewPaths } from "better-auth-ui/server"
 
 export default async function OrganizationPage({ params }: { params: Promise<{ path: string }> }) {
     const { path } = await params
@@ -190,7 +190,7 @@ export default async function OrganizationPage({ params }: { params: Promise<{ p
 
 ## Pages Router
 
-Follow these steps to set up `@daveyplate/better-auth-ui` in your [Next.js](https://nextjs.org) project using the **Pages Router**:
+Follow these steps to set up `better-auth-ui` in your [Next.js](https://nextjs.org) project using the **Pages Router**:
 
 <Steps>
 <Step>
@@ -200,7 +200,7 @@ First set up the [`<AuthUIProvider />`](/components/auth-ui-provider) within you
 
 ```tsx title="pages/_app.tsx"
 import type { AppProps } from "next/app"
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { useRouter } from "next/router"
 import Link from "next/link"
 
@@ -231,8 +231,8 @@ Now the authentication context is available across your entire application.
 Create a page with a dynamic segment in your Pages directory in `pages/auth/[authView].tsx`
 
 ```tsx title="pages/auth/[path].tsx"
-import { AuthView } from "@daveyplate/better-auth-ui"
-import { authViewPaths } from "@daveyplate/better-auth-ui/server"
+import { AuthView } from "better-auth-ui"
+import { authViewPaths } from "better-auth-ui/server"
 
 export default function AuthPage({ path }: { path: string }) {
     return (
@@ -260,8 +260,8 @@ These routes match the list shown in the App Router section above.
 ### Account Pages
 
 ```tsx title="pages/account/[path].tsx"
-import { AccountView } from "@daveyplate/better-auth-ui"
-import { accountViewPaths } from "@daveyplate/better-auth-ui/server"
+import { AccountView } from "better-auth-ui"
+import { accountViewPaths } from "better-auth-ui/server"
 
 export default function AccountPage({ path }: { path: string }) {
     return (
@@ -287,8 +287,8 @@ export async function getStaticProps({ params }: { params: { path: string } }) {
 ### Organization Pages
 
 ```tsx title="pages/organization/[path].tsx"
-import { OrganizationView } from "@daveyplate/better-auth-ui"
-import { organizationViewPaths } from "@daveyplate/better-auth-ui/server"
+import { OrganizationView } from "better-auth-ui"
+import { organizationViewPaths } from "better-auth-ui/server"
 
 export default function OrganizationPage({ path }: { path: string }) {
     return (

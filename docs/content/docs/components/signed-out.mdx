@@ -11,7 +11,7 @@ Use this component to conditionally hide or show content based on the user's aut
 Wrap any content that should be displayed only to signed-out (unauthenticated) users within the `<SignedOut>` component:
 
 ```tsx
-import { SignedOut } from "@daveyplate/better-auth-ui"
+import { SignedOut } from "better-auth-ui"
 
 export default function Example() {
     return (
@@ -27,7 +27,7 @@ export default function Example() {
 A practical view managing authentication states using both [`<SignedIn>`](/components/signed-in) and `<SignedOut>` components together:
 
 ```tsx
-import { SignedIn, SignedOut, UserButton } from "@daveyplate/better-auth-ui"
+import { SignedIn, SignedOut, UserButton } from "better-auth-ui"
 
 export default function Navbar() {
     return (

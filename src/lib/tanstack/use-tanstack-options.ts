@@ -1,7 +1,7 @@
 import {
     AuthQueryContext,
     createAuthHooks
-} from "@daveyplate/better-auth-tanstack"
+} from "better-auth-tanstack"
 import { useIsRestoring, useQueryClient } from "@tanstack/react-query"
 import { useCallback, useContext, useMemo } from "react"
 import type { AuthHooks } from "../../types/auth-hooks"

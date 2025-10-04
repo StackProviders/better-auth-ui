@@ -9,7 +9,7 @@ import { CoffeeIcon, ExternalLink, Twitter } from "lucide-react"
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
-    githubUrl: "https://github.com/daveyplate/better-auth-ui",
+    githubUrl: "https://github.com/StackProviders/better-auth-ui",
     nav: {
         // can be JSX too!
         title: (

@@ -3,7 +3,7 @@ title: Custom Settings
 icon: Cog
 ---
 
-The default authentication components provided by `@daveyplate/better-auth-ui` include built-in settings pages accessible under the same base path as your auth views (e.g., `/auth/settings`, `/auth/security`, etc.).
+The default authentication components provided by `better-auth-ui` include built-in settings pages accessible under the same base path as your auth views (e.g., `/auth/settings`, `/auth/security`, etc.).
 
 However, for advanced use cases, you may want to:
 1. Move the built-in settings views to a different base path (using `settings.basePath`)
@@ -33,7 +33,7 @@ If you want to keep the built-in settings functionality but move it to a differe
 ```tsx title="app/providers.tsx"
 "use client"
 
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -76,7 +76,7 @@ settings={{
 When using `settings.basePath`, you can pass the `pathname` prop to `<SettingsCards />` to automatically determine the current view:
 
 ```tsx title="app/dashboard/[...settings]/page.tsx"
-import { SettingsCards } from "@daveyplate/better-auth-ui"
+import { SettingsCards } from "better-auth-ui"
 
 export default function SettingsPage({ 
     params 
@@ -100,7 +100,7 @@ To replace the built-in settings with your own custom implementation, use `setti
 ```tsx title="app/providers.tsx"
 "use client"
 
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -136,7 +136,7 @@ For maximum control, you can build your own settings page layouts using individu
 The easiest way to get started is using the `<SettingsCards />` component, which automatically handles displaying all enabled settings. This includes avatar, email, username, password, linked social providers, session management, delete account, and custom additional fields you've provided.
 
 ```tsx title="app/dashboard/settings/page.tsx"
-import { SettingsCards } from "@daveyplate/better-auth-ui"
+import { SettingsCards } from "better-auth-ui"
 
 export default function UserSettingsPage() {
     return (
@@ -194,7 +194,7 @@ import {
     SessionsCard,
     DeleteAccountCard,
     UpdateFieldCard
-} from "@daveyplate/better-auth-ui"
+} from "better-auth-ui"
 
 export default function CustomSettingsPage() {
     return (
@@ -261,7 +261,7 @@ import {
     RedirectToSignIn,
     SignedIn,
     SettingsCards
-} from "@daveyplate/better-auth-ui"
+} from "better-auth-ui"
 
 export default function CustomSettingsPage() {
     return (

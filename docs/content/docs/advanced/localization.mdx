@@ -5,7 +5,7 @@ icon: Languages
 
 ## Localization Overview
 
-You can fully customize the text strings displayed across all `@daveyplate/better-auth-ui` components through the provided `localization` prop. The library ships with a full default localization object [`AuthLocalization`](/api-reference/auth-localization), but you can override any of these defaults easily with custom strings.
+You can fully customize the text strings displayed across all `better-auth-ui` components through the provided `localization` prop. The library ships with a full default localization object [`AuthLocalization`](/api-reference/auth-localization), but you can override any of these defaults easily with custom strings.
 
 ## Modifying Strings
 
@@ -16,7 +16,7 @@ Here's an example of modifying some default strings globally across your applica
 ```tsx title="app/providers.tsx"
 "use client"
 
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -56,7 +56,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 You can also provide overridden strings on an individual component basis. Here's how you can override strings for just one instance, such as the `<AuthCard>`:
 
 ```tsx
-import { AuthCard } from "@daveyplate/better-auth-ui"
+import { AuthCard } from "better-auth-ui"
 
 export default function AuthPage({ params }: { params: { pathname: string } }) {
     return (

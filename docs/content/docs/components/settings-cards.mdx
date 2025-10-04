@@ -18,7 +18,7 @@ By default, the built-in [`<AuthView />`](/components/auth-view) component autom
 To use your own custom settings route and avoid using the default included settings card, you can specify the `settings.url` prop within your [`<AuthUIProvider />`](/components/auth-ui-provider) configuration:
 
 ```tsx title="app/providers.tsx"
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -52,7 +52,7 @@ By setting the `settings.url` as shown above, the built-in `/auth/settings` page
 You can then easily utilize the provided `<SettingsCards />` component directly in your custom settings route within your app's layout. Here's how you might set up a properly protected custom settings route in your framework of choice:
 
 ```tsx title="app/dashboard/settings/page.tsx"
-import { SettingsCards } from "@daveyplate/better-auth-ui"
+import { SettingsCards } from "better-auth-ui"
 
 export default function SettingsPage() {
   return (

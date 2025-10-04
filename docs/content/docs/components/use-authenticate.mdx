@@ -9,7 +9,7 @@ This is a hook alternative to the `<RedirectToSignIn />` component, useful for r
 ## Usage
 
 ```tsx
-import { useAuthenticate } from "@daveyplate/better-auth-ui"
+import { useAuthenticate } from "better-auth-ui"
 
 export default function ProtectedPage() {
     // Will redirect to sign-in if user is not authenticated
@@ -36,7 +36,7 @@ interface AuthenticateOptions {
 ## Example with Options
 
 ```tsx
-import { useAuthenticate } from "@daveyplate/better-auth-ui"
+import { useAuthenticate } from "better-auth-ui"
 
 export default function ProtectedSignUpPage() {
     // Will redirect to sign-up instead of sign-in if user is not authenticated
@@ -53,7 +53,7 @@ export default function ProtectedSignUpPage() {
 You can conditionally disable the redirection with the `enabled` option:
 
 ```tsx
-import { useAuthenticate } from "@daveyplate/better-auth-ui"
+import { useAuthenticate } from "better-auth-ui"
 
 export default function ConditionalProtectedPage({ isProtected }: { isProtected: boolean }) {
     // Only redirect if isProtected is true

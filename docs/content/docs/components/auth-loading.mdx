@@ -9,7 +9,7 @@ The `<AuthLoading />` component renders its children only during an authenticati
 Wrap loading placeholders or loader components with `<AuthLoading />` to conditionally render them whenever authentication session data is being fetched.
 
 ```tsx
-import { AuthLoading } from "@daveyplate/better-auth-ui"
+import { AuthLoading } from "better-auth-ui"
 
 export default function LoadingExample() {
   return (
@@ -25,7 +25,7 @@ export default function LoadingExample() {
 Here's a complete example of using `<AuthLoading />` with loading skeletons and managing unauthenticated user sessions using the [`<RedirectToSignIn />`](/components/redirect-to-sign-in) and [`<SignedIn />`](/components/signed-in) components.
 
 ```tsx title="ProtectedPage.tsx"
-import { AuthLoading, RedirectToSignIn, SignedIn } from "@daveyplate/better-auth-ui"
+import { AuthLoading, RedirectToSignIn, SignedIn } from "better-auth-ui"
 import { YourCustomSkeleton } from "@/components/your-custom-skeleton"
 import { DashboardContent } from "@/components/dashboard-content"
 

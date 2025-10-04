@@ -12,7 +12,7 @@ First, customize the default built-in paths by providing your custom routes thro
 ```tsx
 "use client"
 
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -62,8 +62,8 @@ Next, your authentication page route can dynamically handle these paths. Set up 
 Using Next.js App Router (`app` router):
 
 ```tsx
-import { AuthCard } from "@daveyplate/better-auth-ui"
-import { authViewPaths } from "@daveyplate/better-auth-ui/server"
+import { AuthCard } from "better-auth-ui"
+import { authViewPaths } from "better-auth-ui/server"
 
 export function generateStaticParams() {
     return Object.values({

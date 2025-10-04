@@ -4,13 +4,13 @@ icon: TreePalm
 ---
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
-This guide covers integrating `@daveyplate/better-auth-ui` v3 with TanStack Start. We also install [@daveyplate/better-auth-tanstack](https://github.com/daveyplate/better-auth-tanstack) to handle the authentication state and queries.
+This guide covers integrating `better-auth-ui` v3 with TanStack Start. We also install [better-auth-tanstack](https://github.com/StackProviders/better-auth-tanstack) to handle the authentication state and queries.
 
 ## Starter Project
 
 Want to skip the installation? Check out the starter here:
 
-[GitHub](https://github.com/daveyplate/better-auth-tanstack-starter) - [Demo](https://tanstack.better-auth-starter.com)
+[GitHub](https://github.com/StackProviders/better-auth-tanstack-starter) - [Demo](https://tanstack.better-auth-starter.com)
 
 ## Installation
 
@@ -21,8 +21,8 @@ Want to skip the installation? Check out the starter here:
 TanStack Start requires setting up providers slightly differently than a standard React application. Create a root-level provider component:
 
 ```tsx title="app/providers.tsx"
-import { AuthQueryProvider } from "@daveyplate/better-auth-tanstack"
-import { AuthUIProviderTanstack } from "@daveyplate/better-auth-ui/tanstack"
+import { AuthQueryProvider } from "better-auth-tanstack"
+import { AuthUIProviderTanstack } from "better-auth-ui/tanstack"
 import { Link, useRouter } from "@tanstack/react-router"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import type { ReactNode } from "react"
@@ -154,7 +154,7 @@ Create the following route for authentication views:
 
 ```tsx title="app/routes/auth/$authView.tsx"
 import { cn } from "@/lib/utils"
-import { AuthView } from "@daveyplate/better-auth-ui"
+import { AuthView } from "better-auth-ui"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/auth/$authView")({
@@ -188,7 +188,7 @@ This dynamic route covers all authentication paths, such as `sign-in`, `sign-up`
 Create a dynamic route for account settings using the `AccountView` container (defaults to the `/account` base path):
 
 ```tsx title="app/routes/account/$accountView.tsx"
-import { AccountView } from "@daveyplate/better-auth-ui"
+import { AccountView } from "better-auth-ui"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/account/$accountView")({
@@ -214,7 +214,7 @@ You can customize the base path via the provider using `account={{ basePath: "/a
 Create a dynamic route for organization settings using the `OrganizationView` container (defaults to the `/organization` base path):
 
 ```tsx title="app/routes/organization/$organizationView.tsx"
-import { OrganizationView } from "@daveyplate/better-auth-ui"
+import { OrganizationView } from "better-auth-ui"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/organization/$organizationView")({
@@ -234,7 +234,7 @@ function RouteComponent() {
 If you prefer slug-based org URLs, set `organization={{ pathMode: "slug", basePath: "/organization", slug: currentSlug }}` in the provider and structure your routes accordingly:
 
 ```tsx title="app/routes/organization/$slug/$organizationView.tsx"
-import { OrganizationView } from "@daveyplate/better-auth-ui"
+import { OrganizationView } from "better-auth-ui"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/organization/$slug/$organizationView")({

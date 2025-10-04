@@ -4,7 +4,7 @@ icon: React
 ---
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-This guide covers integrating `@daveyplate/better-auth-ui` into your React project.
+This guide covers integrating `better-auth-ui` into your React project.
 
 <Steps>
 <Step>
@@ -13,7 +13,7 @@ This guide covers integrating `@daveyplate/better-auth-ui` into your React proje
 First, set up [`<AuthUIProvider />`](/components/auth-ui-provider) as it provides context and hooks required by all subsequent authentication components. Create a top-level provider to encapsulate your app:
 
 ```tsx title="src/providers.tsx"
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { AuthUIProvider } from "better-auth-ui"
 import { authClient } from "@/lib/auth-client"
 import { useNavigate, NavLink } from "react-router-dom"
 
@@ -59,7 +59,7 @@ Create a dynamic authentication route such as `auth/[pathname].tsx` inside your 
 
 ```tsx title="src/pages/auth/AuthPage.tsx"
 import { useParams } from "react-router-dom"
-import { AuthCard } from "@daveyplate/better-auth-ui"
+import { AuthCard } from "better-auth-ui"
 
 export default function AuthPage() {
   const { pathname } = useParams()

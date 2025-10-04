@@ -7,15 +7,15 @@ icon: "Triplit"
 
 ## Prerequisites
 
-Set up your project with the [@daveyplate/better-auth-triplit](https://github.com/daveyplate/better-auth-triplit) package.
+Set up your project with the [better-auth-triplit](https://github.com/StackProviders/better-auth-triplit) package.
 
 ## Integration with Auth UI Providers
 
 You can pass the Triplit hooks to both the `AuthUIProvider` and `AuthUIProviderTanstack` components:
 
 ```tsx
-import { useTriplitHooks } from "@daveyplate/better-auth-ui/triplit"
-import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { useTriplitHooks } from "better-auth-ui/triplit"
+import { AuthUIProvider } from "better-auth-ui"
 import { useSession } from "@/lib/auth-client"
 import { triplit } from "@/lib/triplit"
 
