@@ -51,3 +51,4 @@ Coming Soon: API Keys, Organization, and more!
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+"# better-auth-ui" 
