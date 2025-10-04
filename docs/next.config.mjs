@@ -7,6 +7,7 @@ const config = {
     reactStrictMode: true,
     output: "export",
     basePath: process.env.NODE_ENV === "production" && !process.env.GITHUB_PAGES_CUSTOM_DOMAIN ? "/better-auth-ui" : "",
+    assetPrefix: process.env.NODE_ENV === "production" && !process.env.GITHUB_PAGES_CUSTOM_DOMAIN ? "/better-auth-ui" : "",
     images: { unoptimized: true }
 }
 
