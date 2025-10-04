@@ -4,9 +4,9 @@
     "version": "3.2.5",
     "description": "Plug & play shadcn/ui components for better-auth",
     "scripts": {
-        "build": "tsup --clean --dts && copy src/style.css dist/style.css",
+        "build": "tsup --clean --dts && shx cp src/style.css dist/style.css",
         "dev": "tsc-watch",
-        "prepublishOnly": "rmdir /s /q dist 2>nul & turbo build"
+        "prepublishOnly": "shx rm -rf dist && turbo build"
     },
     "type": "module",
     "main": "./dist/index.cjs",
@@ -99,6 +99,7 @@
         "clsx": "^2.1.1",
         "esbuild-plugin-preserve-directives": "^0.0.11",
         "lucide-react": "^0.544.0",
+        "shx": "^0.4.0",
         "tailwind-merge": "^3.3.1",
         "tailwindcss-animate": "^1.0.7",
         "tsc-watch": "^7.1.1",
