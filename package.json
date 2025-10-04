@@ -6,7 +6,7 @@
     "scripts": {
         "build": "tsup --clean --dts && cp src/style.css dist/style.css",
         "dev": "tsc-watch",
-        "prepublishOnly": "rm -rf dist && turbo build"
+        "prepublishOnly": "rmdir /s /q dist 2>nul & turbo build"
     },
     "type": "module",
     "main": "./dist/index.cjs",
