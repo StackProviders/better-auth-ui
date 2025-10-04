@@ -4,7 +4,7 @@
     "version": "3.2.5",
     "description": "Plug & play shadcn/ui components for better-auth",
     "scripts": {
-        "build": "tsup --clean --dts && cp src/style.css dist/style.css",
+        "build": "tsup --clean --dts && copy src\style.css dist\style.css",
         "dev": "tsc-watch",
         "prepublishOnly": "rmdir /s /q dist 2>nul & turbo build"
     },
