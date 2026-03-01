@@ -17,12 +17,14 @@ import {
 } from "../ui/dropdown-menu"
 import { UserAvatar } from "../user-avatar"
 
+export type UserInvitationsCardProps = SettingsCardProps
+
 export function UserInvitationsCard({
     className,
     classNames,
     localization: localizationProp,
     ...props
-}: SettingsCardProps) {
+}: UserInvitationsCardProps) {
     const {
         hooks: { useListUserInvitations, useListOrganizations },
         localization: contextLocalization

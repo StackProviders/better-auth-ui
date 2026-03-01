@@ -11,12 +11,14 @@ import { CardContent } from "../ui/card"
 import { CreateOrganizationDialog } from "./create-organization-dialog"
 import { OrganizationCell } from "./organization-cell"
 
+export type OrganizationsCardProps = SettingsCardProps
+
 export function OrganizationsCard({
     className,
     classNames,
     localization,
     ...props
-}: SettingsCardProps) {
+}: OrganizationsCardProps) {
     const {
         hooks: { useListOrganizations },
         localization: contextLocalization

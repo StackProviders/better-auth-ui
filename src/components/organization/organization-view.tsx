@@ -22,7 +22,7 @@ import { OrganizationInvitationsCard } from "./organization-invitations-card"
 import { OrganizationMembersCard } from "./organization-members-card"
 import { OrganizationSettingsCards } from "./organization-settings-cards"
 
-export type OrganizationViewPageProps = Omit<AccountViewProps, "view"> & {
+export type OrganizationViewProps = Omit<AccountViewProps, "view"> & {
     slug?: string
     view?: OrganizationViewPath
 }
@@ -36,7 +36,7 @@ export function OrganizationView({
     view: viewProp,
     hideNav,
     slug: slugProp
-}: OrganizationViewPageProps) {
+}: OrganizationViewProps) {
     const {
         organization: organizationOptions,
         localization: contextLocalization,
@@ -70,9 +70,9 @@ export function OrganizationView({
         view: OrganizationViewPath
         label: string
     }[] = [
-        { view: "SETTINGS", label: localization.SETTINGS },
-        { view: "MEMBERS", label: localization.MEMBERS }
-    ]
+            { view: "SETTINGS", label: localization.SETTINGS },
+            { view: "MEMBERS", label: localization.MEMBERS }
+        ]
 
     if (apiKey) {
         navItems.push({
@@ -173,7 +173,7 @@ export function OrganizationView({
                                             ? "font-semibold"
                                             : "text-foreground/70",
                                         view === item.view &&
-                                            classNames?.sidebar?.buttonActive
+                                        classNames?.sidebar?.buttonActive
                                     )}
                                     variant="ghost"
                                 >

@@ -10,13 +10,15 @@ import { SettingsCard } from "../settings/shared/settings-card"
 import { CardContent } from "../ui/card"
 import { InvitationCell } from "./invitation-cell"
 
+export type OrganizationInvitationsCardProps = SettingsCardProps & { slug?: string }
+
 export function OrganizationInvitationsCard({
     className,
     classNames,
     localization: localizationProp,
     slug: slugProp,
     ...props
-}: SettingsCardProps & { slug?: string }) {
+}: OrganizationInvitationsCardProps) {
     const {
         localization: contextLocalization,
         organization: organizationOptions
