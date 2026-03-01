@@ -12,6 +12,7 @@ import { notFound } from "next/navigation"
 import type { ComponentProps } from "react"
 
 import { source } from "@/lib/source"
+import { MdxImage, MdxImg } from "@/components/mdx-image";
 
 const generator = createGenerator()
 
@@ -35,13 +36,16 @@ export default async function Page(props: {
 
             <DocsDescription>{page.data.description}</DocsDescription>
 
+
             <DocsBody>
                 <MDX
                     components={{
+                        ...defaultMdxComponents,
                         AutoTypeTable: AutoTypeTableWithGenerator,
                         Tab,
                         Tabs,
-                        ...defaultMdxComponents
+                        Image: MdxImage,
+                        img: MdxImg
                     }}
                 />
             </DocsBody>

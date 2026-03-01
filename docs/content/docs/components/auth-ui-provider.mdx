@@ -7,15 +7,15 @@ The `<AuthUIProvider />` wraps your application with authentication context, pro
 ## Usage
 
 ```tsx title="providers.tsx"
-"use client"
+"use client";
 
-import { AuthUIProvider } from 'better-auth-ui'
-import { authClient } from '@/lib/auth-client'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
+import { AuthUIProvider } from "better-auth-ui";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <AuthUIProvider
@@ -27,7 +27,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     >
       {children}
     </AuthUIProvider>
-  )
+  );
 }
 ```
 
@@ -35,23 +35,29 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
 The following props can be passed to the `<AuthUIProvider />` component:
 
-<AutoTypeTable path="../src/lib/auth-ui-provider.tsx" name="AuthUIProviderProps" />
+<AutoTypeTable
+  path="../src/lib/auth-ui-provider.tsx"
+  name="AuthUIProviderProps"
+/>
 
 ## Example
 
 A minimal Next.js layout file using the `AuthUIProvider`:
 
 ```tsx
-"use client"
+"use client";
 
-import { AuthUIProvider } from "better-auth-ui"
-import { authClient } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import Image from "next/image"
+import { AuthUIProvider } from "better-auth-ui";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const router = useRouter()
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const router = useRouter();
 
   return (
     <html lang="en">
@@ -62,38 +68,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           replace={router.replace}
           onSessionChange={() => router.refresh()}
           social={{
-            providers: ["github", "google", "facebook", "apple"]
+            providers: ["github", "google", "facebook", "apple"],
           }}
           multiSession
           magicLink
           passkey
           avatar={{
             upload: async (file) => {
-              const formData = new FormData()
-              formData.append("avatar", file)
+              const formData = new FormData();
+              formData.append("avatar", file);
 
-              const res = await fetch("/api/uploadAvatar", { method: "POST", body: formData })
-              const { data } = await res.json()
+              const res = await fetch("/api/uploadAvatar", {
+                method: "POST",
+                body: formData,
+              });
+              const { data } = await res.json();
 
-              return data.url
+              return data.url;
             },
             delete: async (url) => {
               await fetch("/api/deleteAvatar", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ url })
-              })
+                body: JSON.stringify({ url }),
+              });
             },
             // Custom Image component for rendering avatar images
             // Useful for CDN optimization (Cloudinary, Imgix, ImgProxy, etc.)
-            Image: Image // Use Next.js Image component for avatars
+            Image: Image, // Use Next.js Image component for avatars
           }}
           captcha={{
             provider: "google-recaptcha-v3",
             siteKey: "your-site-key",
           }}
           settings={{
-            url: "/dashboard/settings"
+            url: "/dashboard/settings",
           }}
           twoFactor={["otp", "totp"]}
           Link={Link}
@@ -102,6 +111,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </AuthUIProvider>
       </body>
     </html>
-  )
+  );
 }
 ```
