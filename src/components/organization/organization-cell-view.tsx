@@ -21,7 +21,7 @@ export interface OrganizationViewClassNames {
     skeleton?: string
 }
 
-export interface OrganizationViewProps {
+export interface OrganizationCellViewProps {
     className?: string
     classNames?: OrganizationViewClassNames
     isPending?: boolean
@@ -41,7 +41,7 @@ export function OrganizationCellView({
     size,
     organization,
     localization: propLocalization
-}: OrganizationViewProps) {
+}: OrganizationCellViewProps) {
     const { localization: contextLocalization } = useContext(AuthUIContext)
 
     const localization = { ...contextLocalization, ...propLocalization }
