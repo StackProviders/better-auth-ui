@@ -6,40 +6,52 @@ The `<SettingsCards />` component provides a convenient plug-and-play UI for man
 
 This component automatically leverages all the features you have enabled via the [`<AuthUIProvider />`](/components/auth-ui-provider) and provides a seamless user settings UI out of the box.
 
-<img alt="Settings Cards" src="/screenshots/settings-cards-dark.png" className="rounded-xl hidden dark:block w-lg mt-0 mb-0" />
-<img alt="Settings Cards" src="/screenshots/settings-cards-light.png" className="rounded-xl dark:hidden w-lg mt-0 mb-0" />
+<Image
+  alt="Settings Cards"
+  src="/screenshots/settings-cards-dark.png"
+  width={1024}
+  height={768}
+  className="rounded-xl hidden dark:block w-lg mt-0 mb-0"
+/>
+<Image
+  alt="Settings Cards"
+  src="/screenshots/settings-cards-light.png"
+  width={1024}
+  height={768}
+  className="rounded-xl dark:hidden w-lg mt-0 mb-0"
+/>
 
 ## Default Settings Page Behavior
 
 By default, the built-in [`<AuthView />`](/components/auth-view) component automatically displays `<SettingsCards />` when the `/auth/settings` route is accessed. If you prefer to handle user settings on a custom route or component, you can override this behavior using the `settings.url` prop.
 
-## Overriding Built-in Settings URL 
+## Overriding Built-in Settings URL
 
 To use your own custom settings route and avoid using the default included settings card, you can specify the `settings.url` prop within your [`<AuthUIProvider />`](/components/auth-ui-provider) configuration:
 
 ```tsx title="app/providers.tsx"
-import { AuthUIProvider } from "better-auth-ui"
-import { authClient } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
+import { AuthUIProvider } from "better-auth-ui";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-    const router = useRouter()
+  const router = useRouter();
 
-    return (
-        <AuthUIProvider
-            authClient={authClient}
-            navigate={router.push}
-            replace={router.replace}
-            onSessionChange={() => router.refresh()}
-            settings={{
-                url: "/dashboard/settings"  // Your custom settings page URL
-            }}
-            Link={Link}
-        >
-            {children}
-        </AuthUIProvider>
-    )
+  return (
+    <AuthUIProvider
+      authClient={authClient}
+      navigate={router.push}
+      replace={router.replace}
+      onSessionChange={() => router.refresh()}
+      settings={{
+        url: "/dashboard/settings", // Your custom settings page URL
+      }}
+      Link={Link}
+    >
+      {children}
+    </AuthUIProvider>
+  );
 }
 ```
 
@@ -52,14 +64,14 @@ By setting the `settings.url` as shown above, the built-in `/auth/settings` page
 You can then easily utilize the provided `<SettingsCards />` component directly in your custom settings route within your app's layout. Here's how you might set up a properly protected custom settings route in your framework of choice:
 
 ```tsx title="app/dashboard/settings/page.tsx"
-import { SettingsCards } from "better-auth-ui"
+import { SettingsCards } from "better-auth-ui";
 
 export default function SettingsPage() {
   return (
     <div className="flex justify-center py-12 px-4">
       <SettingsCards className="max-w-xl" />
     </div>
-  )
+  );
 }
 ```
 
@@ -87,13 +99,13 @@ Using Tailwind utility classes, you can fully customize all card states. Here's 
       content: "bg-blue-50",
       footer: "bg-blue-500/5",
       button: "text-white bg-blue-600 hover:bg-blue-700",
-      input: "bg-background placeholder:text-muted-foreground/50"
-    }
+      input: "bg-background placeholder:text-muted-foreground/50",
+    },
   }}
 />
 ```
 
-### All available settings included in SettingsCards: 
+### All available settings included in SettingsCards:
 
 - **Avatar** (optional, requires avatar upload configured in AuthUIProvider)
 - **Name**
@@ -124,10 +136,10 @@ The `<SettingsCards />` also supports displaying any custom `additionalFields` y
       description: "Subscribe to receive newsletters.",
       required: false,
       type: "boolean",
-    }
+    },
   }}
   settings={{
-    fields: ["age", "newsletter"]
+    fields: ["age", "newsletter"],
   }}
 >
   {children}

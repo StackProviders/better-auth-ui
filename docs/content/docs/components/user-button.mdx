@@ -2,11 +2,29 @@
 title: <UserButton />
 ---
 
-The `<UserButton />` component provides an easy-to-use dropdown menu button that displays user account information and session management actions. It includes an avatar, provides quick access to user settings, linked accounts, and session management actions.  
+The `<UserButton />` component provides an easy-to-use dropdown menu button that displays user account information and session management actions. It includes an avatar, provides quick access to user settings, linked accounts, and session management actions.
 
-<img alt="Seto" src="/avatars/seto.png" className="size-8 rounded-full -mb-6 -mt-2" />
-<img alt="User Dropdown Dark" src="/screenshots/user-dropdown-dark.png" className="border-r rounded-lg hidden dark:block w-44" />
-<img alt="User Dropdown Light" src="/screenshots/user-dropdown-light.png" className="border-r rounded-lg dark:hidden w-44" />
+<Image
+  alt="Seto"
+  src="/avatars/seto.png"
+  width={32}
+  height={32}
+  className="size-8 rounded-full -mb-6 -mt-2"
+/>
+<Image
+  alt="User Dropdown Dark"
+  src="/screenshots/user-dropdown-dark.png"
+  width={176}
+  height={256}
+  className="border-r rounded-lg hidden dark:block w-44"
+/>
+<Image
+  alt="User Dropdown Light"
+  src="/screenshots/user-dropdown-light.png"
+  width={176}
+  height={256}
+  className="border-r rounded-lg dark:hidden w-44"
+/>
 
 ## Usage
 
@@ -22,7 +40,10 @@ export default function Example() {
 
 These are the available props for the `<UserButton />` component:
 
-<AutoTypeTable path="../src/components/user-button.tsx" name="UserButtonProps" />
+<AutoTypeTable
+  path="../src/components/user-button.tsx"
+  name="UserButtonProps"
+/>
 
 ## Examples
 
@@ -30,17 +51,33 @@ These are the available props for the `<UserButton />` component:
 
 The `size="icon"` prop turns the UserButton into a small button, showing only the user's avatar. This is the default size.
 
-<img alt="Seto" src="/avatars/seto.png" className="size-8 rounded-full -mb-6" />
-<img alt="User Dropdown Dark" src="/screenshots/user-dropdown-dark.png" className="border-r rounded-lg hidden dark:block w-44" />
-<img alt="User Dropdown Light" src="/screenshots/user-dropdown-light.png" className="border-r rounded-lg dark:hidden w-44" />
+<Image
+  alt="Seto"
+  src="/avatars/seto.png"
+  width={32}
+  height={32}
+  className="size-8 rounded-full -mb-6"
+/>
+<Image
+  alt="User Dropdown Dark"
+  src="/screenshots/user-dropdown-dark.png"
+  width={176}
+  height={256}
+  className="border-r rounded-lg hidden dark:block w-44"
+/>
+<Image
+  alt="User Dropdown Light"
+  src="/screenshots/user-dropdown-light.png"
+  width={176}
+  height={256}
+  className="border-r rounded-lg dark:hidden w-44"
+/>
 
 ```tsx
 import { UserButton } from "better-auth-ui";
 
 export default function Example() {
-  return (
-    <UserButton />
-  )
+  return <UserButton />;
 }
 ```
 
@@ -48,14 +85,26 @@ export default function Example() {
 
 The `size="full"` prop turns the UserButton into a wide button, showing the user's avatar, name or email, and dropdown arrow. Recommended for desktop user menus.
 
-<img alt="Seto" src="/screenshots/user-button-dark.png" className="rounded-lg hidden dark:block w-64" />
-<img alt="Seto" src="/screenshots/user-button-light.png" className="rounded-lg dark:hidden w-64" />
+<Image
+  alt="Seto"
+  src="/screenshots/user-button-dark.png"
+  width={256}
+  height={128}
+  className="rounded-lg hidden dark:block w-64"
+/>
+<Image
+  alt="Seto"
+  src="/screenshots/user-button-light.png"
+  width={256}
+  height={128}
+  className="rounded-lg dark:hidden w-64"
+/>
 
 ```tsx
 import { UserButton } from "better-auth-ui";
 
 export default function Example() {
-  return <UserButton size="full" />
+  return <UserButton size="full" />;
 }
 ```
 
@@ -65,8 +114,20 @@ You can fully customize the appearance of the UserButton component with [`UserBu
 
 Here's an example that drastically customizes the styling:
 
-<img alt="Seto" src="/screenshots/custom-user-button-dark.png" className="rounded-lg hidden dark:block w-64" />
-<img alt="Seto" src="/screenshots/custom-user-button-light.png" className="rounded-lg dark:hidden w-64" />
+<Image
+  alt="Seto"
+  src="/screenshots/custom-user-button-dark.png"
+  width={256}
+  height={128}
+  className="rounded-lg hidden dark:block w-64"
+/>
+<Image
+  alt="Seto"
+  src="/screenshots/custom-user-button-light.png"
+  width={256}
+  height={128}
+  className="rounded-lg dark:hidden w-64"
+/>
 
 ```tsx
 import { UserButton } from "better-auth-ui";
@@ -78,12 +139,12 @@ export default function Example() {
       classNames={{
         content: {
           avatar: {
-            fallback: "bg-destructive text-white"
-          }
-        }
+            fallback: "bg-destructive text-white",
+          },
+        },
       }}
       size="full"
     />
-  )
+  );
 }
 ```

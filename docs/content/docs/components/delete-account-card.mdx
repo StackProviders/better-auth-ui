@@ -4,22 +4,34 @@ title: <DeleteAccountCard />
 
 The `<DeleteAccountCard />` component provides users a streamlined UI to delete their account. It supports verification flows, such as password confirmation or email verification, before account deletion.
 
-<img alt="Delete Account Card" src="/screenshots/delete-account-card-dark.png" className="rounded-xl hidden dark:block w-lg mt-0 mb-0" />
-<img alt="Delete Account Card" src="/screenshots/delete-account-card-light.png" className="rounded-xl dark:hidden w-lg mt-0 mb-0" />
+<Image
+  alt="Delete Account Card"
+  src="/screenshots/delete-account-card-dark.png"
+  width={800}
+  height={600}
+  className="rounded-xl hidden dark:block w-lg mt-0 mb-0"
+/>
+<Image
+  alt="Delete Account Card"
+  src="/screenshots/delete-account-card-light.png"
+  width={800}
+  height={600}
+  className="rounded-xl dark:hidden w-lg mt-0 mb-0"
+/>
 
 ## Usage
 
 Include the `<DeleteAccountCard />` component on your user settings page:
 
 ```tsx
-import { DeleteAccountCard } from "better-auth-ui"
+import { DeleteAccountCard } from "better-auth-ui";
 
 export default function SettingsPage() {
-    return (
-        <div className="flex flex-col gap-6">
-            <DeleteAccountCard />
-        </div>
-    )
+  return (
+    <div className="flex flex-col gap-6">
+      <DeleteAccountCard />
+    </div>
+  );
 }
 ```
 
@@ -29,7 +41,10 @@ This component leverages the [`AuthUIProvider`](/components/auth-ui-provider) co
 
 These are the available props for `<DeleteAccountCard />`:
 
-<AutoTypeTable path="../src/components/settings/account/delete-account-card.tsx" name="DeleteAccountCardProps" />
+<AutoTypeTable
+  path="../src/components/settings/account/delete-account-card.tsx"
+  name="DeleteAccountCardProps"
+/>
 
 ## Styling
 
@@ -37,14 +52,14 @@ You can customize styling using the provided `classNames` prop with TailwindCSS 
 
 ```tsx
 <DeleteAccountCard
-    classNames={{
-        base: "border-destructive",
-        header: "bg-destructive/10",
-        title: "text-destructive text-xl font-semibold",
-        description: "text-destructive",
-        footer: "bg-destructive/30",
-        button: "bg-destructive hover:bg-destructive/80 text-white"
-    }}
+  classNames={{
+    base: "border-destructive",
+    header: "bg-destructive/10",
+    title: "text-destructive text-xl font-semibold",
+    description: "text-destructive",
+    footer: "bg-destructive/30",
+    button: "bg-destructive hover:bg-destructive/80 text-white",
+  }}
 />
 ```
 
@@ -54,11 +69,13 @@ Adjust the text within the component for specific requirements or languages:
 
 ```tsx
 <DeleteAccountCard
-    localization={{
-        DELETE_ACCOUNT: "Delete My Account",
-        DELETE_ACCOUNT_DESCRIPTION: "This action permanently deletes your account and is irreversible.",
-        DELETE_ACCOUNT_INSTRUCTIONS: "Please provide your password to confirm deletion.",
-        DELETE_ACCOUNT_NOT_FRESH: "Sign out and back in to delete your account.",
-    }}
+  localization={{
+    DELETE_ACCOUNT: "Delete My Account",
+    DELETE_ACCOUNT_DESCRIPTION:
+      "This action permanently deletes your account and is irreversible.",
+    DELETE_ACCOUNT_INSTRUCTIONS:
+      "Please provide your password to confirm deletion.",
+    DELETE_ACCOUNT_NOT_FRESH: "Sign out and back in to delete your account.",
+  }}
 />
 ```

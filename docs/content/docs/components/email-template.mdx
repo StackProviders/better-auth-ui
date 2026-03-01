@@ -4,8 +4,20 @@ title: <EmailTemplate />
 
 The `<EmailTemplate />` component lets you easily build responsive HTML emails with consistent styling for your authentication flows. It's specifically designed to integrate seamlessly with Better Auth.
 
-<img alt="Email Template" src="/screenshots/email-template-dark.png" className="rounded-xl hidden dark:block w-sm mt-0 mb-0" />
-<img alt="Email Template" src="/screenshots/email-template-light.png" className="rounded-xl dark:hidden w-sm mt-0 mb-0" />
+<Image
+  alt="Email Template"
+  src="/screenshots/email-template-dark.png"
+  width={800}
+  height={600}
+  className="rounded-xl hidden dark:block w-sm mt-0 mb-0"
+/>
+<Image
+  alt="Email Template"
+  src="/screenshots/email-template-light.png"
+  width={800}
+  height={600}
+  className="rounded-xl dark:hidden w-sm mt-0 mb-0"
+/>
 
 ## Usage
 
@@ -62,4 +74,7 @@ This example demonstrates using the component specifically to send email verific
 
 The following props can be passed to the `<EmailTemplate />` component:
 
-<AutoTypeTable path="../src/components/email/email-template.tsx" name="EmailTemplateProps" />
+<AutoTypeTable
+  path="../src/components/email/email-template.tsx"
+  name="EmailTemplateProps"
+/>
