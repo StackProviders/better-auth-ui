@@ -13,6 +13,8 @@ import type { ComponentProps } from "react"
 
 import { source } from "@/lib/source"
 import { MdxImage, MdxImg } from "@/components/mdx-image";
+import { getLLMText } from "@/lib/get-llm-text"
+import { CopyAIButton } from "@/components/copy-ai-button"
 
 const generator = createGenerator()
 
@@ -29,13 +31,18 @@ export default async function Page(props: {
     if (!page) notFound()
 
     const MDX = page.data.body
+    const llmText = await getLLMText(page)
 
     return (
         <DocsPage full={page.data.full} toc={page.data.toc}>
-            <DocsTitle>{page.data.title}</DocsTitle>
+            <div className="flex flex-row items-center justify-between gap-4">
+                <DocsTitle>{page.data.title}</DocsTitle>
+                <div className="flex-shrink-0">
+                    <CopyAIButton content={llmText} />
+                </div>
+            </div>
 
             <DocsDescription>{page.data.description}</DocsDescription>
-
 
             <DocsBody>
                 <MDX
