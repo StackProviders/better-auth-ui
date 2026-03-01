@@ -10,7 +10,7 @@
 
 Plug & play shadcn/ui auth components for [better-auth](https://better-auth.com).
 
-- *Own Your Auth*
+- _Own Your Auth_
 
 [Demo](https://newtech.dev/auth/login) - [Documentation](https://better-auth-ui.com) - [Roadmap](https://betterauthui.featurebase.app/roadmap)
 
@@ -42,13 +42,40 @@ Plug & play shadcn/ui auth components for [better-auth](https://better-auth.com)
 
 <img src="docs/public/screenshots/settings-cards-dark.png" alt="Settings Cards Dark" width="384" /><img src="docs/public/screenshots/settings-cards-light.png" alt="Settings Cards Light" width="384" />
 
+## Installation
+
+```bash
+pnpm add better-auth-ui
+```
+
+## Quick Start
+
+1. **Wrap your app** with the `AuthUIProvider`:
+
+```tsx
+import { AuthUIProvider } from "better-auth-ui";
+
+export default function RootLayout({ children }) {
+  return <AuthUIProvider>{children}</AuthUIProvider>;
+}
+```
+
+2. **Use the components** anywhere in your app:
+
+```tsx
+import { SignInCard } from "better-auth-ui";
+
+export default function LoginPage() {
+  return <SignInCard />;
+}
+```
+
 ---
 
 Fully customizable!
 
-Coming Soon: API Keys, Organization, and more!
+Organizations and Settings are now supported!
 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-"# better-auth-ui" 
