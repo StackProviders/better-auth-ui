@@ -1,0 +1,48 @@
+---
+title: <UserInvitationsCard />
+---
+
+The `<UserInvitationsCard />` component allows users to view and manage invitations they have received from various organizations.
+
+## Usage
+
+```tsx
+import { UserInvitationsCard } from "better-auth-ui";
+
+export function InvitationsPage() {
+  return <UserInvitationsCard />;
+}
+```
+
+## Features
+
+- **Invitations List**: Shows all pending invitations for the current user
+- **Accept/Decline**: Integrated actions to respond to invitations
+- **Auto-Refresh**: Updates automatically upon action completion
+
+## Reference
+
+<AutoTypeTable
+  path="../src/components/organization/user-invitations-card.tsx"
+  name="UserInvitationsCardProps"
+/>
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<UserInvitationsCard />
+```
+
+### With Custom Localization
+
+```tsx
+<UserInvitationsCard
+  localization={{
+    INVITATIONS: "Pending Invites",
+    ACCEPT: "Join",
+    DECLINE: "Ignore",
+  }}
+/>
+```

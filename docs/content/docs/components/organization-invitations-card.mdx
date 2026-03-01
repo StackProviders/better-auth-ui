@@ -1,0 +1,37 @@
+---
+title: <OrganizationInvitationsCard />
+---
+
+The `<OrganizationInvitationsCard />` component allows organization administrators to manage invitations sent from their organization.
+
+## Usage
+
+```tsx
+import { OrganizationInvitationsCard } from "better-auth-ui";
+
+export function OrgSettingsPage({ orgId }: { orgId: string }) {
+  return <OrganizationInvitationsCard organizationId={orgId} />;
+}
+```
+
+## Features
+
+- **Sent Invitations**: View all pending invitations sent by the organization
+- **Cancel Invitation**: Revoke sent invitations
+- **Invite Member**: Integrated action to send new invitations (opens dialog)
+- **Role-Based**: Typically visible only to Admins and Owners
+
+## Reference
+
+<AutoTypeTable
+  path="../src/components/organization/organization-invitations-card.tsx"
+  name="OrganizationInvitationsCardProps"
+/>
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<OrganizationInvitationsCard organizationId="org_123" />
+```

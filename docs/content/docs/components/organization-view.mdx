@@ -1,0 +1,73 @@
+---
+title: <OrganizationView />
+---
+
+The `<OrganizationView />` component is a high-level component that displays a comprehensive view of an organization, typically including its members, invitations, and settings.
+
+## Usage
+
+```tsx
+import { OrganizationView } from "better-auth-ui";
+
+export function OrganizationPage({ slug }: { slug: string }) {
+  return <OrganizationView slug={slug} />;
+}
+```
+
+## Features
+
+- **Member List**: Displays and manages organization members
+- **Invitations**: Manages pending organization invitations
+- **Settings**: Integrated access to organization settings
+- **Role Management**: Update member roles and permissions
+- **Responsive Layout**: Optimized for both mobile and desktop views
+
+## Reference
+
+<AutoTypeTable
+  path="../src/components/organization/organization-view.tsx"
+  name="OrganizationViewProps"
+/>
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<OrganizationView slug="my-organization" />
+```
+
+### With Custom Class Names
+
+```tsx
+<OrganizationView
+  slug="my-organization"
+  classNames={{
+    base: "max-w-4xl mx-auto",
+    content: "p-6",
+  }}
+/>
+```
+
+## Internal Components
+
+The `<OrganizationView />` is composed of several specialized cards:
+
+- **OrganizationMembersCard**: Manages the list of members.
+- **OrganizationInvitationsCard**: Manages pending invitations.
+- **OrganizationSettingsCards**: Provides the settings management interface.
+
+## Requirements
+
+The organization plugin must be enabled in your `AuthUIProvider`:
+
+```tsx title="providers.tsx"
+<AuthUIProvider
+  authClient={authClient}
+  organization={{
+    enabled: true,
+  }}
+>
+  {children}
+</AuthUIProvider>
+```

@@ -1,0 +1,52 @@
+---
+title: <OrganizationsCard />
+---
+
+The `<OrganizationsCard />` component displays a list of organizations the user belongs to and provides an interface for creating new ones.
+
+## Usage
+
+```tsx
+import { OrganizationsCard } from "better-auth-ui";
+
+export function DashboardPage() {
+  return <OrganizationsCard />;
+}
+```
+
+## Features
+
+- **Organization List**: Shows all organizations the user is a member of
+- **Create Organization**: Integrated button to open the creation dialog
+- **Active Status**: Highlights the currently active organization
+- **Quick Switch**: Easy navigation to organization views
+
+## Reference
+
+<AutoTypeTable
+  path="../src/components/organization/organizations-card.tsx"
+  name="OrganizationsCardProps"
+/>
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<OrganizationsCard />
+```
+
+### With Redirection
+
+```tsx
+<OrganizationsCard
+  onOrganizationCreated={(org) => {
+    router.push(`/org/${org.slug}`);
+  }}
+/>
+```
+
+## Role Requirements
+
+- Users can view this card if they are authenticated.
+- Creating an organization typically requires general permissions defined in your `better-auth` configuration.
