@@ -9,6 +9,7 @@
             "description": "Comprehensive authentication components for better-auth.",
             "dependencies": [
                 "better-auth",
+                "better-auth-ui",
                 "@better-fetch/fetch",
                 "lucide-react",
                 "zod",
@@ -146,84 +147,9 @@
                     "target": "components/captcha/recaptcha-v3.tsx"
                 },
                 {
-                    "path": "registry/source/lib/auth-data-cache.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/auth-data-cache.ts"
-                },
-                {
                     "path": "registry/source/auth-ui-provider.tsx",
                     "type": "registry:component",
                     "target": "components/auth/auth-ui-provider.tsx"
-                },
-                {
-                    "path": "registry/source/lib/gravatar-utils.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/gravatar-utils.ts"
-                },
-                {
-                    "path": "registry/source/lib/image-utils.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/image-utils.ts"
-                },
-                {
-                    "path": "registry/source/lib/social-providers.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/social-providers.ts"
-                },
-                {
-                    "path": "registry/source/lib/utils.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/utils.ts"
-                },
-                {
-                    "path": "registry/source/lib/view-paths.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/view-paths.ts"
-                },
-                {
-                    "path": "registry/source/hooks/use-auth-data.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-auth-data.ts"
-                },
-                {
-                    "path": "registry/source/hooks/use-authenticate.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-authenticate.ts"
-                },
-                {
-                    "path": "registry/source/hooks/use-captcha.tsx",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-captcha.tsx"
-                },
-                {
-                    "path": "registry/source/hooks/use-hydrated.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-hydrated.ts"
-                },
-                {
-                    "path": "registry/source/hooks/use-lang.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-lang.ts"
-                },
-                {
-                    "path": "registry/source/hooks/use-success-transition.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-success-transition.ts"
-                },
-                {
-                    "path": "registry/source/hooks/use-theme.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-theme.ts"
-                },
-                {
-                    "path": "registry/source/types/password-validation.ts",
-                    "type": "registry:file",
-                    "target": "lib/auth/types/password-validation.ts"
-                },
-                {
-                    "path": "registry/source/localization/auth-localization.ts",
-                    "type": "registry:file",
-                    "target": "lib/auth/localization/auth-localization.ts"
                 },
                 {
                     "path": "registry/source/auth-loading.tsx",
@@ -288,6 +214,7 @@
             "description": "Organization management components for better-auth.",
             "dependencies": [
                 "better-auth",
+                "better-auth-ui",
                 "lucide-react",
                 "clsx",
                 "tailwind-merge",
@@ -326,16 +253,6 @@
                     "path": "registry/source/organization/organization-view.tsx",
                     "type": "registry:component",
                     "target": "components/organization/organization-view.tsx"
-                },
-                {
-                    "path": "registry/source/lib/organization-refetcher.tsx",
-                    "type": "registry:component",
-                    "target": "lib/auth/organization-refetcher.tsx"
-                },
-                {
-                    "path": "registry/source/hooks/use-current-organization.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-current-organization.ts"
                 }
             ]
         },
@@ -345,6 +262,7 @@
             "description": "Account settings and security components.",
             "dependencies": [
                 "better-auth",
+                "better-auth-ui",
                 "lucide-react",
                 "zod",
                 "react-hook-form",
@@ -457,6 +375,11 @@
                     "path": "registry/source/settings/shared/settings-action-button.tsx",
                     "type": "registry:component",
                     "target": "components/settings/shared/settings-action-button.tsx"
+                },
+                {
+                    "path": "registry/source/account/account-view.tsx",
+                    "type": "registry:component",
+                    "target": "components/account/account-view.tsx"
                 }
             ]
         },
@@ -590,6 +513,7 @@
             "name": "user-button",
             "type": "registry:component",
             "dependencies": [
+                "better-auth-ui",
                 "lucide-react"
             ],
             "registryDependencies": [
@@ -618,26 +542,6 @@
                     "path": "registry/source/auth-ui-provider.tsx",
                     "type": "registry:component",
                     "target": "components/auth/auth-ui-provider.tsx"
-                },
-                {
-                    "path": "registry/source/lib/social-providers.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/social-providers.ts"
-                },
-                {
-                    "path": "registry/source/lib/utils.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/utils.ts"
-                },
-                {
-                    "path": "registry/source/lib/view-paths.ts",
-                    "type": "registry:component",
-                    "target": "lib/auth/view-paths.ts"
-                },
-                {
-                    "path": "registry/source/hooks/use-current-organization.ts",
-                    "type": "registry:hook",
-                    "target": "hooks/auth/use-current-organization.ts"
                 }
             ]
         }

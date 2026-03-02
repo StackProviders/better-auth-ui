@@ -28,7 +28,7 @@ The first step is to set up the [`<AuthUIProvider />`](/components/auth-ui-provi
 ```tsx title="app/providers.tsx"
 "use client";
 
-import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { AuthUIProvider } from "better-auth-ui";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
@@ -92,7 +92,7 @@ Create a dynamic route segment for authentication views in `app/auth/[authView]/
 
 ```tsx title="app/auth/[path]/page.tsx"
 import { AuthView } from "@/components/auth/auth-view";
-import { authViewPaths } from "@/lib/auth/view-paths";
+import { authViewPaths } from "better-auth-ui";
 
 export const dynamicParams = false;
 
@@ -136,7 +136,7 @@ Ensure that any links to the authentication process utilize these routes accordi
 
 ```tsx title="app/account/[path]/page.tsx"
 import { AccountView } from "@/components/settings/account-view";
-import { accountViewPaths } from "@/lib/auth/view-paths";
+import { accountViewPaths } from "better-auth-ui";
 
 export const dynamicParams = false;
 
@@ -165,7 +165,7 @@ export default async function AccountPage({
 
 ```tsx title="app/organization/[path]/page.tsx"
 import { OrganizationView } from "@/components/organization/organization-view";
-import { organizationViewPaths } from "@/lib/auth/view-paths";
+import { organizationViewPaths } from "better-auth-ui";
 
 export const dynamicParams = false;
 
@@ -192,7 +192,7 @@ If you prefer slug-based org URLs, set `organization={{ pathMode: "slug", basePa
 
 ```tsx title="app/organization/[slug]/[path]/page.tsx"
 import { OrganizationView } from "@/components/organization/organization-view";
-import { organizationViewPaths } from "@/lib/auth/view-paths";
+import { organizationViewPaths } from "better-auth-ui";
 
 export default async function OrganizationPage({
   params,
@@ -224,7 +224,7 @@ First set up the [`<AuthUIProvider />`](/components/auth-ui-provider) within you
 
 ```tsx title="pages/_app.tsx"
 import type { AppProps } from "next/app";
-import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { AuthUIProvider } from "better-auth-ui";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -257,7 +257,7 @@ Create a page with a dynamic segment in your Pages directory in `pages/auth/[aut
 
 ```tsx title="pages/auth/[path].tsx"
 import { AuthView } from "@/components/auth/auth-view";
-import { authViewPaths } from "@/lib/auth/view-paths";
+import { authViewPaths } from "better-auth-ui";
 
 export default function AuthPage({ path }: { path: string }) {
   return (
@@ -287,7 +287,7 @@ These routes match the list shown in the App Router section above.
 
 ```tsx title="pages/account/[path].tsx"
 import { AccountView } from "@/components/settings/account-view";
-import { accountViewPaths } from "@/lib/auth/view-paths";
+import { accountViewPaths } from "better-auth-ui";
 
 export default function AccountPage({ path }: { path: string }) {
   return (
@@ -317,7 +317,7 @@ export async function getStaticProps({ params }: { params: { path: string } }) {
 
 ```tsx title="pages/organization/[path].tsx"
 import { OrganizationView } from "@/components/organization/organization-view";
-import { organizationViewPaths } from "@/lib/auth/view-paths";
+import { organizationViewPaths } from "better-auth-ui";
 
 export default function OrganizationPage({ path }: { path: string }) {
   return (

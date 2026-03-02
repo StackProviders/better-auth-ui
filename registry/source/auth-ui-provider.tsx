@@ -3,42 +3,39 @@
 import { createContext, type ReactNode, useMemo } from "react"
 import { toast } from "sonner"
 
-import { RecaptchaV3 } from "@/components/captcha/recaptcha-v3"
-import { useAuthData } from "@/hooks/auth/use-auth-data"
-import {
-    type AuthLocalization,
-    authLocalization
-} from "@/lib/auth/localization/auth-localization"
-import type {
-    AccountOptions,
-    AccountOptionsContext
-} from "@/lib/auth/types/account-options"
-import type { AdditionalFields } from "@/lib/auth/types/additional-fields"
-import type { AnyAuthClient } from "@/lib/auth/types/any-auth-client"
-import type { AuthClient } from "@/lib/auth/types/auth-client"
-import type { AuthHooks } from "@/lib/auth/types/auth-hooks"
-import type { AuthMutators } from "@/lib/auth/types/auth-mutators"
-import type { AvatarOptions } from "@/lib/auth/types/avatar-options"
-import type { CaptchaOptions } from "@/lib/auth/types/captcha-options"
-import type { CredentialsOptions } from "@/lib/auth/types/credentials-options"
-import type { DeleteUserOptions } from "@/lib/auth/types/delete-user-options"
-import type { GenericOAuthOptions } from "@/lib/auth/types/generic-oauth-options"
-import type { GravatarOptions } from "@/lib/auth/types/gravatar-options"
-import type { Link } from "@/lib/auth/types/link"
-import type {
-    OrganizationOptions,
-    OrganizationOptionsContext
-} from "@/lib/auth/types/organization-options"
-import type { RenderToast } from "@/lib/auth/types/render-toast"
-import type { SignUpOptions } from "@/lib/auth/types/sign-up-options"
-import type { SocialOptions } from "@/lib/auth/types/social-options"
-import { OrganizationRefetcher } from "@/lib/auth/organization-refetcher"
-import type { AuthViewPaths } from "@/lib/auth/view-paths"
 import {
     accountViewPaths,
+    authLocalization,
     authViewPaths,
-    organizationViewPaths
-} from "@/lib/auth/view-paths"
+    organizationViewPaths,
+    useAuthData
+} from "better-auth-ui"
+import type {
+    AccountOptions,
+    AccountOptionsContext,
+    AdditionalFields,
+    AnyAuthClient,
+    AuthClient,
+    AuthHooks,
+    AuthLocalization,
+    AuthMutators,
+    AuthViewPaths,
+    AvatarOptions,
+    CaptchaOptions,
+    CredentialsOptions,
+    DeleteUserOptions,
+    GenericOAuthOptions,
+    GravatarOptions,
+    Link,
+    OrganizationOptions,
+    OrganizationOptionsContext,
+    RenderToast,
+    SignUpOptions,
+    SocialOptions
+} from "better-auth-ui"
+
+import { RecaptchaV3 } from "./captcha/recaptcha-v3"
+import { OrganizationRefetcher } from "./organization-refetcher"
 
 const DefaultLink: Link = ({ href, className, children }) => (
     <a className={className} href={href}>

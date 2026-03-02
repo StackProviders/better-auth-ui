@@ -15,7 +15,7 @@ Mutators are accessed through the `AuthUIContext`. They provide a thin wrapper a
 
 ```tsx
 import { useContext } from "react";
-import { AuthUIContext } from "@/components/auth/auth-ui-provider";
+import { AuthUIContext } from "better-auth-ui";
 
 export function ProfileForm() {
   const { mutators } = useContext(AuthUIContext);

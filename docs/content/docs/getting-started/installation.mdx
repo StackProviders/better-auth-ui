@@ -11,28 +11,36 @@ Follow the steps below to set up `better-auth-ui` in your project. We recommend 
 <Step>
 ## Recommended: Manual Installation (Registry)
 
-This is the **Pro-Level** approach. It installs the components directly into your project, giving you full control over the code and ensuring zero unnecessary dependencies.
+This is the **Pro-Level** approach. It installs the UI components directly into your project, giving you full control over the code while ensuring a high-performance, tailored experience. All internal logic (hooks, types, and utilities) is imported directly from the `better-auth-ui` package.
 
-### 1. Install All Auth Components
+### 1. Install the Core Package
 
-Includes sign-in, sign-up, forgot password, and internal hooks/lib.
+Before adding components, you must install the core package which provides all the shared logic, hooks, and types used by the UI components.
+
+```package-install
+better-auth-ui@latest
+```
+
+### 2. Install Auth Components
+
+Includes sign-in, sign-up, forgot password, and other core authentication forms.
 
 <ShadcnInstall name="auth" />
 
-### 2. Install Organization Management (Optional)
+### 3. Install Organization Management (Optional)
 
 Required if you want to use team management and invitation flows.
 
 <ShadcnInstall name="org" />
 
-### 3. Install Account Settings (Optional)
+### 4. Install Account Settings (Optional)
 
 Includes user profile, security settings, and account management cards.
 
 <ShadcnInstall name="account" />
 
 > [!TIP]
-> Manual installation allows you to easily customize the UI to match your brand perfectly, as the code lives directly in your `components/`, `hooks/`, and `lib/` folders.
+> Manual installation allows you to easily customize the UI to match your brand perfectly, as the component code lives directly in your `components/` folder, while the complex logic remains handled by the `better-auth-ui` library.
 
 </Step>
 

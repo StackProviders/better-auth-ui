@@ -14,7 +14,7 @@ This guide covers integrating `better-auth-ui` into your React project.
 First, set up [`<AuthUIProvider />`](/components/auth-ui-provider) as it provides context and hooks required by all subsequent authentication components. Create a top-level provider to encapsulate your app:
 
 ```tsx title="src/providers.tsx"
-import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { AuthUIProvider } from "better-auth-ui";
 import { authClient } from "@/lib/auth-client";
 import { useNavigate, NavLink } from "react-router-dom";
 

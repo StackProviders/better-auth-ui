@@ -13,18 +13,20 @@ import { UpdateUsernameCard } from "./account/update-username-card"
 import { ChangeEmailCard } from "./security/change-email-card"
 import type { SettingsCardClassNames } from "./shared/settings-card"
 
-export function AccountSettingsCards({
-    className,
-    classNames,
-    localization
-}: {
+export interface AccountSettingsCardsProps {
     className?: string
     classNames?: {
         card?: SettingsCardClassNames
         cards?: string
     }
     localization?: Partial<AuthLocalization>
-}) {
+}
+
+export function AccountSettingsCards({
+    className,
+    classNames,
+    localization
+}: AccountSettingsCardsProps) {
     const {
         additionalFields,
         avatar,

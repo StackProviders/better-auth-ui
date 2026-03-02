@@ -6,6 +6,8 @@ import type { User } from "@/lib/auth/types/auth-client"
 import type { SettingsCardProps } from "../shared/settings-card"
 import { UpdateFieldCard } from "./update-field-card"
 
+export type UpdateUsernameCardProps = SettingsCardProps
+
 export function UpdateUsernameCard({
     className,
     classNames,

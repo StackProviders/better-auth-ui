@@ -16,7 +16,7 @@ If you are using the manual installation method, the `AuthUIProvider` is include
 ```tsx title="providers.tsx"
 "use client";
 
-import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { AuthUIProvider } from "better-auth-ui";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -54,7 +54,7 @@ A minimal Next.js layout file using the `AuthUIProvider`:
 ```tsx
 "use client";
 
-import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { AuthUIProvider } from "better-auth-ui";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";

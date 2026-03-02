@@ -59,16 +59,16 @@ import { OrganizationSwitcher } from "@/components/organization/organization-swi
 The settings component automatically shows organization options when enabled:
 
 ```tsx
-import { SettingsCards } from '@/components/settings/settings-cards'
+import { AccountView } from 'better-auth-ui'
 
 // Shows organization settings when view="ORGANIZATION"
-<SettingsCards view="ORGANIZATION" />
+<AccountView view="ORGANIZATION" />
 
 // Shows organization members when view="MEMBERS"
-<SettingsCards view="MEMBERS" />
+<AccountView view="MEMBERS" />
 
 // Shows all organizations when view="ORGANIZATIONS"
-<SettingsCards view="ORGANIZATIONS" />
+<AccountView view="ORGANIZATIONS" />
 ```
 
 ### Organization-Specific Components
@@ -120,7 +120,7 @@ Access organization data programmatically:
 
 ```tsx
 import { useContext } from "react";
-import { AuthUIContext } from "@/components/auth/auth-ui-provider";
+import { AuthUIContext } from "better-auth-ui";
 
 function MyComponent() {
   const { hooks } = useContext(AuthUIContext);

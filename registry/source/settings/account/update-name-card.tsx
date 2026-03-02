@@ -5,6 +5,8 @@ import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
 import type { SettingsCardProps } from "../shared/settings-card"
 import { UpdateFieldCard } from "./update-field-card"
 
+export type UpdateNameCardProps = SettingsCardProps
+
 export function UpdateNameCard({
     className,
     classNames,
