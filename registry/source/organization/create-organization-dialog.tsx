@@ -12,10 +12,10 @@ import {
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { fileToBase64, resizeAndCropImage } from "@/lib/auth/image-utils"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { AuthUIContext } from "better-auth-ui"
+import { fileToBase64, resizeAndCropImage } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import type { SettingsCardClassNames } from "@/components/settings/shared/settings-card"
 import { Button } from "@/components/ui/button"
 import {

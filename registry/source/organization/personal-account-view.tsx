@@ -1,8 +1,8 @@
 "use client"
 
 import { useContext, useMemo } from "react"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn } from "@/lib/auth/utils"
+import { AuthUIContext } from "better-auth-ui"
+import { cn } from "better-auth-ui"
 import { Skeleton } from "@/components/ui/skeleton"
 import { UserAvatar } from "../user-avatar"
 import type { UserViewProps } from "../user-view"

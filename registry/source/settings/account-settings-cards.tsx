@@ -2,9 +2,9 @@
 
 import { useContext } from "react"
 
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { AuthUIContext } from "better-auth-ui"
+import { cn } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import { AccountsCard } from "./account/accounts-card"
 import { UpdateAvatarCard } from "./account/update-avatar-card"
 import { UpdateFieldCard } from "./account/update-field-card"

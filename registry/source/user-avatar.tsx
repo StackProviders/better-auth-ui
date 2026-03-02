@@ -3,11 +3,11 @@
 import { UserRoundIcon } from "lucide-react"
 import { type ComponentProps, useContext } from "react"
 
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { getGravatarUrl } from "@/lib/auth/gravatar-utils"
-import { cn } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import type { Profile } from "@/lib/auth/types/profile"
+import { AuthUIContext } from "better-auth-ui"
+import { getGravatarUrl } from "better-auth-ui"
+import { cn } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import type { Profile } from "better-auth-ui"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import { Skeleton } from "./ui/skeleton"
 

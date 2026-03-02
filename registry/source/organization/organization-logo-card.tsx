@@ -10,11 +10,11 @@ import {
     useState
 } from "react"
 
-import { useCurrentOrganization } from "@/hooks/auth/use-current-organization"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { fileToBase64, resizeAndCropImage } from "@/lib/auth/image-utils"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { useCurrentOrganization } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { fileToBase64, resizeAndCropImage } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import type { SettingsCardClassNames } from "@/components/settings/shared/settings-card"
 import { SettingsCardFooter } from "@/components/settings/shared/settings-card-footer"
 import { SettingsCardHeader } from "@/components/settings/shared/settings-card-header"

@@ -3,9 +3,9 @@
 import type { Organization } from "better-auth/plugins/organization"
 import { useContext, useMemo, useState } from "react"
 
-import { useCurrentOrganization } from "@/hooks/auth/use-current-organization"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn } from "@/lib/auth/utils"
+import { useCurrentOrganization } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn } from "better-auth-ui"
 import type { SettingsCardProps } from "@/components/settings/shared/settings-card"
 import { SettingsCard } from "@/components/settings/shared/settings-card"
 import { CardContent } from "@/components/ui/card"

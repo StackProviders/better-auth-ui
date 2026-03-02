@@ -1,7 +1,7 @@
 "use client"
 
 import { useContext } from "react"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { AuthUIContext } from "better-auth-ui"
 import type { SettingsCardProps } from "../shared/settings-card"
 import { UpdateFieldCard } from "./update-field-card"
 

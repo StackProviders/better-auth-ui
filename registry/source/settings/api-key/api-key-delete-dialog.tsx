@@ -3,12 +3,12 @@
 import { KeyRoundIcon, Loader2 } from "lucide-react"
 import { type ComponentProps, useContext, useState } from "react"
 
-import { useLang } from "@/hooks/auth/use-lang"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import type { ApiKey } from "@/lib/auth/types/api-key"
-import type { Refetch } from "@/lib/auth/types/refetch"
+import { useLang } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import type { ApiKey } from "better-auth-ui"
+import type { Refetch } from "better-auth-ui"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import {

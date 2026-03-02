@@ -205,6 +205,11 @@
                     "path": "registry/source/user-view.tsx",
                     "type": "registry:component",
                     "target": "components/auth/user-view.tsx"
+                },
+                {
+                    "path": "registry/source/organization-refetcher.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/organization-refetcher.tsx"
                 }
             ]
         },

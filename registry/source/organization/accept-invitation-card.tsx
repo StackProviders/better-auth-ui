@@ -3,10 +3,10 @@
 import { CheckIcon, Loader2, XIcon } from "lucide-react"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 
-import { useAuthenticate } from "@/hooks/auth/use-authenticate"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError, getSearchParam } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { useAuthenticate } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError, getSearchParam } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import type { SettingsCardClassNames } from "@/components/settings/shared/settings-card"
 import { Button } from "@/components/ui/button"
 import {

@@ -2,8 +2,8 @@
 
 import type { Account } from "better-auth"
 import { useContext, useState } from "react"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { AuthUIContext } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import type { SettingsCardClassNames } from "../shared/settings-card"
 import { SettingsCard } from "../shared/settings-card"
 import { DeleteAccountDialog } from "./delete-account-dialog"

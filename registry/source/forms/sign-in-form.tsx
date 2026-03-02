@@ -7,19 +7,19 @@ import { useContext, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useCaptcha } from "@/hooks/auth/use-captcha"
-import { useIsHydrated } from "@/hooks/auth/use-hydrated"
-import { useOnSuccessTransition } from "@/hooks/auth/use-success-transition"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { useCaptcha } from "better-auth-ui"
+import { useIsHydrated } from "better-auth-ui"
+import { useOnSuccessTransition } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
 import {
     cn,
     getLocalizedError,
     getPasswordSchema,
     isValidEmail
-} from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import type { PasswordValidation } from "@/lib/auth/types/password-validation"
-import { Captcha } from "@/components/captcha/captcha"
+} from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import type { PasswordValidation } from "better-auth-ui"
+import { Captcha } from "@/components/auth/captcha/captcha"
 import { PasswordInput } from "../../password-input"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"

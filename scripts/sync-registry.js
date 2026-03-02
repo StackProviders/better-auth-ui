@@ -10,10 +10,6 @@ const filesToCopy = [
   { src: "components/organization", dest: "organization" },
   { src: "components/account", dest: "account" },
   { src: "components/settings", dest: "settings" },
-  { src: "lib", dest: "lib" },
-  { src: "hooks", dest: "hooks" },
-  { src: "types", dest: "types" },
-  { src: "localization", dest: "localization" },
   { src: "components/captcha", dest: "captcha" },
   { src: "components/auth-loading.tsx", dest: "auth-loading.tsx" },
   { src: "components/form-error.tsx", dest: "form-error.tsx" },
@@ -32,6 +28,8 @@ const filesToCopy = [
   { src: "components/user-avatar.tsx", dest: "user-avatar.tsx" },
   { src: "components/user-button.tsx", dest: "user-button.tsx" },
   { src: "components/user-view.tsx", dest: "user-view.tsx" },
+  { src: "lib/auth-ui-provider.tsx", dest: "auth-ui-provider.tsx" },
+  { src: "lib/organization-refetcher.tsx", dest: "organization-refetcher.tsx" },
 ];
 
 function ensureDir(dir) {
@@ -42,6 +40,12 @@ function ensureDir(dir) {
 
 function copyAndTransform() {
   console.log("Syncing registry source files...");
+
+  // Clean registry source to remove stale files from previous syncs
+  if (fs.existsSync(registrySourceDir)) {
+    fs.rmSync(registrySourceDir, { recursive: true });
+  }
+  fs.mkdirSync(registrySourceDir, { recursive: true });
 
   filesToCopy.forEach(({ src, dest }) => {
     const fullSrcPath = path.join(srcDir, src);
@@ -92,45 +96,25 @@ function copyAndTransform() {
 function copyFile(src, dest, destCategory) {
   let content = fs.readFileSync(src, "utf8");
 
-  // Global transformations for internal project structure
-  // We use aliases to support placing files in root folders while maintaining DX
+  // Transform internal imports to use the better-auth-ui package
+  // hooks, lib, types, localization are all exported from the package
   content = content.replace(
-    /from ["'](\.\.\/)*hooks\/([^"']*)["']/g,
-    'from "@/hooks/auth/$2"',
-  );
-  content = content.replace(
-    /from ["'](\.\.\/)*lib\/([^"']*)["']/g,
-    'from "@/lib/auth/$2"',
-  );
-  content = content.replace(
-    /from ["'](\.\.\/)*types\/([^"']*)["']/g,
-    'from "@/lib/auth/types/$2"',
-  );
-  content = content.replace(
-    /from ["'](\.\.\/)*localization\/([^"']*)["']/g,
-    'from "@/lib/auth/localization/$2"',
+    /from ["'](\.\.\/)*(hooks|lib|types|localization)\/[^"']*["']/g,
+    'from "better-auth-ui"',
   );
 
   // Components transformations
   content = content.replace(
-    /from ["'](\.\.\/)*auth\/([^"']*)["']/g,
-    'from "@/components/auth/$2"',
+    /from ["'](\.\.\/)*(auth|organization|account|settings)\/([^"']*)["']/g,
+    'from "@/components/$2/$3"',
   );
   content = content.replace(
-    /from ["'](\.\.\/)*organization\/([^"']*)["']/g,
-    'from "@/components/organization/$2"',
+    /from ["'](\.\.\/)*components\/(auth|organization|account|settings)\/([^"']*)["']/g,
+    'from "@/components/$2/$3"',
   );
   content = content.replace(
-    /from ["'](\.\.\/)*account\/([^"']*)["']/g,
-    'from "@/components/account/$2"',
-  );
-  content = content.replace(
-    /from ["'](\.\.\/)*settings\/([^"']*)["']/g,
-    'from "@/components/settings/$2"',
-  );
-  content = content.replace(
-    /from ["'](\.\.\/)*captcha\/([^"']*)["']/g,
-    'from "@/components/captcha/$2"',
+    /from ["'](\.\.\/)*(components\/)?captcha\/([^"']*)["']/g,
+    'from "@/components/auth/captcha/$3"',
   );
 
   // Global transformations for shadcn UI components

@@ -3,9 +3,9 @@
 import { FingerprintIcon, Loader2 } from "lucide-react"
 import { useContext, useState } from "react"
 
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { SessionFreshnessDialog } from "../shared/session-freshness-dialog"

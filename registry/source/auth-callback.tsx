@@ -3,8 +3,8 @@
 import { Loader2 } from "lucide-react"
 import { useContext, useEffect, useRef } from "react"
 
-import { useOnSuccessTransition } from "@/hooks/auth/use-success-transition"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { useOnSuccessTransition } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
 
 export function AuthCallback({ redirectTo }: { redirectTo?: string }) {
     const {

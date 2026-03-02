@@ -1,10 +1,10 @@
 "use client"
 
 import { useContext, useMemo } from "react"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import type { Profile } from "@/lib/auth/types/profile"
+import { AuthUIContext } from "better-auth-ui"
+import { cn } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import type { Profile } from "better-auth-ui"
 import { Skeleton } from "./ui/skeleton"
 import { UserAvatar, type UserAvatarClassNames } from "./user-avatar"
 

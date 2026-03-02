@@ -1,9 +1,9 @@
 "use client"
 import { useContext, useMemo, useState } from "react"
 
-import { useIsHydrated } from "@/hooks/auth/use-hydrated"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn } from "@/lib/auth/utils"
+import { useIsHydrated } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn } from "better-auth-ui"
 import type { SettingsCardProps } from "@/components/settings/shared/settings-card"
 import { SettingsCard } from "@/components/settings/shared/settings-card"
 import { SettingsCellSkeleton } from "@/components/settings/skeletons/settings-cell-skeleton"

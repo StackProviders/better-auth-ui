@@ -7,12 +7,12 @@ import { useCallback, useContext, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useCaptcha } from "@/hooks/auth/use-captcha"
-import { useIsHydrated } from "@/hooks/auth/use-hydrated"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError, getSearchParam } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import { Captcha } from "@/components/captcha/captcha"
+import { useCaptcha } from "better-auth-ui"
+import { useIsHydrated } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError, getSearchParam } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import { Captcha } from "@/components/auth/captcha/captcha"
 import { Button } from "@/components/ui/button"
 import {
     Form,

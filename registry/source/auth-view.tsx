@@ -2,12 +2,12 @@
 
 import { ArrowLeftIcon } from "lucide-react"
 import { type ReactNode, useContext, useEffect, useState } from "react"
-import { useIsHydrated } from "@/hooks/auth/use-hydrated"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { socialProviders } from "@/lib/auth/social-providers"
-import { cn, getViewByPath } from "@/lib/auth/utils"
-import type { AuthViewPaths } from "@/lib/auth/view-paths"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { useIsHydrated } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { socialProviders } from "better-auth-ui"
+import { cn, getViewByPath } from "better-auth-ui"
+import type { AuthViewPaths } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import { AcceptInvitationCard } from "@/components/organization/accept-invitation-card"
 import { Button } from "@/components/ui/button"
 import {

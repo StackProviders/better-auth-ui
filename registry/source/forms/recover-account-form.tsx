@@ -5,10 +5,10 @@ import { useContext, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useOnSuccessTransition } from "@/hooks/auth/use-success-transition"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { useOnSuccessTransition } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import { Button } from "@/components/ui/button"
 import {
     Form,

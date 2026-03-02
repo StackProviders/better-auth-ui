@@ -19,12 +19,12 @@ import {
     useState
 } from "react"
 
-import { useIsHydrated } from "@/hooks/auth/use-hydrated"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import type { AnyAuthClient } from "@/lib/auth/types/any-auth-client"
-import type { User } from "@/lib/auth/types/auth-client"
+import { useIsHydrated } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import type { AnyAuthClient } from "better-auth-ui"
+import type { User } from "better-auth-ui"
 import { Button } from "./ui/button"
 import {
     DropdownMenu,

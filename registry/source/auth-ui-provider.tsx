@@ -3,39 +3,42 @@
 import { createContext, type ReactNode, useMemo } from "react"
 import { toast } from "sonner"
 
+import { RecaptchaV3 } from "@/components/auth/captcha/recaptcha-v3"
+import { useAuthData } from "better-auth-ui"
 import {
-    accountViewPaths,
-    authLocalization,
-    authViewPaths,
-    organizationViewPaths,
-    useAuthData
+    type AuthLocalization,
+    authLocalization
 } from "better-auth-ui"
 import type {
     AccountOptions,
-    AccountOptionsContext,
-    AdditionalFields,
-    AnyAuthClient,
-    AuthClient,
-    AuthHooks,
-    AuthLocalization,
-    AuthMutators,
-    AuthViewPaths,
-    AvatarOptions,
-    CaptchaOptions,
-    CredentialsOptions,
-    DeleteUserOptions,
-    GenericOAuthOptions,
-    GravatarOptions,
-    Link,
-    OrganizationOptions,
-    OrganizationOptionsContext,
-    RenderToast,
-    SignUpOptions,
-    SocialOptions
+    AccountOptionsContext
 } from "better-auth-ui"
-
-import { RecaptchaV3 } from "./captcha/recaptcha-v3"
+import type { AdditionalFields } from "better-auth-ui"
+import type { AnyAuthClient } from "better-auth-ui"
+import type { AuthClient } from "better-auth-ui"
+import type { AuthHooks } from "better-auth-ui"
+import type { AuthMutators } from "better-auth-ui"
+import type { AvatarOptions } from "better-auth-ui"
+import type { CaptchaOptions } from "better-auth-ui"
+import type { CredentialsOptions } from "better-auth-ui"
+import type { DeleteUserOptions } from "better-auth-ui"
+import type { GenericOAuthOptions } from "better-auth-ui"
+import type { GravatarOptions } from "better-auth-ui"
+import type { Link } from "better-auth-ui"
+import type {
+    OrganizationOptions,
+    OrganizationOptionsContext
+} from "better-auth-ui"
+import type { RenderToast } from "better-auth-ui"
+import type { SignUpOptions } from "better-auth-ui"
+import type { SocialOptions } from "better-auth-ui"
 import { OrganizationRefetcher } from "./organization-refetcher"
+import type { AuthViewPaths } from "./view-paths"
+import {
+    accountViewPaths,
+    authViewPaths,
+    organizationViewPaths
+} from "./view-paths"
 
 const DefaultLink: Link = ({ href, className, children }) => (
     <a className={className} href={href}>
@@ -69,17 +72,17 @@ export type AuthUIContextType = {
      * API Key plugin configuration
      */
     apiKey?:
-    | {
-        /**
-         * Prefix for API Keys
-         */
-        prefix?: string
-        /**
-         * Metadata for API Keys
-         */
-        metadata?: Record<string, unknown>
-    }
-    | boolean
+        | {
+              /**
+               * Prefix for API Keys
+               */
+              prefix?: string
+              /**
+               * Metadata for API Keys
+               */
+              metadata?: Record<string, unknown>
+          }
+        | boolean
     /**
      * Avatar configuration
      * @default undefined

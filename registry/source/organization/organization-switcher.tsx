@@ -17,11 +17,11 @@ import {
     useState
 } from "react"
 
-import { useCurrentOrganization } from "@/hooks/auth/use-current-organization"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import type { User } from "@/lib/auth/types/auth-client"
+import { useCurrentOrganization } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import type { User } from "better-auth-ui"
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,

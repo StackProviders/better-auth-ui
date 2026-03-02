@@ -1,7 +1,7 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { useAuthenticate } from "@/hooks/auth/use-authenticate"
+import { useAuthenticate } from "better-auth-ui"
 
 /**
  * Redirects the user to the sign-in page

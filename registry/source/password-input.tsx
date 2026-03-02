@@ -3,7 +3,7 @@
 import { EyeIcon, EyeOffIcon } from "lucide-react"
 import { type ComponentProps, useState } from "react"
 
-import { cn } from "@/lib/auth/utils"
+import { cn } from "better-auth-ui"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 

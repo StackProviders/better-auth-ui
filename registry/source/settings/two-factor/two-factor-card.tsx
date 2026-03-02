@@ -1,9 +1,9 @@
 "use client"
 
 import { useContext, useState } from "react"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
-import type { User } from "@/lib/auth/types/auth-client"
+import { AuthUIContext } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
+import type { User } from "better-auth-ui"
 import type { SettingsCardClassNames } from "../shared/settings-card"
 import { SettingsCard } from "../shared/settings-card"
 import { TwoFactorPasswordDialog } from "./two-factor-password-dialog"

@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import { cn, getLocalizedError } from "@/lib/auth/utils"
+import { AuthUIContext } from "better-auth-ui"
+import { cn, getLocalizedError } from "better-auth-ui"
 import { CardContent } from "@/components/ui/card"
 import {
     Form,

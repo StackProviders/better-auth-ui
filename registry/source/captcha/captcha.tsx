@@ -2,9 +2,9 @@ import HCaptcha from "@hcaptcha/react-hcaptcha"
 import { Turnstile } from "@marsidev/react-turnstile"
 import { type RefObject, useContext } from "react"
 
-import { useTheme } from "@/hooks/auth/use-theme"
-import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
-import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { useTheme } from "better-auth-ui"
+import { AuthUIContext } from "better-auth-ui"
+import type { AuthLocalization } from "better-auth-ui"
 import { RecaptchaBadge } from "./recaptcha-badge"
 import { RecaptchaV2 } from "./recaptcha-v2"
 

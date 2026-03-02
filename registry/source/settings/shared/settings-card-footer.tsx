@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react"
 
-import { cn } from "@/lib/auth/utils"
+import { cn } from "better-auth-ui"
 import { CardDescription, CardFooter } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { SettingsActionButton } from "./settings-action-button"

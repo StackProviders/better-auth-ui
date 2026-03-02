@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@/lib/auth/utils"
+import { cn } from "better-auth-ui"
 import { Card } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import type { SettingsCardClassNames } from "../shared/settings-card"
