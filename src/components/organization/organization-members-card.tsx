@@ -12,13 +12,15 @@ import { CardContent } from "../ui/card"
 import { InviteMemberDialog } from "./invite-member-dialog"
 import { MemberCell } from "./member-cell"
 
+export type OrganizationMembersCardProps = SettingsCardProps & { slug?: string }
+
 export function OrganizationMembersCard({
     className,
     classNames,
     localization: localizationProp,
     slug: slugProp,
     ...props
-}: SettingsCardProps & { slug?: string }) {
+}: OrganizationMembersCardProps) {
     const {
         localization: contextLocalization,
         organization: organizationOptions

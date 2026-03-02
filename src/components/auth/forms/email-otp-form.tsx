@@ -25,7 +25,7 @@ import { InputOTP } from "../../ui/input-otp"
 import type { AuthFormClassNames } from "../auth-form"
 import { OTPInputGroup } from "../otp-input-group"
 
-export interface EmailOTPFormProps {
+export interface EmailOtpFormProps {
     className?: string
     classNames?: AuthFormClassNames
     callbackURL?: string
@@ -36,7 +36,7 @@ export interface EmailOTPFormProps {
     setIsSubmitting?: (value: boolean) => void
 }
 
-export function EmailOTPForm(props: EmailOTPFormProps) {
+export function EmailOTPForm(props: EmailOtpFormProps) {
     const [email, setEmail] = useState<string | undefined>()
 
     if (!email) {
@@ -53,7 +53,7 @@ function EmailForm({
     localization,
     setIsSubmitting,
     setEmail
-}: EmailOTPFormProps & {
+}: EmailOtpFormProps & {
     setEmail: (email: string) => void
 }) {
     const isHydrated = useIsHydrated()
@@ -167,7 +167,7 @@ export function OTPForm({
     redirectTo,
     setIsSubmitting,
     email
-}: EmailOTPFormProps & {
+}: EmailOtpFormProps & {
     email: string
 }) {
     const {

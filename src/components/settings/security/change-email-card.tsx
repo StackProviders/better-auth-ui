@@ -19,6 +19,8 @@ import { Skeleton } from "../../ui/skeleton"
 import type { SettingsCardProps } from "../shared/settings-card"
 import { SettingsCard } from "../shared/settings-card"
 
+export type ChangeEmailCardProps = SettingsCardProps
+
 export function ChangeEmailCard({
     className,
     classNames,
