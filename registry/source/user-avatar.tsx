@@ -8,8 +8,8 @@ import { getGravatarUrl } from "better-auth-ui"
 import { cn } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { Profile } from "better-auth-ui"
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
-import { Skeleton } from "./ui/skeleton"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export interface UserAvatarClassNames {
     base?: string

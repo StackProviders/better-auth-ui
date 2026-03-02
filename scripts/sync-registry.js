@@ -99,27 +99,33 @@ function copyFile(src, dest, destCategory) {
   // Transform internal imports to use the better-auth-ui package
   // hooks, lib, types, localization are all exported from the package
   content = content.replace(
-    /from ["'](\.\.\/)*(hooks|lib|types|localization)\/[^"']*["']/g,
+    /from ["'](\.\/|\.\.\/)*(hooks|lib|types|localization|server|view-paths|organization-refetcher)\/?([^"']*)["']/g,
     'from "better-auth-ui"',
   );
 
   // Components transformations
   content = content.replace(
-    /from ["'](\.\.\/)*(auth|organization|account|settings)\/([^"']*)["']/g,
+    /from ["'](\.\/|\.\.\/)*(auth|organization|account|settings)\/([^"']*)["']/g,
     'from "@/components/$2/$3"',
   );
   content = content.replace(
-    /from ["'](\.\.\/)*components\/(auth|organization|account|settings)\/([^"']*)["']/g,
+    /from ["'](\.\/|\.\.\/)*components\/(auth|organization|account|settings)\/([^"']*)["']/g,
     'from "@/components/$2/$3"',
   );
   content = content.replace(
-    /from ["'](\.\.\/)*(components\/)?captcha\/([^"']*)["']/g,
-    'from "@/components/auth/captcha/$3"',
+    /from ["'](\.\/|\.\.\/)*(components\/)?captcha\/([^"']*)["']/g,
+    'from "@/components/captcha/$3"',
+  );
+
+  // Root components transformations
+  content = content.replace(
+    /from ["'](\.\/|\.\.\/)+(auth-loading|form-error|password-input|provider-icons|redirect-to-sign-in|redirect-to-sign-up|signed-in|signed-out|user-avatar|user-button|user-view)["']/g,
+    'from "@/components/$2"',
   );
 
   // Global transformations for shadcn UI components
   content = content.replace(
-    /from ["'](\.\.\/)*ui\/?([^"']*)["']/g,
+    /from ["'](\.\/|\.\.\/)*ui\/?([^"']*)["']/g,
     'from "@/components/ui/$2"',
   );
 

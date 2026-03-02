@@ -4,8 +4,8 @@ import { AlertCircle } from "lucide-react"
 import { useFormState } from "react-hook-form"
 
 import { cn } from "better-auth-ui"
-import type { AuthFormClassNames } from "./auth/auth-form"
-import { Alert, AlertDescription, AlertTitle } from "./ui/alert"
+import type { AuthFormClassNames } from "@/components/auth/auth-form"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 export interface FormErrorProps {
     title?: string

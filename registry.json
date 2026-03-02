@@ -20,7 +20,11 @@
                 "tailwindcss-animate",
                 "vaul",
                 "input-otp",
-                "sonner"
+                "sonner",
+                "@hcaptcha/react-hcaptcha",
+                "@marsidev/react-turnstile",
+                "@wojtekmaj/react-recaptcha-v3",
+                "react-google-recaptcha"
             ],
             "registryDependencies": [
                 "button",
@@ -33,7 +37,14 @@
                 "dropdown-menu",
                 "select",
                 "separator",
-                "dialog"
+                "dialog",
+                "alert",
+                "card",
+                "drawer",
+                "skeleton",
+                "input-otp",
+                "captcha",
+                "accept-invitation-card"
             ],
             "files": [
                 {
@@ -127,26 +138,6 @@
                     "target": "components/auth/forms/two-factor-form.tsx"
                 },
                 {
-                    "path": "registry/source/captcha/captcha.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/captcha.tsx"
-                },
-                {
-                    "path": "registry/source/captcha/recaptcha-badge.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/recaptcha-badge.tsx"
-                },
-                {
-                    "path": "registry/source/captcha/recaptcha-v2.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/recaptcha-v2.tsx"
-                },
-                {
-                    "path": "registry/source/captcha/recaptcha-v3.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/recaptcha-v3.tsx"
-                },
-                {
                     "path": "registry/source/auth-ui-provider.tsx",
                     "type": "registry:component",
                     "target": "components/auth/auth-ui-provider.tsx"
@@ -236,7 +227,8 @@
                 "dropdown-menu",
                 "separator",
                 "table",
-                "badge"
+                "badge",
+                "drawer"
             ],
             "files": [
                 {
@@ -250,6 +242,81 @@
                     "target": "components/organization/create-organization-dialog.tsx"
                 },
                 {
+                    "path": "registry/source/organization/delete-organization-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/delete-organization-card.tsx"
+                },
+                {
+                    "path": "registry/source/organization/delete-organization-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/delete-organization-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/organization/invitation-cell.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/invitation-cell.tsx"
+                },
+                {
+                    "path": "registry/source/organization/invite-member-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/invite-member-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/organization/leave-organization-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/leave-organization-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/organization/member-cell.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/member-cell.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-cell-view.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-cell-view.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-cell.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-cell.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-invitations-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-invitations-card.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-logo-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-logo-card.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-logo.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-logo.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-members-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-members-card.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-name-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-name-card.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-settings-cards.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-settings-cards.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organization-slug-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organization-slug-card.tsx"
+                },
+                {
                     "path": "registry/source/organization/organization-switcher.tsx",
                     "type": "registry:component",
                     "target": "components/organization/organization-switcher.tsx"
@@ -258,6 +325,31 @@
                     "path": "registry/source/organization/organization-view.tsx",
                     "type": "registry:component",
                     "target": "components/organization/organization-view.tsx"
+                },
+                {
+                    "path": "registry/source/organization/organizations-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/organizations-card.tsx"
+                },
+                {
+                    "path": "registry/source/organization/personal-account-view.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/personal-account-view.tsx"
+                },
+                {
+                    "path": "registry/source/organization/remove-member-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/remove-member-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/organization/update-member-role-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/update-member-role-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/organization/user-invitations-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/organization/user-invitations-card.tsx"
                 }
             ]
         },
@@ -307,14 +399,9 @@
                     "target": "components/settings/security/change-password-card.tsx"
                 },
                 {
-                    "path": "registry/source/settings/account/delete-account-card.tsx",
+                    "path": "registry/source/settings/security/session-cell.tsx",
                     "type": "registry:component",
-                    "target": "components/settings/account/delete-account-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/providers/providers-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/providers/providers-card.tsx"
+                    "target": "components/settings/security/session-cell.tsx"
                 },
                 {
                     "path": "registry/source/settings/security/sessions-card.tsx",
@@ -322,34 +409,9 @@
                     "target": "components/settings/security/sessions-card.tsx"
                 },
                 {
-                    "path": "registry/source/settings/two-factor/two-factor-card.tsx",
+                    "path": "registry/source/settings/account/account-cell.tsx",
                     "type": "registry:component",
-                    "target": "components/settings/two-factor/two-factor-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/passkey/passkeys-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/passkey/passkeys-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/account/update-avatar-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/account/update-avatar-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/account/update-username-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/account/update-username-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/account/update-name-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/account/update-name-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/account/update-field-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/account/update-field-card.tsx"
+                    "target": "components/settings/account/account-cell.tsx"
                 },
                 {
                     "path": "registry/source/settings/account/accounts-card.tsx",
@@ -357,19 +419,89 @@
                     "target": "components/settings/account/accounts-card.tsx"
                 },
                 {
+                    "path": "registry/source/settings/account/delete-account-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/account/delete-account-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/account/delete-account-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/account/delete-account-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/settings/account/update-avatar-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/account/update-avatar-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/account/update-field-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/account/update-field-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/account/update-name-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/account/update-name-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/account/update-username-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/account/update-username-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/api-key/api-key-cell.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/api-key/api-key-cell.tsx"
+                },
+                {
+                    "path": "registry/source/settings/api-key/api-key-delete-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/api-key/api-key-delete-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/settings/api-key/api-key-display-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/api-key/api-key-display-dialog.tsx"
+                },
+                {
                     "path": "registry/source/settings/api-key/api-keys-card.tsx",
                     "type": "registry:component",
                     "target": "components/settings/api-key/api-keys-card.tsx"
                 },
                 {
-                    "path": "registry/source/settings/shared/settings-card.tsx",
+                    "path": "registry/source/settings/api-key/create-api-key-dialog.tsx",
                     "type": "registry:component",
-                    "target": "components/settings/shared/settings-card.tsx"
+                    "target": "components/settings/api-key/create-api-key-dialog.tsx"
                 },
                 {
-                    "path": "registry/source/settings/shared/settings-card-header.tsx",
+                    "path": "registry/source/settings/passkey/passkey-cell.tsx",
                     "type": "registry:component",
-                    "target": "components/settings/shared/settings-card-header.tsx"
+                    "target": "components/settings/passkey/passkey-cell.tsx"
+                },
+                {
+                    "path": "registry/source/settings/passkey/passkeys-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/passkey/passkeys-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/providers/provider-cell.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/providers/provider-cell.tsx"
+                },
+                {
+                    "path": "registry/source/settings/providers/providers-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/providers/providers-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/shared/session-freshness-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/session-freshness-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/settings/shared/settings-action-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/settings-action-button.tsx"
                 },
                 {
                     "path": "registry/source/settings/shared/settings-card-footer.tsx",
@@ -377,9 +509,39 @@
                     "target": "components/settings/shared/settings-card-footer.tsx"
                 },
                 {
-                    "path": "registry/source/settings/shared/settings-action-button.tsx",
+                    "path": "registry/source/settings/shared/settings-card-header.tsx",
                     "type": "registry:component",
-                    "target": "components/settings/shared/settings-action-button.tsx"
+                    "target": "components/settings/shared/settings-card-header.tsx"
+                },
+                {
+                    "path": "registry/source/settings/shared/settings-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/settings-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/skeletons/input-field-skeleton.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/skeletons/input-field-skeleton.tsx"
+                },
+                {
+                    "path": "registry/source/settings/skeletons/settings-cell-skeleton.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/skeletons/settings-cell-skeleton.tsx"
+                },
+                {
+                    "path": "registry/source/settings/two-factor/backup-codes-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/two-factor/backup-codes-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/settings/two-factor/two-factor-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/two-factor/two-factor-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/two-factor/two-factor-password-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/two-factor/two-factor-password-dialog.tsx"
                 },
                 {
                     "path": "registry/source/account/account-view.tsx",
@@ -525,7 +687,8 @@
                 "avatar",
                 "button",
                 "dropdown-menu",
-                "separator"
+                "separator",
+                "skeleton"
             ],
             "files": [
                 {
@@ -547,6 +710,40 @@
                     "path": "registry/source/auth-ui-provider.tsx",
                     "type": "registry:component",
                     "target": "components/auth/auth-ui-provider.tsx"
+                }
+            ]
+        },
+        {
+            "name": "captcha",
+            "type": "registry:component",
+            "description": "Captcha components for better-auth.",
+            "dependencies": [
+                "better-auth-ui",
+                "@hcaptcha/react-hcaptcha",
+                "@marsidev/react-turnstile",
+                "@wojtekmaj/react-recaptcha-v3",
+                "react-google-recaptcha"
+            ],
+            "files": [
+                {
+                    "path": "registry/source/captcha/captcha.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/captcha.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-badge.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/recaptcha-badge.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-v2.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/recaptcha-v2.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-v3.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/recaptcha-v3.tsx"
                 }
             ]
         }

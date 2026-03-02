@@ -8,7 +8,7 @@ import * as z from "zod"
 
 import { AuthUIContext } from "better-auth-ui"
 import { cn, getLocalizedError } from "better-auth-ui"
-import { PasswordInput } from "../../password-input"
+import { PasswordInput } from "@/components/password-input"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,

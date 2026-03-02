@@ -5,8 +5,8 @@ import { AuthUIContext } from "better-auth-ui"
 import { cn } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { Profile } from "better-auth-ui"
-import { Skeleton } from "./ui/skeleton"
-import { UserAvatar, type UserAvatarClassNames } from "./user-avatar"
+import { Skeleton } from "@/components/ui/skeleton"
+import { UserAvatar, type UserAvatarClassNames } from "@/components/user-avatar"
 
 export interface UserViewClassNames {
     base?: string

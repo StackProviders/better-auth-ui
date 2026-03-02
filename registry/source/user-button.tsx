@@ -25,16 +25,16 @@ import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { AnyAuthClient } from "better-auth-ui"
 import type { User } from "better-auth-ui"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger
-} from "./ui/dropdown-menu"
-import { UserAvatar, type UserAvatarClassNames } from "./user-avatar"
-import { UserView, type UserViewClassNames } from "./user-view"
+} from "@/components/ui/dropdown-menu"
+import { UserAvatar, type UserAvatarClassNames } from "@/components/user-avatar"
+import { UserView, type UserViewClassNames } from "@/components/user-view"
 
 export interface UserButtonClassNames {
     base?: string

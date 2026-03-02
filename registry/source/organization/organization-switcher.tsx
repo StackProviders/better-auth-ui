@@ -30,8 +30,8 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { UserAvatar, type UserAvatarClassNames } from "../user-avatar"
-import type { UserViewClassNames } from "../user-view"
+import { UserAvatar, type UserAvatarClassNames } from "@/components/user-avatar"
+import type { UserViewClassNames } from "@/components/user-view"
 import { CreateOrganizationDialog } from "./create-organization-dialog"
 import {
     OrganizationCellView,

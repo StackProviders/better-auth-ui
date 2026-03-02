@@ -4,8 +4,8 @@ import { EyeIcon, EyeOffIcon } from "lucide-react"
 import { type ComponentProps, useState } from "react"
 
 import { cn } from "better-auth-ui"
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export function PasswordInput({
     className,

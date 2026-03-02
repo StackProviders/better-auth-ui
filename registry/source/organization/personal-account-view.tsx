@@ -4,8 +4,8 @@ import { useContext, useMemo } from "react"
 import { AuthUIContext } from "better-auth-ui"
 import { cn } from "better-auth-ui"
 import { Skeleton } from "@/components/ui/skeleton"
-import { UserAvatar } from "../user-avatar"
-import type { UserViewProps } from "../user-view"
+import { UserAvatar } from "@/components/user-avatar"
+import type { UserViewProps } from "@/components/user-view"
 
 /**
  * Displays user information with avatar and details in a compact view for personal accounts

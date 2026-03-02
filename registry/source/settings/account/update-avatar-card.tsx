@@ -15,7 +15,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { UserAvatar } from "../../user-avatar"
+import { UserAvatar } from "@/components/user-avatar"
 import type { SettingsCardClassNames } from "../shared/settings-card"
 import { SettingsCardFooter } from "../shared/settings-card-footer"
 import { SettingsCardHeader } from "../shared/settings-card-header"

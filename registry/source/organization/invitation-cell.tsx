@@ -17,7 +17,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { UserAvatar } from "../user-avatar"
+import { UserAvatar } from "@/components/user-avatar"
 
 export interface InvitationCellProps {
     className?: string

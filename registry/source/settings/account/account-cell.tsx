@@ -22,7 +22,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { UserView } from "../../user-view"
+import { UserView } from "@/components/user-view"
 import type { SettingsCardClassNames } from "../shared/settings-card"
 
 export interface AccountCellProps {

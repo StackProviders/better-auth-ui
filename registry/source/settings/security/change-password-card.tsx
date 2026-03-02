@@ -9,7 +9,7 @@ import { AuthUIContext } from "better-auth-ui"
 import { cn, getLocalizedError, getPasswordSchema } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { PasswordValidation } from "better-auth-ui"
-import { PasswordInput } from "../../password-input"
+import { PasswordInput } from "@/components/password-input"
 import { CardContent } from "@/components/ui/card"
 import {
     Form,

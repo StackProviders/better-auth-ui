@@ -12,7 +12,7 @@ import { useIsHydrated } from "better-auth-ui"
 import { AuthUIContext } from "better-auth-ui"
 import { cn, getLocalizedError, getSearchParam } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
-import { Captcha } from "@/components/auth/captcha/captcha"
+import { Captcha } from "@/components/captcha/captcha"
 import { Button } from "@/components/ui/button"
 import {
     Form,

@@ -20,8 +20,8 @@ import {
 } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { PasswordValidation } from "better-auth-ui"
-import { Captcha } from "@/components/auth/captcha/captcha"
-import { PasswordInput } from "../../password-input"
+import { Captcha } from "@/components/captcha/captcha"
+import { PasswordInput } from "@/components/password-input"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
@@ -40,7 +40,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { UserAvatar } from "../../user-avatar"
+import { UserAvatar } from "@/components/user-avatar"
 import type { AuthFormClassNames } from "../auth-form"
 
 export interface SignUpFormProps {

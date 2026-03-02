@@ -20,7 +20,11 @@
                 "tailwindcss-animate",
                 "vaul",
                 "input-otp",
-                "sonner"
+                "sonner",
+                "@hcaptcha/react-hcaptcha",
+                "@marsidev/react-turnstile",
+                "@wojtekmaj/react-recaptcha-v3",
+                "react-google-recaptcha"
             ],
             "registryDependencies": [
                 "button",
@@ -33,7 +37,13 @@
                 "dropdown-menu",
                 "select",
                 "separator",
-                "dialog"
+                "dialog",
+                "alert",
+                "card",
+                "drawer",
+                "skeleton",
+                "input-otp",
+                "captcha"
             ],
             "files": [
                 {
@@ -127,26 +137,6 @@
                     "target": "components/auth/forms/two-factor-form.tsx"
                 },
                 {
-                    "path": "registry/source/captcha/captcha.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/captcha.tsx"
-                },
-                {
-                    "path": "registry/source/captcha/recaptcha-badge.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/recaptcha-badge.tsx"
-                },
-                {
-                    "path": "registry/source/captcha/recaptcha-v2.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/recaptcha-v2.tsx"
-                },
-                {
-                    "path": "registry/source/captcha/recaptcha-v3.tsx",
-                    "type": "registry:component",
-                    "target": "components/captcha/recaptcha-v3.tsx"
-                },
-                {
                     "path": "registry/source/auth-ui-provider.tsx",
                     "type": "registry:component",
                     "target": "components/auth/auth-ui-provider.tsx"
@@ -236,7 +226,8 @@
                 "dropdown-menu",
                 "separator",
                 "table",
-                "badge"
+                "badge",
+                "drawer"
             ],
             "files": [
                 {
@@ -525,7 +516,8 @@
                 "avatar",
                 "button",
                 "dropdown-menu",
-                "separator"
+                "separator",
+                "skeleton"
             ],
             "files": [
                 {
@@ -547,6 +539,40 @@
                     "path": "registry/source/auth-ui-provider.tsx",
                     "type": "registry:component",
                     "target": "components/auth/auth-ui-provider.tsx"
+                }
+            ]
+        },
+        {
+            "name": "captcha",
+            "type": "registry:component",
+            "description": "Captcha components for better-auth.",
+            "dependencies": [
+                "better-auth-ui",
+                "@hcaptcha/react-hcaptcha",
+                "@marsidev/react-turnstile",
+                "@wojtekmaj/react-recaptcha-v3",
+                "react-google-recaptcha"
+            ],
+            "files": [
+                {
+                    "path": "registry/source/captcha/captcha.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/captcha.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-badge.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/recaptcha-badge.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-v2.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/recaptcha-v2.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-v3.tsx",
+                    "type": "registry:component",
+                    "target": "components/captcha/recaptcha-v3.tsx"
                 }
             ]
         }

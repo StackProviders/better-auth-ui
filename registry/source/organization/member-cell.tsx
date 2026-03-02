@@ -17,7 +17,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { UserView } from "../user-view"
+import { UserView } from "@/components/user-view"
 import { LeaveOrganizationDialog } from "./leave-organization-dialog"
 import { RemoveMemberDialog } from "./remove-member-dialog"
 import { UpdateMemberRoleDialog } from "./update-member-role-dialog"

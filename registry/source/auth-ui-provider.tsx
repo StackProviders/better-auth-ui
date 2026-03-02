@@ -3,7 +3,7 @@
 import { createContext, type ReactNode, useMemo } from "react"
 import { toast } from "sonner"
 
-import { RecaptchaV3 } from "@/components/auth/captcha/recaptcha-v3"
+import { RecaptchaV3 } from "@/components/captcha/recaptcha-v3"
 import { useAuthData } from "better-auth-ui"
 import {
     type AuthLocalization,
@@ -32,13 +32,13 @@ import type {
 import type { RenderToast } from "better-auth-ui"
 import type { SignUpOptions } from "better-auth-ui"
 import type { SocialOptions } from "better-auth-ui"
-import { OrganizationRefetcher } from "./organization-refetcher"
-import type { AuthViewPaths } from "./view-paths"
+import { OrganizationRefetcher } from "better-auth-ui"
+import type { AuthViewPaths } from "better-auth-ui"
 import {
     accountViewPaths,
     authViewPaths,
     organizationViewPaths
-} from "./view-paths"
+} from "better-auth-ui"
 
 const DefaultLink: Link = ({ href, className, children }) => (
     <a className={className} href={href}>

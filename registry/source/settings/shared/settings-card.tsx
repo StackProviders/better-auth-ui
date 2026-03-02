@@ -5,7 +5,7 @@ import type { ComponentProps, ReactNode } from "react"
 import { cn } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import { Card } from "@/components/ui/card"
-import type { UserAvatarClassNames } from "../../user-avatar"
+import type { UserAvatarClassNames } from "@/components/user-avatar"
 import { SettingsCardFooter } from "./settings-card-footer"
 import { SettingsCardHeader } from "./settings-card-header"
 
