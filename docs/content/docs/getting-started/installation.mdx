@@ -5,22 +5,47 @@ icon: Download
 
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
-Follow the steps below to install the `better-auth-ui` library.
+Follow the steps below to set up `better-auth-ui` in your project. We recommend the **Manual Installation** via our Shadcn Registry for maximum control and performance.
 
 <Steps>
 <Step>
-## Install the Package
+## Recommended: Manual Installation (Registry)
 
-Install the `better-auth-ui` library using your preferred package manager.
+This is the **Pro-Level** approach. It installs the components directly into your project, giving you full control over the code and ensuring zero unnecessary dependencies.
+
+### 1. Install All Auth Components
+
+Includes sign-in, sign-up, forgot password, and internal hooks/lib.
+
+<ShadcnInstall name="auth" />
+
+### 2. Install Organization Management (Optional)
+
+Required if you want to use team management and invitation flows.
+
+<ShadcnInstall name="org" />
+
+### 3. Install Account Settings (Optional)
+
+Includes user profile, security settings, and account management cards.
+
+<ShadcnInstall name="account" />
+
+> [!TIP]
+> Manual installation allows you to easily customize the UI to match your brand perfectly, as the code lives directly in your `components/`, `hooks/`, and `lib/` folders.
+
+</Step>
+
+<Step>
+## Alternative: Quick Start (npm Package)
+
+If you prefer a managed approach or want to get started instantly without managing the source code, you can install the library as a package.
 
 ```package-install
 better-auth-ui@latest
 ```
 
-</Step>
-
-<Step>
-## TailwindCSS Configuration
+### TailwindCSS Configuration
 
 For [TailwindCSS](https://tailwindcss.com) `v4`, add the following `@import` to your global css:
 
@@ -28,12 +53,9 @@ For [TailwindCSS](https://tailwindcss.com) `v4`, add the following `@import` to 
 @import "better-auth-ui/css";
 ```
 
-- Ensure you have [TailwindCSS](https://tailwindcss.com) `v4` set up and configured correctly.
-- You must have [better-auth](https://better-auth.com) `v1.3` or greater installed and configured.
-- To use organization components, the **Organization Plugin** must be enabled in your `better-auth` configuration.
-  For [TailwindCSS](https://tailwindcss.com) `v3` _(Deprecated)_, add the following `content` to your Tailwind config:
+For [TailwindCSS](https://tailwindcss.com) `v3` _(Deprecated)_, add the following `content` to your Tailwind config:
 
-```ts
+```ts title="tailwind.config.ts"
 content: ["./node_modules/better-auth-ui/dist/**/*.{js,ts,jsx,tsx,mdx}"];
 ```
 
@@ -42,7 +64,7 @@ content: ["./node_modules/better-auth-ui/dist/**/*.{js,ts,jsx,tsx,mdx}"];
 <Step>
 ### Integrations
 
-Now that you've installed `better-auth-ui`, follow one of the guides below to integrate it with your preferred framework.
+Once you've installed the components, follow one of the guides below to integrate with your framework.
 
 <Cards>
   <Card href="/integrations/next-js" title="Next.js" />
@@ -50,29 +72,13 @@ Now that you've installed `better-auth-ui`, follow one of the guides below to in
   <Card href="/integrations/react" title="React" />
 </Cards>
 </Step>
-
-<Step>
-## Manual Installation (Shadcn Registry)
-
-Alternatively, you can install the components directly into your project using the [Shadcn Registry](https://ui.shadcn.com/docs/registry). This method allows you to have full control over the code and customize it as needed.
-
-To install all authentication components:
-
-```bash
-npx shadcn@latest add https://stackproviders.github.io/better-auth-ui/r/auth.json
-```
-
-To install only the **User Button** component:
-
-```bash
-npx shadcn@latest add https://stackproviders.github.io/better-auth-ui/r/user-button.json
-```
-
-### Why use Manual Installation?
-
-- **Full Customizability**: The code is copied directly into your `components/auth` folder.
-- **No Dependencies**: You don't need to add `better-auth-ui` as a dependency in your `package.json`.
-- **Theming**: It automatically uses your existing shadcn UI components (button, input, etc.) and your tailwind theme.
-
-</Step>
 </Steps>
+
+## Next Steps
+
+Now that you're set up, you might want to explore:
+
+- [Customizing Auth Paths](/advanced/custom-auth-paths)
+- [Adding Custom Fields](/advanced/additional-fields)
+- [Global Localization](/advanced/localization)
+- [API Reference](/api-reference/auth-ui-provider)

@@ -7,36 +7,56 @@ icon: UserPen
 
 ### Create Custom Authentication Flow
 
-You may use `additionalFields` to define extra fields required during signup or settings:
+You can define `additionalFields` globally via the `AuthUIProvider` or individually on specific components. These fields are automatically rendered during signup and in the settings dashboards.
+
+```tsx title="app/providers.tsx"
+import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { authClient } from "@/lib/auth-client";
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <AuthUIProvider
+      authClient={authClient}
+      additionalFields={{
+        company: {
+          label: "Company",
+          placeholder: "Your company name",
+          description: "Enter your company name",
+          required: true,
+          type: "string",
+        },
+        age: {
+          label: "Age",
+          placeholder: "Your age",
+          description: "Enter your age",
+          instructions: "You must be 18 or older",
+          required: true,
+          type: "number",
+          validate: (value: string) => parseInt(value) >= 18,
+        },
+      }}
+      settings={{
+        fields: ["company", "age"],
+      }}
+      signUp={{
+        fields: ["company", "age"],
+      }}
+    >
+      {children}
+    </AuthUIProvider>
+  );
+}
+```
+
+> [!TIP]
+> Custom field validation can be performed both on the client (via the `validate` prop) and is automatically enforced by the `better-auth` server-side schema.
+
+### Using Custom Field Cards
+
+If you want to allow users to update single additional fields in a custom settings layout, use the `<UpdateFieldCard />`:
 
 ```tsx
-<AuthUIProvider
-  authClient={authClient}
-  additionalFields={{
-    company: {
-      label: "Company",
-      placeholder: "Your company name",
-      description: "Enter your company name",
-      required: true,
-      type: "string"
-    },
-    age: {
-      label: "Age",
-      placeholder: "Your age",
-      description: "Enter your age",
-      instructions: "You must be 18 or older",
-      required: true,
-      type: "number",
-      validate: (value: string) => parseInt(value) >= 18
-    }
-  }}
-  settings={{
-    fields: ["company", "age"]
-  }}
-  signUp={{
-    fields: ["company", "age"]
-  }}
->
-  {children}
-</AuthUIProvider>
+import { UpdateFieldCard } from "@/components/settings/cards";
+
+<UpdateFieldCard field="company" label="Company Name" type="string" />;
 ```

@@ -1,0 +1,96 @@
+"use client"
+
+import type { Organization } from "better-auth/plugins/organization"
+import { useContext, useMemo } from "react"
+import { useCurrentOrganization } from "@/hooks/auth/use-current-organization"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn } from "@/lib/auth/utils"
+import type { SettingsCardProps } from "@/components/settings/shared/settings-card"
+import { SettingsCard } from "@/components/settings/shared/settings-card"
+import { CardContent } from "@/components/ui/card"
+import { InvitationCell } from "./invitation-cell"
+
+export type OrganizationInvitationsCardProps = SettingsCardProps & { slug?: string }
+
+export function OrganizationInvitationsCard({
+    className,
+    classNames,
+    localization: localizationProp,
+    slug: slugProp,
+    ...props
+}: OrganizationInvitationsCardProps) {
+    const {
+        localization: contextLocalization,
+        organization: organizationOptions
+    } = useContext(AuthUIContext)
+
+    const localization = useMemo(
+        () => ({ ...contextLocalization, ...localizationProp }),
+        [contextLocalization, localizationProp]
+    )
+
+    const slug = slugProp || organizationOptions?.slug
+
+    const { data: organization } = useCurrentOrganization({ slug })
+
+    if (!organization) return null
+
+    return (
+        <OrganizationInvitationsContent
+            className={className}
+            classNames={classNames}
+            localization={localization}
+            organization={organization}
+            {...props}
+        />
+    )
+}
+
+function OrganizationInvitationsContent({
+    className,
+    classNames,
+    localization: localizationProp,
+    organization,
+    ...props
+}: SettingsCardProps & { organization: Organization }) {
+    const {
+        hooks: { useListInvitations },
+        localization: contextLocalization
+    } = useContext(AuthUIContext)
+
+    const localization = useMemo(
+        () => ({ ...contextLocalization, ...localizationProp }),
+        [contextLocalization, localizationProp]
+    )
+
+    const { data: invitations } = useListInvitations({
+        query: { organizationId: organization.id }
+    })
+
+    const pendingInvitations = invitations?.filter(
+        (invitation) => invitation.status === "pending"
+    )
+    if (!pendingInvitations?.length) return null
+
+    return (
+        <SettingsCard
+            className={className}
+            classNames={classNames}
+            title={localization.PENDING_INVITATIONS}
+            description={localization.PENDING_INVITATIONS_DESCRIPTION}
+            {...props}
+        >
+            <CardContent className={cn("grid gap-4", classNames?.content)}>
+                {pendingInvitations.map((invitation) => (
+                    <InvitationCell
+                        key={invitation.id}
+                        classNames={classNames}
+                        invitation={invitation}
+                        localization={localization}
+                        organization={organization}
+                    />
+                ))}
+            </CardContent>
+        </SettingsCard>
+    )
+}

@@ -1,8 +1,23 @@
 ---
 title: <UserButton />
+description: A comprehensive user profile and session management button for your navigation bar.
 ---
 
 The `<UserButton />` component provides an easy-to-use dropdown menu button that displays user account information and session management actions. It includes an avatar, provides quick access to user settings, linked accounts, and session management actions.
+
+## Installation
+
+<ShadcnInstall name="user-button" />
+
+## Usage
+
+```tsx
+import { UserButton } from "@/components/auth/user-button";
+
+export default function Navbar() {
+  return <UserButton />;
+}
+```
 
 <Image
   alt="Seto"
@@ -29,7 +44,7 @@ The `<UserButton />` component provides an easy-to-use dropdown menu button that
 ## Usage
 
 ```tsx
-import { UserButton } from "better-auth-ui";
+import { UserButton } from "@/components/auth/user-button";
 
 export default function Example() {
   return <UserButton />;
@@ -74,7 +89,7 @@ The `size="icon"` prop turns the UserButton into a small button, showing only th
 />
 
 ```tsx
-import { UserButton } from "better-auth-ui";
+import { UserButton } from "@/components/auth/user-button";
 
 export default function Example() {
   return <UserButton />;
@@ -101,7 +116,7 @@ The `size="full"` prop turns the UserButton into a wide button, showing the user
 />
 
 ```tsx
-import { UserButton } from "better-auth-ui";
+import { UserButton } from "@/components/auth/user-button";
 
 export default function Example() {
   return <UserButton size="full" />;
@@ -130,7 +145,7 @@ Here's an example that drastically customizes the styling:
 />
 
 ```tsx
-import { UserButton } from "better-auth-ui";
+import { UserButton } from "@/components/auth/user-button";
 
 export default function Example() {
   return (

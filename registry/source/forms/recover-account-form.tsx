@@ -5,11 +5,11 @@ import { useContext, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useOnSuccessTransition } from "../hooks/use-success-transition"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { cn, getLocalizedError } from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import { Button } from "../../ui/button"
+import { useOnSuccessTransition } from "@/hooks/auth/use-success-transition"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn, getLocalizedError } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
@@ -17,8 +17,8 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "../../ui/form"
-import { Input } from "../../ui/input"
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 import type { AuthFormClassNames } from "../auth-form"
 
 export interface RecoverAccountFormProps {

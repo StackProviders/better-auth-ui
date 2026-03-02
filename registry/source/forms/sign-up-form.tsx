@@ -7,29 +7,29 @@ import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useCaptcha } from "../hooks/use-captcha"
-import { useIsHydrated } from "../hooks/use-hydrated"
-import { useOnSuccessTransition } from "../hooks/use-success-transition"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { fileToBase64, resizeAndCropImage } from "../lib/image-utils"
+import { useCaptcha } from "@/hooks/auth/use-captcha"
+import { useIsHydrated } from "@/hooks/auth/use-hydrated"
+import { useOnSuccessTransition } from "@/hooks/auth/use-success-transition"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { fileToBase64, resizeAndCropImage } from "@/lib/auth/image-utils"
 import {
     cn,
     getLocalizedError,
     getPasswordSchema,
     getSearchParam
-} from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { PasswordValidation } from "../types/password-validation"
-import { Captcha } from "../captcha/captcha"
-import { PasswordInput } from "../password-input"
-import { Button } from "../../ui/button"
-import { Checkbox } from "../../ui/checkbox"
+} from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { PasswordValidation } from "@/lib/auth/types/password-validation"
+import { Captcha } from "@/components/captcha/captcha"
+import { PasswordInput } from "../../password-input"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger
-} from "../../ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
     Form,
     FormControl,
@@ -37,9 +37,9 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "../../ui/form"
-import { Input } from "../../ui/input"
-import { Textarea } from "../../ui/textarea"
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import { UserAvatar } from "../../user-avatar"
 import type { AuthFormClassNames } from "../auth-form"
 

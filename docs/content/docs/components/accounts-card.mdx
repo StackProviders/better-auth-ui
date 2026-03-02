@@ -6,8 +6,12 @@ description: Displays and manages linked social accounts
 ## Import
 
 ```tsx
-import { AccountsCard } from "@better-auth/ui-react/components"
+import { AccountsCard } from "@better-auth/ui-react/components";
 ```
+
+## Installation
+
+<ShadcnInstall name="accounts-card" />
 
 ## Usage
 
@@ -17,23 +21,23 @@ import { AccountsCard } from "@better-auth/ui-react/components"
 
 ## Props
 
-| Name           | Type                         | Default     | Description                                |
-|----------------|------------------------------|-------------|--------------------------------------------|
-| `className`    | `string`                     | `undefined` | Additional CSS classes for styling         |
-| `classNames`   | `SettingsCardClassNames`     | `undefined` | Class names for individual card components |
-| `localization` | `Partial<AuthLocalization>`  | `undefined` | Localization object for translations       |
+| Name           | Type                        | Default     | Description                                |
+| -------------- | --------------------------- | ----------- | ------------------------------------------ |
+| `className`    | `string`                    | `undefined` | Additional CSS classes for styling         |
+| `classNames`   | `SettingsCardClassNames`    | `undefined` | Class names for individual card components |
+| `localization` | `Partial<AuthLocalization>` | `undefined` | Localization object for translations       |
 
 ## Example
 
 ```tsx
-import { AccountsCard } from "@better-auth/ui-react/components"
+import { AccountsCard } from "@better-auth/ui-react/components";
 
 export function AccountSettings() {
-    return (
-        <div className="space-y-4">
-            <AccountsCard />
-        </div>
-    )
+  return (
+    <div className="space-y-4">
+      <AccountsCard />
+    </div>
+  );
 }
 ```
 
@@ -44,4 +48,4 @@ export function AccountSettings() {
 - Unlink existing social accounts
 - Shows provider icons and account information
 - Built-in loading states
-- Prevents unlinking if it's the only authentication method 
+- Prevents unlinking if it's the only authentication method

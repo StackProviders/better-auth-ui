@@ -1,7 +1,34 @@
 ---
 title: AuthMutators
+description: Reference for authentication mutation functions like updating profiles and managing sessions.
 ---
 
-The `AuthMutators` interface defines mutation functions for updating authentication state, such as updating the user, revoking sessions, and more.
+The `AuthMutators` interface defines mutation functions for updating authentication state, such as updating the user, removing members, and more.
 
-<AutoTypeTable path="../src/types/auth-mutators.ts" name="AuthMutators" /> 
+## Reference
+
+<AutoTypeTable path="../src/types/auth-mutators.ts" name="AuthMutators" />
+
+## Usage
+
+Mutators are accessed through the `AuthUIContext`. They provide a thin wrapper around `better-auth` client methods to ensure UI consistency and cache updates.
+
+```tsx
+import { useContext } from "react";
+import { AuthUIContext } from "@/components/auth/auth-ui-provider";
+
+export function ProfileForm() {
+  const { mutators } = useContext(AuthUIContext);
+  const { updateMemberRole } = mutators;
+
+  const handleRoleUpdate = async () => {
+    await updateMemberRole({
+      memberId: "...",
+      role: "admin",
+      organizationId: "...",
+    });
+  };
+
+  return <button onClick={handleRoleUpdate}>Promote to Admin</button>;
+}
+```

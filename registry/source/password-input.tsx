@@ -3,9 +3,9 @@
 import { EyeIcon, EyeOffIcon } from "lucide-react"
 import { type ComponentProps, useState } from "react"
 
-import { cn } from "../lib/utils"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { cn } from "@/lib/auth/utils"
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
 
 export function PasswordInput({
     className,

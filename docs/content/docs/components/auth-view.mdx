@@ -1,14 +1,32 @@
 ---
 title: <AuthView />
+description: The main authentication entry point, automatically switching between sign-in, sign-up, and other auth views.
 ---
 
 The `<AuthView />` component provides an interactive and customizable authentication interface that seamlessly integrates with your authentication flow. It supports multiple authentication methods, including email/password, magic links, passkey (WebAuthn), and social providers.
+
+## Installation
+
+<ShadcnInstall name="auth" />
+
+## Usage
+
+```tsx
+import { AuthView } from "@/components/auth/auth-view";
+
+export default function AuthPage() {
+  return <AuthView />;
+}
+```
 
 ## Reference
 
 The following props can be passed to `<AuthView />` for customization:
 
-<AutoTypeTable path="../src/components/auth/auth-view.tsx" name="AuthViewProps" />
+<AutoTypeTable
+  path="../src/components/auth/auth-view.tsx"
+  name="AuthViewProps"
+/>
 
 ## Examples
 
@@ -36,11 +54,11 @@ You can pass custom localization texts to fit different languages or contexts:
 
 ```tsx
 <AuthView
-    localization={{
-        SIGN_IN: "Log in",
-        SIGN_UP: "Register",
-        MAGIC_LINK: "Sign in with Email",
-    }}
+  localization={{
+    SIGN_IN: "Log in",
+    SIGN_UP: "Register",
+    MAGIC_LINK: "Sign in with Email",
+  }}
 />
 ```
 
@@ -50,11 +68,11 @@ You can thoroughly customize `<AuthView />` components using TailwindCSS utility
 
 ```tsx
 <AuthView
-    classNames={{
-        base: "border-2 border-destructive max-w-xs",
-        header: "bg-destructive/30",
-        title: "text-xl text-destructive font-semibold",
-        footerLink: "text-destructive hover:text-foreground",
-    }}
+  classNames={{
+    base: "border-2 border-destructive max-w-xs",
+    header: "bg-destructive/30",
+    title: "text-xl text-destructive font-semibold",
+    footerLink: "text-destructive hover:text-foreground",
+  }}
 />
 ```

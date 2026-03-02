@@ -7,6 +7,9 @@ const registrySourceDir = "registry/source";
 const filesToCopy = [
   { src: "components/auth", dest: "" },
   { src: "components/auth/forms", dest: "forms" },
+  { src: "components/organization", dest: "organization" },
+  { src: "components/account", dest: "account" },
+  { src: "components/settings", dest: "settings" },
   { src: "lib", dest: "lib" },
   { src: "hooks", dest: "hooks" },
   { src: "types", dest: "types" },
@@ -51,17 +54,26 @@ function copyAndTransform() {
 
     if (fs.statSync(fullSrcPath).isDirectory()) {
       ensureDir(fullDestPath);
-      const files = fs.readdirSync(fullSrcPath);
+      const files = fs.readdirSync(fullSrcPath, { recursive: true });
       files.forEach((file) => {
+        const srcFile = path.join(fullSrcPath, file);
         if (
-          fs.statSync(path.join(fullSrcPath, file)).isFile() &&
+          fs.statSync(srcFile).isFile() &&
           (file.endsWith(".tsx") || file.endsWith(".ts"))
         ) {
-          copyFile(
-            path.join(fullSrcPath, file),
-            path.join(fullDestPath, file),
-            dest,
-          );
+          const destFile = path.join(fullDestPath, file);
+          ensureDir(path.dirname(destFile));
+
+          // Calculate category for transformation
+          const relativeDir = path.dirname(file);
+          const category =
+            dest === ""
+              ? relativeDir === "."
+                ? ""
+                : relativeDir
+              : path.join(dest, relativeDir).replace(/\\/g, "/");
+
+          copyFile(srcFile, destFile, category);
         }
       });
     } else {
@@ -80,38 +92,51 @@ function copyAndTransform() {
 function copyFile(src, dest, destCategory) {
   let content = fs.readFileSync(src, "utf8");
 
-  // Apply transformations based on destination category
-  if (destCategory === "") {
-    // Top level components (auth-form.tsx, etc.)
-    content = content.replace(/\.\.\/\.\.\/lib/g, "./lib");
-    content = content.replace(/\.\.\/\.\.\/hooks/g, "./hooks");
-    content = content.replace(/\.\.\/\.\.\/types/g, "./types");
-    content = content.replace(/\.\.\/\.\.\/localization/g, "./localization");
-  } else if (destCategory === "forms") {
-    content = content.replace(/\.\.\/\.\.\/\.\.\/lib/g, "../lib");
-    content = content.replace(/\.\.\/\.\.\/\.\.\/hooks/g, "../hooks");
-    content = content.replace(/\.\.\/\.\.\/\.\.\/types/g, "../types");
-    content = content.replace(
-      /\.\.\/\.\.\/\.\.\/localization/g,
-      "../localization",
-    );
-    content = content.replace(/\.\.\/\.\.\/captcha/g, "../captcha");
-    content = content.replace(
-      /\.\.\/\.\.\/password-input/g,
-      "../password-input",
-    );
-  } else if (destCategory === "captcha") {
-    content = content.replace(/\.\.\/\.\.\/lib/g, "../lib");
-  }
+  // Global transformations for internal project structure
+  // We use aliases to support placing files in root folders while maintaining DX
+  content = content.replace(
+    /from ["'](\.\.\/)*hooks\/([^"']*)["']/g,
+    'from "@/hooks/auth/$2"',
+  );
+  content = content.replace(
+    /from ["'](\.\.\/)*lib\/([^"']*)["']/g,
+    'from "@/lib/auth/$2"',
+  );
+  content = content.replace(
+    /from ["'](\.\.\/)*types\/([^"']*)["']/g,
+    'from "@/lib/auth/types/$2"',
+  );
+  content = content.replace(
+    /from ["'](\.\.\/)*localization\/([^"']*)["']/g,
+    'from "@/lib/auth/localization/$2"',
+  );
+
+  // Components transformations
+  content = content.replace(
+    /from ["'](\.\.\/)*auth\/([^"']*)["']/g,
+    'from "@/components/auth/$2"',
+  );
+  content = content.replace(
+    /from ["'](\.\.\/)*organization\/([^"']*)["']/g,
+    'from "@/components/organization/$2"',
+  );
+  content = content.replace(
+    /from ["'](\.\.\/)*account\/([^"']*)["']/g,
+    'from "@/components/account/$2"',
+  );
+  content = content.replace(
+    /from ["'](\.\.\/)*settings\/([^"']*)["']/g,
+    'from "@/components/settings/$2"',
+  );
+  content = content.replace(
+    /from ["'](\.\.\/)*captcha\/([^"']*)["']/g,
+    'from "@/components/captcha/$2"',
+  );
 
   // Global transformations for shadcn UI components
   content = content.replace(
-    /from ["']\.\.\/ui\/?([^"']*)["']/g,
-    'from "@/components/ui/$1"',
-  );
-  content = content.replace(
-    /from ["']\.\/ui\/?([^"']*)["']/g,
-    'from "@/components/ui/$1"',
+    /from ["'](\.\.\/)*ui\/?([^"']*)["']/g,
+    'from "@/components/ui/$2"',
   );
 
   fs.writeFileSync(dest, content);

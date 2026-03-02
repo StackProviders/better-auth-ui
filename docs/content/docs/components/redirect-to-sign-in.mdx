@@ -6,21 +6,25 @@ The `<RedirectToSignIn />` component automatically redirects unauthenticated use
 
 Useful for wrapping pages or routes that require users to be signed in.
 
+## Installation
+
+<ShadcnInstall name="auth" />
+
 ## Usage
 
 ```tsx
-import { RedirectToSignIn, SignedIn } from "better-auth-ui"
+import { RedirectToSignIn, SignedIn } from "@/components/auth";
 
 export default function ProtectedPage() {
-    return (
-        <>
-            <RedirectToSignIn />
+  return (
+    <>
+      <RedirectToSignIn />
 
-            <SignedIn>
-                You can see this content only if you are authenticated.
-            </SignedIn>
-        </>
-    )
+      <SignedIn>
+        You can see this content only if you are authenticated.
+      </SignedIn>
+    </>
+  );
 }
 ```
 
@@ -29,18 +33,20 @@ export default function ProtectedPage() {
 Here's a practical example of enforcing authentication for private routes:
 
 ```tsx title="PrivateRoute.tsx"
-import { RedirectToSignIn, SignedIn } from "better-auth-ui"
+import { RedirectToSignIn, SignedIn } from "@/components/auth";
 
-export default function PrivateRoute({ children }: { children: React.ReactNode }) {
+export default function PrivateRoute({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <RedirectToSignIn />
-      
-      <SignedIn>
-        {children}
-      </SignedIn>
+
+      <SignedIn>{children}</SignedIn>
     </>
-  )
+  );
 }
 ```
 

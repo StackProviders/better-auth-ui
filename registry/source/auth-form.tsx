@@ -2,10 +2,10 @@
 
 import { useContext, useEffect } from "react"
 
-import { AuthUIContext } from "./lib/auth-ui-provider"
-import { getViewByPath } from "./lib/utils"
-import type { AuthViewPath } from "./lib/view-paths"
-import type { AuthLocalization } from "./localization/auth-localization"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { getViewByPath } from "@/lib/auth/utils"
+import type { AuthViewPath } from "@/lib/auth/view-paths"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
 import { AuthCallback } from "./auth-callback"
 import { EmailOTPForm } from "./forms/email-otp-form"
 import { ForgotPasswordForm } from "./forms/forgot-password-form"

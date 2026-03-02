@@ -21,7 +21,7 @@ export type OrganizationLogoOptions = {
     extension: string
 }
 
-import type { OrganizationViewPaths } from "../lib/view-paths"
+import type { OrganizationViewPaths } from "@/lib/auth/view-paths"
 
 export type OrganizationOptions = {
     /**

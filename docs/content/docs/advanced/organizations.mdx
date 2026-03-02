@@ -27,15 +27,15 @@ To enable organizations, configure the `organization` prop in your `AuthUIProvid
     logo: {
       upload: async (file) => {
         // Your upload logic
-        return uploadedUrl
+        return uploadedUrl;
       },
       size: 256,
-      extension: "png"
+      extension: "png",
     },
     customRoles: [
       { role: "developer", label: "Developer" },
-      { role: "viewer", label: "Viewer" }
-    ]
+      { role: "viewer", label: "Viewer" },
+    ],
   }}
 >
   {children}
@@ -45,19 +45,21 @@ To enable organizations, configure the `organization` prop in your `AuthUIProvid
 ## Key Components
 
 ### OrganizationSwitcher
+
 The main component for switching between organizations and personal accounts:
 
 ```tsx
-import { OrganizationSwitcher } from 'better-auth-ui'
+import { OrganizationSwitcher } from "@/components/organization/organization-switcher";
 
-<OrganizationSwitcher />
+<OrganizationSwitcher />;
 ```
 
 ### SettingsCards with Organization View
+
 The settings component automatically shows organization options when enabled:
 
 ```tsx
-import { SettingsCards } from 'better-auth-ui'
+import { SettingsCards } from '@/components/settings/settings-cards'
 
 // Shows organization settings when view="ORGANIZATION"
 <SettingsCards view="ORGANIZATION" />
@@ -117,31 +119,27 @@ organization={{
 Access organization data programmatically:
 
 ```tsx
-import { useContext } from 'react'
-import { AuthUIContext } from 'better-auth-ui'
+import { useContext } from "react";
+import { AuthUIContext } from "@/components/auth/auth-ui-provider";
 
 function MyComponent() {
-  const { hooks } = useContext(AuthUIContext)
-  
+  const { hooks } = useContext(AuthUIContext);
+
   // Get active organization
-  const { data: activeOrg } = hooks.useActiveOrganization()
-  
+  const { data: activeOrg } = hooks.useActiveOrganization();
+
   // List all organizations
-  const { data: organizations } = hooks.useListOrganizations()
-  
+  const { data: organizations } = hooks.useListOrganizations();
+
   // Check permissions
   const { data: hasPermission } = hooks.useHasPermission({
     permissions: {
       organization: ["update"],
-      member: ["create", "delete"]
-    }
-  })
-  
-  return (
-    <div>
-      Current org: {activeOrg?.name}
-    </div>
-  )
+      member: ["create", "delete"],
+    },
+  });
+
+  return <div>Current org: {activeOrg?.name}</div>;
 }
 ```
 
@@ -166,4 +164,10 @@ function MyComponent() {
 - **Permission Validation**: All actions are permission-checked server-side
 - **Invitation Security**: Invitations include secure tokens
 - **Data Isolation**: Organization data is properly isolated
-- **Audit Trail**: Consider logging organization actions 
+- **Audit Trail**: Consider logging organization actions
+
+## Next Steps
+
+- [API Key Management](/advanced/api-keys)
+- [Custom User Fields](/advanced/additional-fields)
+- [Localization Guide](/advanced/localization)

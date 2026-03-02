@@ -6,8 +6,12 @@ description: A collection of security-related settings cards for user account pr
 ## Import
 
 ```tsx
-import { SecuritySettingsCards } from "better-auth-ui"
+import { SecuritySettingsCards } from "@/components/settings/security-settings-cards";
 ```
+
+## Installation
+
+<ShadcnInstall name="account" />
 
 ## Usage
 
@@ -17,24 +21,24 @@ import { SecuritySettingsCards } from "better-auth-ui"
 
 ## Props
 
-| Name           | Type                            | Default     | Description                                |
-|----------------|---------------------------------|-------------|--------------------------------------------|
-| `className`    | `string`                        | `undefined` | Additional CSS classes for the container   |
-| `classNames`   | `SettingsCardsClassNames`       | `undefined` | Class names for individual components      |
-| `localization` | `Partial<AuthLocalization>`     | `undefined` | Localization object for translations       |
+| Name           | Type                        | Default     | Description                              |
+| -------------- | --------------------------- | ----------- | ---------------------------------------- |
+| `className`    | `string`                    | `undefined` | Additional CSS classes for the container |
+| `classNames`   | `SettingsCardsClassNames`   | `undefined` | Class names for individual components    |
+| `localization` | `Partial<AuthLocalization>` | `undefined` | Localization object for translations     |
 
 ## Example
 
 ```tsx
-import { SecuritySettingsCards } from "better-auth-ui"
+import { SecuritySettingsCards } from "@/components/settings/security-settings-cards";
 
 export function SecuritySettings() {
-    return (
-        <div className="container mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-6">Security Settings</h1>
-            <SecuritySettingsCards />
-        </div>
-    )
+  return (
+    <div className="container mx-auto p-6">
+      <h1 className="text-2xl font-bold mb-6">Security Settings</h1>
+      <SecuritySettingsCards />
+    </div>
+  );
 }
 ```
 
@@ -42,14 +46,14 @@ export function SecuritySettings() {
 
 ```tsx
 <SecuritySettingsCards
-    className="space-y-8"
-    classNames={{
-        cards: "gap-6",
-        card: {
-            base: "border-dashed",
-            header: "bg-red-50 dark:bg-red-950"
-        }
-    }}
+  className="space-y-8"
+  classNames={{
+    cards: "gap-6",
+    card: {
+      base: "border-dashed",
+      header: "bg-red-50 dark:bg-red-950",
+    },
+  }}
 />
 ```
 
@@ -69,11 +73,13 @@ The `SecuritySettingsCards` component automatically renders security-related car
 ### Conditional Rendering
 
 Cards are conditionally rendered based on:
+
 - Your Better Auth configuration
 - User's current authentication state
 - Available authentication methods
 
 For example:
+
 - Password card only appears if `credentials` is enabled
 - Two-factor card requires both `twoFactor` enabled and a credential-linked account
 - Providers card appears if either `social.providers` or `genericOAuth.providers` are configured
@@ -84,21 +90,22 @@ The component supports full localization through the `localization` prop:
 
 ```tsx
 <SecuritySettingsCards
-    localization={{
-        security: {
-            title: "Sécurité",
-            changePassword: "Changer le mot de passe",
-            twoFactorAuth: "Authentification à deux facteurs",
-            sessions: "Sessions actives"
-            // ... other translations
-        }
-    }}
+  localization={{
+    security: {
+      title: "Sécurité",
+      changePassword: "Changer le mot de passe",
+      twoFactorAuth: "Authentification à deux facteurs",
+      sessions: "Sessions actives",
+      // ... other translations
+    },
+  }}
 />
 ```
 
 ## Security Considerations
 
 This component handles sensitive security settings. It includes:
+
 - Session freshness checks for critical operations
 - Proper authentication state validation
 - Secure password change flows
@@ -110,4 +117,4 @@ This component handles sensitive security settings. It includes:
 - [`<ChangePasswordCard />`](/docs/components/change-password-card) - Individual password change card
 - [`<TwoFactorCard />`](/docs/components/two-factor-card) - Two-factor authentication management
 - [`<SessionsCard />`](/docs/components/sessions-card) - Active sessions management
-- [`<DeleteAccountCard />`](/docs/components/delete-account-card) - Account deletion 
+- [`<DeleteAccountCard />`](/docs/components/delete-account-card) - Account deletion

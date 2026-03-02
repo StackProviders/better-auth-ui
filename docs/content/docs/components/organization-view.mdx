@@ -1,13 +1,18 @@
 ---
 title: <OrganizationView />
+description: A complete organization management dashboard, including members, invitations, and settings.
 ---
 
 The `<OrganizationView />` component is a high-level component that displays a comprehensive view of an organization, typically including its members, invitations, and settings.
 
+## Installation
+
+<ShadcnInstall name="org" />
+
 ## Usage
 
 ```tsx
-import { OrganizationView } from "better-auth-ui";
+import { OrganizationView } from "@/components/organization/organization-view";
 
 export function OrganizationPage({ slug }: { slug: string }) {
   return <OrganizationView slug={slug} />;

@@ -1,7 +1,44 @@
 ---
 title: AuthHooks
+description: Comprehensive reference for authentication-related hooks used by better-auth-ui.
 ---
 
-The `AuthHooks` type defines the set of authentication-related hooks used by the UI provider and components.
+The `AuthHooks` type defines the set of authentication-related hooks used by the UI provider and components. These hooks are typically provided by the `better-auth` client and passed to the `<AuthUIProvider />`.
 
-<AutoTypeTable path="../src/types/auth-hooks.ts" name="AuthHooks" /> 
+## Reference
+
+<AutoTypeTable path="../src/types/auth-hooks.ts" name="AuthHooks" />
+
+## Usage in Components
+
+You can access these hooks through the `AuthUIContext` within any component wrapped by the provider.
+
+```tsx
+import { useContext } from "react";
+import { AuthUIContext } from "@/components/auth/auth-ui-provider";
+
+export function MyComponent() {
+  const { hooks } = useContext(AuthUIContext);
+  const { useSession } = hooks;
+
+  const { data: session } = useSession();
+
+  return (
+    <div>{session ? `Logged in as ${session.user.name}` : "Not logged in"}</div>
+  );
+}
+```
+
+## Core Hooks
+
+### `useSession`
+
+Returns the current user session.
+
+- **Returns**: `{ data: Session | null; isPending: boolean; error: any; refetch: () => void }`
+
+### `useListOrganizations`
+
+Returns a list of organizations the user belongs to.
+
+- **Returns**: `{ data: Organization[] | null; isPending: boolean; }`

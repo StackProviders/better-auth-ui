@@ -1,8 +1,8 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import * as z from "zod"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { PasswordValidation } from "../types/password-validation"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { PasswordValidation } from "@/lib/auth/types/password-validation"
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))

@@ -3,13 +3,13 @@
 import { UserRoundIcon } from "lucide-react"
 import { type ComponentProps, useContext } from "react"
 
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { getGravatarUrl } from "../lib/gravatar-utils"
-import { cn } from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { Profile } from "../types/profile"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Skeleton } from "@/components/ui/skeleton"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { getGravatarUrl } from "@/lib/auth/gravatar-utils"
+import { cn } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { Profile } from "@/lib/auth/types/profile"
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
+import { Skeleton } from "./ui/skeleton"
 
 export interface UserAvatarClassNames {
     base?: string

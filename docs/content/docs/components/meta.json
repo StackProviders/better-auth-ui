@@ -3,6 +3,15 @@
     "pages": [
         "auth-view",
         "auth-ui-provider",
+        "--- Auth Forms ---",
+        "sign-in-form",
+        "sign-up-form",
+        "forgot-password-form",
+        "reset-password-form",
+        "magic-link-form",
+        "email-otp-form",
+        "two-factor-form",
+        "recover-account-form",
         "--- User ---",
         "user-avatar",
         "user-button",
@@ -41,7 +50,7 @@
         "auth-loading",
         "signed-in",
         "signed-out",
-        "--- Templates ---",
+        "--- Email ---",
         "email-template"
     ]
 }

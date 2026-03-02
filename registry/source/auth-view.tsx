@@ -2,13 +2,13 @@
 
 import { ArrowLeftIcon } from "lucide-react"
 import { type ReactNode, useContext, useEffect, useState } from "react"
-import { useIsHydrated } from "./hooks/use-hydrated"
-import { AuthUIContext } from "./lib/auth-ui-provider"
-import { socialProviders } from "./lib/social-providers"
-import { cn, getViewByPath } from "./lib/utils"
-import type { AuthViewPaths } from "./lib/view-paths"
-import type { AuthLocalization } from "./localization/auth-localization"
-import { AcceptInvitationCard } from "../organization/accept-invitation-card"
+import { useIsHydrated } from "@/hooks/auth/use-hydrated"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { socialProviders } from "@/lib/auth/social-providers"
+import { cn, getViewByPath } from "@/lib/auth/utils"
+import type { AuthViewPaths } from "@/lib/auth/view-paths"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { AcceptInvitationCard } from "@/components/organization/accept-invitation-card"
 import { Button } from "@/components/ui/button"
 import {
     Card,

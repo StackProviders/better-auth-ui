@@ -6,19 +6,23 @@ The `<SignedOut />` component conditionally renders its children only when the u
 
 Use this component to conditionally hide or show content based on the user's authentication status.
 
+## Installation
+
+<ShadcnInstall name="auth" />
+
 ## Usage
 
 Wrap any content that should be displayed only to signed-out (unauthenticated) users within the `<SignedOut>` component:
 
 ```tsx
-import { SignedOut } from "better-auth-ui"
+import { SignedOut } from "@/components/auth";
 
 export default function Example() {
-    return (
-        <SignedOut>
-            <div>You need to log in to access this feature.</div>
-        </SignedOut>
-    )
+  return (
+    <SignedOut>
+      <div>You need to log in to access this feature.</div>
+    </SignedOut>
+  );
 }
 ```
 
@@ -27,31 +31,29 @@ export default function Example() {
 A practical view managing authentication states using both [`<SignedIn>`](/components/signed-in) and `<SignedOut>` components together:
 
 ```tsx
-import { SignedIn, SignedOut, UserButton } from "better-auth-ui"
+import { SignedIn, SignedOut, UserButton } from "better-auth-ui";
 
 export default function Navbar() {
-    return (
-        <nav className="flex items-center justify-between px-4 h-14 border-b">
-            <h1 className="text-lg font-semibold">
-                Better Auth UI
-            </h1>
+  return (
+    <nav className="flex items-center justify-between px-4 h-14 border-b">
+      <h1 className="text-lg font-semibold">Better Auth UI</h1>
 
-            <div className="flex gap-3 items-center">
-                <SignedOut>
-                    <a href="/auth/sign-in" className="text-sm font-medium">
-                        Sign In
-                    </a>
-                </SignedOut>
+      <div className="flex gap-3 items-center">
+        <SignedOut>
+          <a href="/auth/sign-in" className="text-sm font-medium">
+            Sign In
+          </a>
+        </SignedOut>
 
-                <SignedOut>
-                    <a href="/auth/sign-up" className="text-sm font-medium">
-                        Create account
-                    </a>
-                </SignedOut>
+        <SignedOut>
+          <a href="/auth/sign-up" className="text-sm font-medium">
+            Create account
+          </a>
+        </SignedOut>
 
-                <UserButton />
-            </div>
-        </nav>
-    )
+        <UserButton />
+      </div>
+    </nav>
+  );
 }
 ```

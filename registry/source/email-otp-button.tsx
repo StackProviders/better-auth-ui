@@ -1,10 +1,10 @@
 import { LockIcon, MailIcon } from "lucide-react"
 import { useContext } from "react"
 
-import { AuthUIContext } from "./lib/auth-ui-provider"
-import { cn } from "./lib/utils"
-import type { AuthViewPath } from "./lib/view-paths"
-import type { AuthLocalization } from "./localization/auth-localization"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn } from "@/lib/auth/utils"
+import type { AuthViewPath } from "@/lib/auth/view-paths"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
 import { Button } from "@/components/ui/button"
 import type { AuthViewClassNames } from "./auth-view"
 

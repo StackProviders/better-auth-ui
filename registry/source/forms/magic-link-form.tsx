@@ -7,13 +7,13 @@ import { useCallback, useContext, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useCaptcha } from "../hooks/use-captcha"
-import { useIsHydrated } from "../hooks/use-hydrated"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { cn, getLocalizedError, getSearchParam } from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import { Captcha } from "../captcha/captcha"
-import { Button } from "../../ui/button"
+import { useCaptcha } from "@/hooks/auth/use-captcha"
+import { useIsHydrated } from "@/hooks/auth/use-hydrated"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn, getLocalizedError, getSearchParam } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import { Captcha } from "@/components/captcha/captcha"
+import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
@@ -21,8 +21,8 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "../../ui/form"
-import { Input } from "../../ui/input"
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 import type { AuthFormClassNames } from "../auth-form"
 
 export interface MagicLinkFormProps {

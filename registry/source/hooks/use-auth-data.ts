@@ -7,10 +7,10 @@ import {
     useSyncExternalStore
 } from "react"
 
-import { authDataCache } from "../lib/auth-data-cache"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { getLocalizedError } from "../lib/utils"
-import type { FetchError } from "../types/fetch-error"
+import { authDataCache } from "@/lib/auth/auth-data-cache"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { getLocalizedError } from "@/lib/auth/utils"
+import type { FetchError } from "@/lib/auth/types/fetch-error"
 
 export function useAuthData<T>({
     queryFn,

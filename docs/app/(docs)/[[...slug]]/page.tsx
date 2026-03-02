@@ -16,6 +16,8 @@ import { MdxImage, MdxImg } from "@/components/mdx-image";
 import { getLLMText } from "@/lib/get-llm-text"
 import { CopyAIButton } from "@/components/copy-ai-button"
 
+import { ShadcnInstall } from "@/components/shadcn-install";
+
 const generator = createGenerator()
 
 const AutoTypeTableWithGenerator = (
@@ -51,6 +53,7 @@ export default async function Page(props: {
                         AutoTypeTable: AutoTypeTableWithGenerator,
                         Tab,
                         Tabs,
+                        ShadcnInstall,
                         Image: MdxImage,
                         img: MdxImg
                     }}

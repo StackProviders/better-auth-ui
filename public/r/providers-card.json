@@ -1,0 +1,8 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "providers-card",
+  "registryDependencies": [
+    "account"
+  ],
+  "type": "registry:component"
+}

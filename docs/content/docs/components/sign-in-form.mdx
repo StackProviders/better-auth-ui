@@ -1,0 +1,52 @@
+---
+title: <SignInForm />
+description: Comprehensive Sign In form with support for email/password, social providers, and passkeys.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+The `<SignInForm />` component provides a complete sign-in experience, supporting multiple authentication methods and handling validation out of the box.
+
+## Installation
+
+<ShadcnInstall name="auth" />
+
+## Usage
+
+```tsx
+import { SignInForm } from "@/components/auth/forms/sign-in-form";
+
+export default function SignInPage() {
+  return (
+    <div className="flex justify-center items-center min-vh-100">
+      <SignInForm />
+    </div>
+  );
+}
+```
+
+## Reference
+
+<AutoTypeTable
+  path="../src/components/auth/forms/sign-in-form.tsx"
+  name="SignInFormProps"
+/>
+
+## Examples
+
+### Custom Redirect
+
+```tsx
+<SignInForm redirectTo="/dashboard" />
+```
+
+### With Custom Localization
+
+```tsx
+<SignInForm
+  localization={{
+    SIGN_IN_WITH: "Connect with",
+    EMAIL_ADDRESS: "Your Email",
+  }}
+/>
+```

@@ -19,20 +19,20 @@ import {
     useState
 } from "react"
 
-import { useIsHydrated } from "../hooks/use-hydrated"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { cn, getLocalizedError } from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { AnyAuthClient } from "../types/any-auth-client"
-import type { User } from "../types/auth-client"
-import { Button } from "@/components/ui/button"
+import { useIsHydrated } from "@/hooks/auth/use-hydrated"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn, getLocalizedError } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { AnyAuthClient } from "@/lib/auth/types/any-auth-client"
+import type { User } from "@/lib/auth/types/auth-client"
+import { Button } from "./ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
+} from "./ui/dropdown-menu"
 import { UserAvatar, type UserAvatarClassNames } from "./user-avatar"
 import { UserView, type UserViewClassNames } from "./user-view"
 

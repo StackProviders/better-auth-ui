@@ -7,6 +7,7 @@
         "data",
         "components",
         "advanced",
-        "api-reference"
+        "api-reference",
+        "registry"
     ]
 }

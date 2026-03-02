@@ -1,0 +1,27 @@
+---
+title: <TwoFactorForm />
+description: Secondary authentication form for Two-Factor Authentication (2FA) verification.
+---
+
+The `<TwoFactorForm />` provides the interface for users to enter their 2FA codes (TOTP, recovery codes, or backup codes) to complete the login process.
+
+## Installation
+
+<ShadcnInstall name="auth" />
+
+## Usage
+
+```tsx
+import { TwoFactorForm } from "@/components/auth/forms/two-factor-form";
+
+export default function TwoFactorPage() {
+  return <TwoFactorForm />;
+}
+```
+
+## Reference
+
+<AutoTypeTable
+  path="../src/components/auth/forms/two-factor-form.tsx"
+  name="TwoFactorFormProps"
+/>

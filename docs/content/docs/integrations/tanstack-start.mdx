@@ -2,6 +2,7 @@
 title: TanStack Start
 icon: TreePalm
 ---
+
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
 This guide covers integrating `better-auth-ui` v3 with TanStack Start. We also install [better-auth-tanstack](https://github.com/StackProviders/better-auth-tanstack) to handle the authentication state and queries.
@@ -21,44 +22,45 @@ Want to skip the installation? Check out the starter here:
 TanStack Start requires setting up providers slightly differently than a standard React application. Create a root-level provider component:
 
 ```tsx title="app/providers.tsx"
-import { AuthQueryProvider } from "better-auth-tanstack"
-import { AuthUIProviderTanstack } from "better-auth-ui/tanstack"
-import { Link, useRouter } from "@tanstack/react-router"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import type { ReactNode } from "react"
+import { AuthQueryProvider } from "better-auth-tanstack";
+import { AuthUIProviderTanstack } from "better-auth-ui/tanstack";
+import { Link, useRouter } from "@tanstack/react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import type { ReactNode } from "react";
 
-import { authClient } from "./lib/auth-client"
+import { authClient } from "./lib/auth-client";
 
 // Create a client
 const queryClient = new QueryClient({
-    defaultOptions: {
-        queries: {
-            staleTime: 1000 * 60
-        }
-    }
-})
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60,
+    },
+  },
+});
 
 export function Providers({ children }: { children: ReactNode }) {
-    const router = useRouter()
-    
-    return (
-        <QueryClientProvider client={queryClient}>
-            <AuthQueryProvider>
-                <AuthUIProviderTanstack
-                    authClient={authClient}
-                    navigate={(href) => router.navigate({ href })}
-                    replace={(href) => router.navigate({ href, replace: true })}
-                    Link={({ href, ...props }) => <Link to={href} {...props} />}
-                >
-                    {children}
-                </AuthUIProviderTanstack>
-            </AuthQueryProvider>
-        </QueryClientProvider>
-    )
+  const router = useRouter();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AuthQueryProvider>
+        <AuthUIProviderTanstack
+          authClient={authClient}
+          navigate={(href) => router.navigate({ href })}
+          replace={(href) => router.navigate({ href, replace: true })}
+          Link={({ href, ...props }) => <Link to={href} {...props} />}
+        >
+          {children}
+        </AuthUIProviderTanstack>
+      </AuthQueryProvider>
+    </QueryClientProvider>
+  );
 }
 ```
 
 Note how we use TanStack Router's `useRouter` hook and `Link` component to handle navigation.
+
 </Step>
 
 <Step>
@@ -67,78 +69,82 @@ Note how we use TanStack Router's `useRouter` hook and `Link` component to handl
 Update your root route to use the Providers component:
 
 ```tsx title="app/routes/__root.tsx"
-import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router"
-import type { ReactNode } from "react"
+import {
+  HeadContent,
+  Outlet,
+  Scripts,
+  createRootRoute,
+} from "@tanstack/react-router";
+import type { ReactNode } from "react";
 
-import { Header } from "@/components/header"
-import globalsCss from "@/styles/globals.css?url"
-import { Providers } from "../providers"
+import { Header } from "@/components/header";
+import globalsCss from "@/styles/globals.css?url";
+import { Providers } from "../providers";
 
 export const Route = createRootRoute({
-    head: () => ({
-        meta: [
-            {
-                charSet: "utf-8"
-            },
-            {
-                name: "viewport",
-                content: "width=device-width, initial-scale=1"
-            },
-            {
-                title: "Better Auth TanStack Starter"
-            }
-        ],
-        links: [
-            { rel: "stylesheet", href: globalsCss },
-            { rel: "icon", href: "/favicon.ico" },
-            { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-            { rel: "manifest", href: "/manifest.webmanifest" }
-        ]
-    }),
-    component: RootComponent
-})
+  head: () => ({
+    meta: [
+      {
+        charSet: "utf-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        title: "Better Auth TanStack Starter",
+      },
+    ],
+    links: [
+      { rel: "stylesheet", href: globalsCss },
+      { rel: "icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+    ],
+  }),
+  component: RootComponent,
+});
 
 function RootComponent() {
-    return (
-        <RootDocument>
-            <Outlet />
-        </RootDocument>
-    )
+  return (
+    <RootDocument>
+      <Outlet />
+    </RootDocument>
+  );
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
-    return (
-        <html lang="en" suppressHydrationWarning>
-            <head>
-                <meta
-                    name="viewport"
-                    content="initial-scale=1, viewport-fit=cover, width=device-width"
-                />
-                <meta
-                    name="theme-color"
-                    media="(prefers-color-scheme: light)"
-                    content="oklch(1 0 0)"
-                />
-                <meta
-                    name="theme-color"
-                    media="(prefers-color-scheme: dark)"
-                    content="oklch(0.145 0 0)"
-                />
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="viewport"
+          content="initial-scale=1, viewport-fit=cover, width=device-width"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="oklch(1 0 0)"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="oklch(0.145 0 0)"
+        />
 
-                <HeadContent />
-            </head>
+        <HeadContent />
+      </head>
 
-            <body>
-                <Providers>
-                    {children}
-                </Providers>
+      <body>
+        <Providers>{children}</Providers>
 
-                <Scripts />
-            </body>
-        </html>
-    )
+        <Scripts />
+      </body>
+    </html>
+  );
 }
 ```
+
 </Step>
 </Steps>
 
@@ -153,33 +159,44 @@ TanStack Start uses a file-based routing system. Here's how to set up your authe
 Create the following route for authentication views:
 
 ```tsx title="app/routes/auth/$authView.tsx"
-import { cn } from "@/lib/utils"
-import { AuthView } from "better-auth-ui"
-import { createFileRoute } from "@tanstack/react-router"
+import { cn } from "@/lib/utils";
+import { AuthView } from "@/components/auth/auth-view";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/auth/$authView")({
-    component: RouteComponent
-})
+  component: RouteComponent,
+});
 
 function RouteComponent() {
-    const { authView } = Route.useParams()
+  const { authView } = Route.useParams();
 
-    return (
-        <main className="container flex grow flex-col items-center justify-center gap-3 self-center p-4 md:p-6">
-            <AuthView pathname={authView} />
+  return (
+    <main className="container flex grow flex-col items-center justify-center gap-3 self-center p-4 md:p-6">
+      <AuthView pathname={authView} />
 
-            <p className={cn(["callback", "sign-out"].includes(authView) && "hidden", "text-muted-foreground text-xs")}>
-                Powered by{" "}
-                <a className="text-warning underline" href="https://better-auth.com" target="_blank" rel="noreferrer">
-                    better-auth.
-                </a>
-            </p>
-        </main>
-    )
+      <p
+        className={cn(
+          ["callback", "sign-out"].includes(authView) && "hidden",
+          "text-muted-foreground text-xs",
+        )}
+      >
+        Powered by{" "}
+        <a
+          className="text-warning underline"
+          href="https://better-auth.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          better-auth.
+        </a>
+      </p>
+    </main>
+  );
 }
 ```
 
 This dynamic route covers all authentication paths, such as `sign-in`, `sign-up`, `magic-link`, `forgot-password`, `two-factor`, `recover-account`, `reset-password`, `sign-out`, and the internal `callback`.
+
 </Step>
 
 <Step>
@@ -188,24 +205,25 @@ This dynamic route covers all authentication paths, such as `sign-in`, `sign-up`
 Create a dynamic route for account settings using the `AccountView` container (defaults to the `/account` base path):
 
 ```tsx title="app/routes/account/$accountView.tsx"
-import { AccountView } from "better-auth-ui"
-import { createFileRoute } from "@tanstack/react-router"
+import { AccountView } from "@/components/settings/account-view";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/account/$accountView")({
-    component: RouteComponent
-})
+  component: RouteComponent,
+});
 
 function RouteComponent() {
-    const { accountView } = Route.useParams()
-    return (
-        <main className="container p-4 md:p-6">
-            <AccountView pathname={accountView} />
-        </main>
-    )
+  const { accountView } = Route.useParams();
+  return (
+    <main className="container p-4 md:p-6">
+      <AccountView pathname={accountView} />
+    </main>
+  );
 }
 ```
 
 You can customize the base path via the provider using `account={{ basePath: "/account" }}` if needed.
+
 </Step>
 
 <Step>
@@ -214,42 +232,43 @@ You can customize the base path via the provider using `account={{ basePath: "/a
 Create a dynamic route for organization settings using the `OrganizationView` container (defaults to the `/organization` base path):
 
 ```tsx title="app/routes/organization/$organizationView.tsx"
-import { OrganizationView } from "better-auth-ui"
-import { createFileRoute } from "@tanstack/react-router"
+import { OrganizationView } from "@/components/organization/organization-view";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/organization/$organizationView")({
-    component: RouteComponent
-})
+  component: RouteComponent,
+});
 
 function RouteComponent() {
-    const { organizationView } = Route.useParams()
-    return (
-        <main className="container p-4 md:p-6">
-            <OrganizationView pathname={organizationView} />
-        </main>
-    )
+  const { organizationView } = Route.useParams();
+  return (
+    <main className="container p-4 md:p-6">
+      <OrganizationView pathname={organizationView} />
+    </main>
+  );
 }
 ```
 
 If you prefer slug-based org URLs, set `organization={{ pathMode: "slug", basePath: "/organization", slug: currentSlug }}` in the provider and structure your routes accordingly:
 
 ```tsx title="app/routes/organization/$slug/$organizationView.tsx"
-import { OrganizationView } from "better-auth-ui"
-import { createFileRoute } from "@tanstack/react-router"
+import { OrganizationView } from "better-auth-ui";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/organization/$slug/$organizationView")({
-    component: RouteComponent
-})
+  component: RouteComponent,
+});
 
 function RouteComponent() {
-    const { organizationView } = Route.useParams()
-    return (
-        <main className="container p-4 md:p-6">
-            <OrganizationView pathname={organizationView} />
-        </main>
-    )
+  const { organizationView } = Route.useParams();
+  return (
+    <main className="container p-4 md:p-6">
+      <OrganizationView pathname={organizationView} />
+    </main>
+  );
 }
 ```
+
 </Step>
 </Steps>
 

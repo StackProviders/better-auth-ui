@@ -4,15 +4,17 @@ title: <ApiKeysCard />
 
 The `<ApiKeysCard />` component provides a complete interface for managing API keys, including creating, viewing, and deleting API keys for programmatic access to your application.
 
+## Installation
+
+<ShadcnInstall name="api-keys-card" />
+
 ## Usage
 
 ```tsx
-import { ApiKeysCard } from 'better-auth-ui'
+import { ApiKeysCard } from "@/components/settings/api-key/api-keys-card";
 
 export function ApiKeysSettingsPage() {
-  return (
-    <ApiKeysCard />
-  )
+  return <ApiKeysCard />;
 }
 ```
 
@@ -26,7 +28,10 @@ export function ApiKeysSettingsPage() {
 
 ## Reference
 
-<AutoTypeTable path="../src/components/settings/shared/settings-card.tsx" name="SettingsCardProps" />
+<AutoTypeTable
+  path="../src/components/settings/shared/settings-card.tsx"
+  name="SettingsCardProps"
+/>
 
 ## Examples
 
@@ -39,11 +44,11 @@ export function ApiKeysSettingsPage() {
 ### With Custom Class Names
 
 ```tsx
-<ApiKeysCard 
+<ApiKeysCard
   classNames={{
     base: "shadow-md",
     button: "rounded-full",
-    cell: "hover:bg-accent"
+    cell: "hover:bg-accent",
   }}
 />
 ```
@@ -51,11 +56,11 @@ export function ApiKeysSettingsPage() {
 ### With Custom Localization
 
 ```tsx
-<ApiKeysCard 
+<ApiKeysCard
   localization={{
     API_KEYS: "Developer Keys",
     CREATE_API_KEY: "Generate New Key",
-    DELETE: "Revoke"
+    DELETE: "Revoke",
   }}
 />
 ```
@@ -91,9 +96,10 @@ The API Key plugin must be enabled in your auth configuration:
   authClient={authClient}
   apiKey={{
     prefix: "app_", // Optional: Custom prefix for keys
-    metadata: {      // Optional: Additional metadata
-      environment: "production"
-    }
+    metadata: {
+      // Optional: Additional metadata
+      environment: "production",
+    },
   }}
 >
   {children}
@@ -103,20 +109,26 @@ The API Key plugin must be enabled in your auth configuration:
 ## Display Components
 
 ### API Key List
+
 Shows all active API keys with:
+
 - Key name
 - Masked key value (first 4 characters + asterisks)
 - Expiration date or "Never expires"
 - Delete button
 
 ### Create Dialog
+
 Modal for creating new keys with:
+
 - Name input field
 - Expiration dropdown
 - Create button with loading state
 
 ### Display Dialog
+
 Shows newly created key with:
+
 - Full API key value
 - Copy to clipboard button
 - Warning about one-time display
@@ -128,4 +140,4 @@ Shows newly created key with:
 2. **Expiration Policy**: Always set expiration for production keys
 3. **Key Rotation**: Regularly rotate API keys
 4. **Access Control**: Limit who can create/delete keys
-5. **Monitoring**: Track API key usage 
+5. **Monitoring**: Track API key usage

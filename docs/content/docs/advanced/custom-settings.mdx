@@ -6,6 +6,7 @@ icon: Cog
 The default authentication components provided by `better-auth-ui` include built-in settings pages accessible under the same base path as your auth views (e.g., `/auth/settings`, `/auth/security`, etc.).
 
 However, for advanced use cases, you may want to:
+
 1. Move the built-in settings views to a different base path (using `settings.basePath`)
 2. Replace the settings with a completely custom implementation (using `settings.url`)
 3. Build your own settings page using individual components
@@ -20,45 +21,46 @@ You have three primary ways to customize the settings experience:
 
 ### Quick Comparison
 
-| Option | Use Case | Configuration | Result |
-|--------|----------|---------------|---------|
-| `settings.basePath` | Keep built-in settings but move to different path | `settings: { basePath: "/dashboard" }` | Settings at `/dashboard/settings`, `/dashboard/security`, etc. |
-| `settings.url` | Replace with completely custom settings | `settings: { url: "/my-settings" }` | All settings routes redirect to `/my-settings` |
-| Individual components | Build custom layouts with specific components | Import components directly | Full control over layout and functionality |
+| Option                | Use Case                                          | Configuration                          | Result                                                         |
+| --------------------- | ------------------------------------------------- | -------------------------------------- | -------------------------------------------------------------- |
+| `settings.basePath`   | Keep built-in settings but move to different path | `settings: { basePath: "/dashboard" }` | Settings at `/dashboard/settings`, `/dashboard/security`, etc. |
+| `settings.url`        | Replace with completely custom settings           | `settings: { url: "/my-settings" }`    | All settings routes redirect to `/my-settings`                 |
+| Individual components | Build custom layouts with specific components     | Import components directly             | Full control over layout and functionality                     |
 
 ## Option 1: Moving Settings to a Different Base Path
 
 If you want to keep the built-in settings functionality but move it to a different location (e.g., from `/auth/settings` to `/dashboard/settings`), use the `settings.basePath` option:
 
 ```tsx title="app/providers.tsx"
-"use client"
+"use client";
 
-import { AuthUIProvider } from "better-auth-ui"
-import { authClient } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
+import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-    const router = useRouter()
+  const router = useRouter();
 
-    return (
-        <AuthUIProvider
-            authClient={authClient}
-            navigate={router.push}
-            replace={router.replace}
-            onSessionChange={() => router.refresh()}
-            settings={{
-                basePath: "/dashboard" // Settings views will be at /dashboard/settings, /dashboard/security, etc.
-            }}
-            Link={Link}
-        >
-            {children}
-        </AuthUIProvider>
-    )
+  return (
+    <AuthUIProvider
+      authClient={authClient}
+      navigate={router.push}
+      replace={router.replace}
+      onSessionChange={() => router.refresh()}
+      settings={{
+        basePath: "/dashboard", // Settings views will be at /dashboard/settings, /dashboard/security, etc.
+      }}
+      Link={Link}
+    >
+      {children}
+    </AuthUIProvider>
+  );
 }
 ```
 
 With this configuration:
+
 - Auth views remain at: `/auth/sign-in`, `/auth/sign-up`, etc.
 - Settings views move to: `/dashboard/settings`, `/dashboard/security`, `/dashboard/api-keys`, `/dashboard/organization`, etc.
 - The `<UserButton />` and `<SettingsCards />` components automatically use the new base path
@@ -71,25 +73,26 @@ settings={{
     fields: ["image", "name", "age"] // Specify which fields to show
 }}
 ```
+
 ### Using SettingsCards with pathname
 
 When using `settings.basePath`, you can pass the `pathname` prop to `<SettingsCards />` to automatically determine the current view:
 
 ```tsx title="app/dashboard/[...settings]/page.tsx"
-import { SettingsCards } from "better-auth-ui"
+import { SettingsCards } from "@/components/settings/settings-cards";
 
-export default function SettingsPage({ 
-    params 
-}: { 
-    params: { settings: string[] } 
+export default function SettingsPage({
+  params,
+}: {
+  params: { settings: string[] };
 }) {
-    const pathname = `/dashboard/${params.settings?.join("/") || "settings"}`
-    
-    return (
-        <div className="mx-auto max-w-4xl py-12 px-4">
-            <SettingsCards pathname={pathname} />
-        </div>
-    )
+  const pathname = `/dashboard/${params.settings?.join("/") || "settings"}`;
+
+  return (
+    <div className="mx-auto max-w-4xl py-12 px-4">
+      <SettingsCards pathname={pathname} />
+    </div>
+  );
 }
 ```
 
@@ -98,30 +101,30 @@ export default function SettingsPage({
 To replace the built-in settings with your own custom implementation, use `settings.url`:
 
 ```tsx title="app/providers.tsx"
-"use client"
+"use client";
 
-import { AuthUIProvider } from "better-auth-ui"
-import { authClient } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
+import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-    const router = useRouter()
+  const router = useRouter();
 
-    return (
-        <AuthUIProvider
-            authClient={authClient}
-            navigate={router.push}
-            replace={router.replace}
-            onSessionChange={() => router.refresh()}
-            settings={{
-                url: "/my-custom-settings" // Redirects to your custom settings page
-            }}
-            Link={Link}
-        >
-            {children}
-        </AuthUIProvider>
-    )
+  return (
+    <AuthUIProvider
+      authClient={authClient}
+      navigate={router.push}
+      replace={router.replace}
+      onSessionChange={() => router.refresh()}
+      settings={{
+        url: "/my-custom-settings", // Redirects to your custom settings page
+      }}
+      Link={Link}
+    >
+      {children}
+    </AuthUIProvider>
+  );
 }
 ```
 
@@ -136,32 +139,32 @@ For maximum control, you can build your own settings page layouts using individu
 The easiest way to get started is using the `<SettingsCards />` component, which automatically handles displaying all enabled settings. This includes avatar, email, username, password, linked social providers, session management, delete account, and custom additional fields you've provided.
 
 ```tsx title="app/dashboard/settings/page.tsx"
-import { SettingsCards } from "better-auth-ui"
+import { SettingsCards } from "@/components/settings/settings-cards";
 
 export default function UserSettingsPage() {
-    return (
-        <div className="mx-auto max-w-xl py-12 px-4">
-            <SettingsCards />
-        </div>
-    )
+  return (
+    <div className="mx-auto max-w-xl py-12 px-4">
+      <SettingsCards />
+    </div>
+  );
 }
 ```
 
 You can customize the appearance using TailwindCSS classes through `classNames` props as documented in [SettingsCards](../components/settings-cards) documentation:
 
 ```tsx
-<SettingsCards 
-    className="mx-auto max-w-xl"
-    classNames={{
-        card: {
-            base: "border-primary/50",
-            header: "bg-primary/10",
-            content: "bg-background",
-            footer: "bg-primary/10",
-            button: "bg-primary hover:bg-primary/80",
-            input: "bg-transparent placeholder-muted-foreground/50"
-        }
-    }}
+<SettingsCards
+  className="mx-auto max-w-xl"
+  classNames={{
+    card: {
+      base: "border-primary/50",
+      header: "bg-primary/10",
+      content: "bg-background",
+      footer: "bg-primary/10",
+      button: "bg-primary hover:bg-primary/80",
+      input: "bg-transparent placeholder-muted-foreground/50",
+    },
+  }}
 />
 ```
 
@@ -169,61 +172,61 @@ You can customize the appearance using TailwindCSS classes through `classNames` 
 
 For finer-grained control, selectively import the components you want:
 
-| Component | Description |
-|-----------|-------------|
-| `<UpdateAvatarCard />` | User avatar management |
-| `<UpdateNameCard />` | Update user's name |
+| Component                | Description                                             |
+| ------------------------ | ------------------------------------------------------- |
+| `<UpdateAvatarCard />`   | User avatar management                                  |
+| `<UpdateNameCard />`     | Update user's name                                      |
 | `<UpdateUsernameCard />` | Manage username (if applicable/username set via plugin) |
-| `<ChangeEmailCard />` | Changing the user's email address |
-| `<ChangePasswordCard />` | Allow user to securely update password |
-| `<ProvidersCard />` | Linking/Unlinking social provider accounts |
-| `<SessionsCard />` | Active session management |
-| `<DeleteAccountCard />` | Deleting the user account securely |
-| `<UpdateFieldCard />` | Add or update additional custom user fields |
+| `<ChangeEmailCard />`    | Changing the user's email address                       |
+| `<ChangePasswordCard />` | Allow user to securely update password                  |
+| `<ProvidersCard />`      | Linking/Unlinking social provider accounts              |
+| `<SessionsCard />`       | Active session management                               |
+| `<DeleteAccountCard />`  | Deleting the user account securely                      |
+| `<UpdateFieldCard />`    | Add or update additional custom user fields             |
 
 Here's a complete example demonstrating an individually composed user settings page:
 
 ```tsx title="app/dashboard/settings/page.tsx"
 import {
-    UpdateAvatarCard,
-    UpdateNameCard,
-    UpdateUsernameCard,
-    ChangeEmailCard,
-    ChangePasswordCard,
-    ProvidersCard,
-    SessionsCard,
-    DeleteAccountCard,
-    UpdateFieldCard
-} from "better-auth-ui"
+  UpdateAvatarCard,
+  UpdateNameCard,
+  UpdateUsernameCard,
+  ChangeEmailCard,
+  ChangePasswordCard,
+  ProvidersCard,
+  SessionsCard,
+  DeleteAccountCard,
+  UpdateFieldCard,
+} from "@/components/settings/cards";
 
 export default function CustomSettingsPage() {
-    return (
-        <div className="flex flex-col gap-6 max-w-xl mx-auto py-12 px-4">
-            <UpdateAvatarCard />
+  return (
+    <div className="flex flex-col gap-6 max-w-xl mx-auto py-12 px-4">
+      <UpdateAvatarCard />
 
-            <UpdateNameCard />
+      <UpdateNameCard />
 
-            <UpdateUsernameCard />
+      <UpdateUsernameCard />
 
-            <ChangeEmailCard />
+      <ChangeEmailCard />
 
-            <ChangePasswordCard />
+      <ChangePasswordCard />
 
-            <ProvidersCard />
+      <ProvidersCard />
 
-            <SessionsCard />
+      <SessionsCard />
 
-            <DeleteAccountCard />
+      <DeleteAccountCard />
 
-            <UpdateFieldCard
-                field="age"
-                label="Age"
-                description="Update your age"
-                placeholder="Enter your current age"
-                type="number"
-            />
-        </div>
-    )
+      <UpdateFieldCard
+        field="age"
+        label="Age"
+        description="Update your age"
+        placeholder="Enter your current age"
+        type="number"
+      />
+    </div>
+  );
 }
 ```
 
@@ -231,22 +234,22 @@ This example assumes `additionalFields` are configured via your `<AuthUIProvider
 
 ```tsx title="app/providers.tsx"
 <AuthUIProvider
-    authClient={authClient}
-    additionalFields={{
-        age: {
-            label: "Age",
-            placeholder: "Your age",
-            description: "Enter your age",
-            required: false,
-            type: "number"
-        }
-    }}
-    settings={{
-        fields: ["age"],
-        url: "/dashboard/settings"
-    }}
+  authClient={authClient}
+  additionalFields={{
+    age: {
+      label: "Age",
+      placeholder: "Your age",
+      description: "Enter your age",
+      required: false,
+      type: "number",
+    },
+  }}
+  settings={{
+    fields: ["age"],
+    url: "/dashboard/settings",
+  }}
 >
-    {children}
+  {children}
 </AuthUIProvider>
 ```
 
@@ -257,21 +260,24 @@ It's essential that your custom settings page is protected and accessible only b
 ### Example:
 
 ```tsx title="app/dashboard/settings/page.tsx"
-import {
-    RedirectToSignIn,
-    SignedIn,
-    SettingsCards
-} from "better-auth-ui"
+import { RedirectToSignIn, SignedIn, SettingsCards } from "@/components/auth";
 
 export default function CustomSettingsPage() {
-    return (
-        <>
-            <RedirectToSignIn />
-            
-            <SignedIn>
-                <SettingsCards />
-            </SignedIn>
-        </>
-    )
+  return (
+    <>
+      <RedirectToSignIn />
+
+      <SignedIn>
+        <SettingsCards />
+      </SignedIn>
+    </>
+  );
 }
 ```
+
+## Next Steps
+
+- [Managing Organizations](/advanced/organizations)
+- [API Key Management](/advanced/api-keys)
+- [Custom User Fields](/advanced/additional-fields)
+- [Localization Guide](/advanced/localization)

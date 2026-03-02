@@ -1,0 +1,47 @@
+---
+title: <SignUpForm />
+description: Feature-rich Sign Up form with support for various registration methods and built-in validation.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+The `<SignUpForm />` component provides a seamless registration flow for your users, supporting fields for names, email, and password.
+
+## Installation
+
+<ShadcnInstall name="auth" />
+
+## Usage
+
+```tsx
+import { SignUpForm } from "@/components/auth/forms/sign-up-form";
+
+export default function SignUpPage() {
+  return (
+    <div className="flex justify-center items-center min-vh-100">
+      <SignUpForm />
+    </div>
+  );
+}
+```
+
+## Reference
+
+<AutoTypeTable
+  path="../src/components/auth/forms/sign-up-form.tsx"
+  name="SignUpFormProps"
+/>
+
+## Examples
+
+### Hidden Name Fields
+
+```tsx
+<SignUpForm disableName />
+```
+
+### Custom Navigation
+
+```tsx
+<SignUpForm redirectTo="/welcome" loginUrl="/auth/login" />
+```

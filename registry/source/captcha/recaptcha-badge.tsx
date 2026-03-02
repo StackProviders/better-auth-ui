@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { useIsHydrated } from "../../hooks/use-hydrated"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { cn } from "../lib/utils"
-import type { AuthLocalization } from "../../localization/auth-localization"
+import { useIsHydrated } from "@/hooks/auth/use-hydrated"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
 
 export interface RecaptchaBadgeProps {
     className?: string

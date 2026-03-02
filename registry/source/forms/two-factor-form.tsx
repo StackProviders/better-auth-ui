@@ -8,14 +8,14 @@ import { useForm } from "react-hook-form"
 import QRCode from "react-qr-code"
 import * as z from "zod"
 
-import { useIsHydrated } from "../hooks/use-hydrated"
-import { useOnSuccessTransition } from "../hooks/use-success-transition"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { cn, getLocalizedError, getSearchParam } from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { User } from "../types/auth-client"
-import { Button } from "../../ui/button"
-import { Checkbox } from "../../ui/checkbox"
+import { useIsHydrated } from "@/hooks/auth/use-hydrated"
+import { useOnSuccessTransition } from "@/hooks/auth/use-success-transition"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn, getLocalizedError, getSearchParam } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { User } from "@/lib/auth/types/auth-client"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
     Form,
     FormControl,
@@ -23,9 +23,9 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "../../ui/form"
-import { InputOTP } from "../../ui/input-otp"
-import { Label } from "../../ui/label"
+} from "@/components/ui/form"
+import { InputOTP } from "@/components/ui/input-otp"
+import { Label } from "@/components/ui/label"
 import type { AuthFormClassNames } from "../auth-form"
 import { OTPInputGroup } from "../otp-input-group"
 

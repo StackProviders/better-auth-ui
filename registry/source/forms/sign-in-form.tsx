@@ -7,22 +7,22 @@ import { useContext, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useCaptcha } from "../hooks/use-captcha"
-import { useIsHydrated } from "../hooks/use-hydrated"
-import { useOnSuccessTransition } from "../hooks/use-success-transition"
-import { AuthUIContext } from "../lib/auth-ui-provider"
+import { useCaptcha } from "@/hooks/auth/use-captcha"
+import { useIsHydrated } from "@/hooks/auth/use-hydrated"
+import { useOnSuccessTransition } from "@/hooks/auth/use-success-transition"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
 import {
     cn,
     getLocalizedError,
     getPasswordSchema,
     isValidEmail
-} from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { PasswordValidation } from "../types/password-validation"
-import { Captcha } from "../captcha/captcha"
-import { PasswordInput } from "../password-input"
-import { Button } from "../../ui/button"
-import { Checkbox } from "../../ui/checkbox"
+} from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { PasswordValidation } from "@/lib/auth/types/password-validation"
+import { Captcha } from "@/components/captcha/captcha"
+import { PasswordInput } from "../../password-input"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
     Form,
     FormControl,
@@ -30,8 +30,8 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "../../ui/form"
-import { Input } from "../../ui/input"
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 import type { AuthFormClassNames } from "../auth-form"
 
 export interface SignInFormProps {

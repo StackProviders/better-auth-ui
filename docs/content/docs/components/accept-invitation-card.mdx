@@ -4,17 +4,19 @@ title: <AcceptInvitationCard />
 
 The `<AcceptInvitationCard />` component handles the organization invitation acceptance flow. It displays invitation details and allows users to accept or reject organization invitations.
 
+## Installation
+
+<ShadcnInstall name="accept-invitation-card" />
+
 ## Usage
 
 This component is typically used on a dedicated invitation acceptance page:
 
 ```tsx
-import { AcceptInvitationCard } from 'better-auth-ui'
+import { AcceptInvitationCard } from "@/components/organization/accept-invitation-card";
 
 export function AcceptInvitationPage() {
-  return (
-    <AcceptInvitationCard />
-  )
+  return <AcceptInvitationCard />;
 }
 ```
 
@@ -36,7 +38,10 @@ The component expects an `invitationId` in the URL query parameters:
 
 ## Reference
 
-<AutoTypeTable path="../src/components/organization/accept-invitation-card.tsx" name="AcceptInvitationCardProps" />
+<AutoTypeTable
+  path="../src/components/organization/accept-invitation-card.tsx"
+  name="AcceptInvitationCardProps"
+/>
 
 ## Examples
 
@@ -44,25 +49,25 @@ The component expects an `invitationId` in the URL query parameters:
 
 ```tsx
 // app/auth/accept-invitation/page.tsx
-import { AcceptInvitationCard } from 'better-auth-ui'
+import { AcceptInvitationCard } from "@/components/organization/accept-invitation-card";
 
 export default function AcceptInvitationPage() {
   return (
     <div className="flex min-h-screen items-center justify-center">
       <AcceptInvitationCard />
     </div>
-  )
+  );
 }
 ```
 
 ### With Custom Class Names
 
 ```tsx
-<AcceptInvitationCard 
+<AcceptInvitationCard
   classNames={{
     base: "max-w-md",
     header: "text-center",
-    button: "rounded-full"
+    button: "rounded-full",
   }}
 />
 ```
@@ -70,11 +75,11 @@ export default function AcceptInvitationPage() {
 ### With Custom Localization
 
 ```tsx
-<AcceptInvitationCard 
+<AcceptInvitationCard
   localization={{
     ACCEPT_INVITATION: "Join Team",
     REJECT: "Decline",
-    ACCEPT: "Join"
+    ACCEPT: "Join",
   }}
 />
 ```
@@ -91,6 +96,7 @@ export default function AcceptInvitationPage() {
 ## Displayed Information
 
 The card shows:
+
 - Organization name and logo
 - Organization slug/URL
 - Assigned role (Owner, Admin, Member, or custom)
@@ -130,4 +136,4 @@ Set up the invitation route in your auth configuration:
 2. **Expiration Time**: Set reasonable expiration (7-14 days)
 3. **Email Template**: Customize invitation email design
 4. **Success Redirect**: Configure post-acceptance redirect
-5. **Error Pages**: Handle invalid invitation gracefully 
+5. **Error Pages**: Handle invalid invitation gracefully

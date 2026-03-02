@@ -1,6 +1,6 @@
 import { sha256 } from "@noble/hashes/sha2.js"
 import { bytesToHex } from "@noble/hashes/utils.js"
-import type { GravatarOptions } from "../types/gravatar-options"
+import type { GravatarOptions } from "@/lib/auth/types/gravatar-options"
 
 /**
  * Generate a Gravatar URL for an email address

@@ -1,4 +1,4 @@
-import type { Provider } from "../lib/social-providers"
+import type { Provider } from "@/lib/auth/social-providers"
 import type { AuthClient } from "./auth-client"
 
 export type GenericOAuthOptions = {

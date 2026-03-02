@@ -14,40 +14,40 @@ To modify default strings, you need to provide your custom localization object w
 Here's an example of modifying some default strings globally across your application using `<AuthUIProvider />`:
 
 ```tsx title="app/providers.tsx"
-"use client"
+"use client";
 
-import { AuthUIProvider } from "better-auth-ui"
-import { authClient } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
+import { AuthUIProvider } from "@/components/auth/auth-ui-provider";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-    const router = useRouter()
+  const router = useRouter();
 
-    return (
-        <AuthUIProvider
-            authClient={authClient}
-            navigate={router.push}
-            replace={router.replace}
-            onSessionChange={() => router.refresh()}
-            Link={Link}
-            localization={{
-                SIGN_IN: "Log in",
-                SIGN_IN_DESCRIPTION: "Use your email and password to log in.",
-                SIGN_UP: "Create Account",
-                FORGOT_PASSWORD: "Reset Password",
-                EMAIL_PLACEHOLDER: "your-email@example.com",
-                PASSWORD_PLACEHOLDER: "Secret password",
-                MAGIC_LINK_EMAIL: "Check your inbox for your login link!",
-                FORGOT_PASSWORD_EMAIL: "Check your inbox for the password reset link.",
-                RESET_PASSWORD_SUCCESS: "You can now sign in with your new password!",
-                CHANGE_PASSWORD_SUCCESS: "Your password has been successfully updated.",
-                DELETE_ACCOUNT_SUCCESS: "Your account has been permanently deleted.",
-            }}
-        >
-            {children}
-        </AuthUIProvider>
-    )
+  return (
+    <AuthUIProvider
+      authClient={authClient}
+      navigate={router.push}
+      replace={router.replace}
+      onSessionChange={() => router.refresh()}
+      Link={Link}
+      localization={{
+        SIGN_IN: "Log in",
+        SIGN_IN_DESCRIPTION: "Use your email and password to log in.",
+        SIGN_UP: "Create Account",
+        FORGOT_PASSWORD: "Reset Password",
+        EMAIL_PLACEHOLDER: "your-email@example.com",
+        PASSWORD_PLACEHOLDER: "Secret password",
+        MAGIC_LINK_EMAIL: "Check your inbox for your login link!",
+        FORGOT_PASSWORD_EMAIL: "Check your inbox for the password reset link.",
+        RESET_PASSWORD_SUCCESS: "You can now sign in with your new password!",
+        CHANGE_PASSWORD_SUCCESS: "Your password has been successfully updated.",
+        DELETE_ACCOUNT_SUCCESS: "Your account has been permanently deleted.",
+      }}
+    >
+      {children}
+    </AuthUIProvider>
+  );
 }
 ```
 
@@ -56,23 +56,23 @@ export function Providers({ children }: { children: React.ReactNode }) {
 You can also provide overridden strings on an individual component basis. Here's how you can override strings for just one instance, such as the `<AuthCard>`:
 
 ```tsx
-import { AuthCard } from "better-auth-ui"
+import { AuthCard } from "@/components/auth/auth-card";
 
 export default function AuthPage({ params }: { params: { pathname: string } }) {
-    return (
-        <div className="flex justify-center items-center">
-            <AuthCard
-                pathname={params.pathname}
-                localization={{
-                    SIGN_IN: "Log In",
-                    SIGN_UP: "Register an Account",
-                    FORGOT_PASSWORD: "Forgot Your Password?",
-                    SIGN_IN_DESCRIPTION: "Log in and start using your account.",
-                    MAGIC_LINK: "Log in via Email",
-                }}
-            />
-        </div>
-    )
+  return (
+    <div className="flex justify-center items-center">
+      <AuthCard
+        pathname={params.pathname}
+        localization={{
+          SIGN_IN: "Log In",
+          SIGN_UP: "Register an Account",
+          FORGOT_PASSWORD: "Forgot Your Password?",
+          SIGN_IN_DESCRIPTION: "Log in and start using your account.",
+          MAGIC_LINK: "Log in via Email",
+        }}
+      />
+    </div>
+  );
 }
 ```
 

@@ -4,34 +4,34 @@ import { createContext, type ReactNode, useMemo } from "react"
 import { toast } from "sonner"
 
 import { RecaptchaV3 } from "../components/captcha/recaptcha-v3"
-import { useAuthData } from "../hooks/use-auth-data"
+import { useAuthData } from "@/hooks/auth/use-auth-data"
 import {
     type AuthLocalization,
     authLocalization
-} from "../localization/auth-localization"
+} from "@/lib/auth/localization/auth-localization"
 import type {
     AccountOptions,
     AccountOptionsContext
-} from "../types/account-options"
-import type { AdditionalFields } from "../types/additional-fields"
-import type { AnyAuthClient } from "../types/any-auth-client"
-import type { AuthClient } from "../types/auth-client"
-import type { AuthHooks } from "../types/auth-hooks"
-import type { AuthMutators } from "../types/auth-mutators"
-import type { AvatarOptions } from "../types/avatar-options"
-import type { CaptchaOptions } from "../types/captcha-options"
-import type { CredentialsOptions } from "../types/credentials-options"
-import type { DeleteUserOptions } from "../types/delete-user-options"
-import type { GenericOAuthOptions } from "../types/generic-oauth-options"
-import type { GravatarOptions } from "../types/gravatar-options"
-import type { Link } from "../types/link"
+} from "@/lib/auth/types/account-options"
+import type { AdditionalFields } from "@/lib/auth/types/additional-fields"
+import type { AnyAuthClient } from "@/lib/auth/types/any-auth-client"
+import type { AuthClient } from "@/lib/auth/types/auth-client"
+import type { AuthHooks } from "@/lib/auth/types/auth-hooks"
+import type { AuthMutators } from "@/lib/auth/types/auth-mutators"
+import type { AvatarOptions } from "@/lib/auth/types/avatar-options"
+import type { CaptchaOptions } from "@/lib/auth/types/captcha-options"
+import type { CredentialsOptions } from "@/lib/auth/types/credentials-options"
+import type { DeleteUserOptions } from "@/lib/auth/types/delete-user-options"
+import type { GenericOAuthOptions } from "@/lib/auth/types/generic-oauth-options"
+import type { GravatarOptions } from "@/lib/auth/types/gravatar-options"
+import type { Link } from "@/lib/auth/types/link"
 import type {
     OrganizationOptions,
     OrganizationOptionsContext
-} from "../types/organization-options"
-import type { RenderToast } from "../types/render-toast"
-import type { SignUpOptions } from "../types/sign-up-options"
-import type { SocialOptions } from "../types/social-options"
+} from "@/lib/auth/types/organization-options"
+import type { RenderToast } from "@/lib/auth/types/render-toast"
+import type { SignUpOptions } from "@/lib/auth/types/sign-up-options"
+import type { SocialOptions } from "@/lib/auth/types/social-options"
 import { OrganizationRefetcher } from "./organization-refetcher"
 import type { AuthViewPaths } from "./view-paths"
 import {

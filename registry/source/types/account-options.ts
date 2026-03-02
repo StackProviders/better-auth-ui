@@ -1,4 +1,4 @@
-import type { AccountViewPaths } from "../lib/view-paths"
+import type { AccountViewPaths } from "@/lib/auth/view-paths"
 
 export type AccountOptions = {
     /**

@@ -1,11 +1,11 @@
 "use client"
 
 import { useContext, useMemo } from "react"
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { cn } from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { Profile } from "../types/profile"
-import { Skeleton } from "@/components/ui/skeleton"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { Profile } from "@/lib/auth/types/profile"
+import { Skeleton } from "./ui/skeleton"
 import { UserAvatar, type UserAvatarClassNames } from "./user-avatar"
 
 export interface UserViewClassNames {

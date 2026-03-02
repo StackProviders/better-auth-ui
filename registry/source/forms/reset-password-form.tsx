@@ -6,12 +6,12 @@ import { useContext, useEffect, useRef } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { AuthUIContext } from "../lib/auth-ui-provider"
-import { cn, getLocalizedError, getPasswordSchema } from "../lib/utils"
-import type { AuthLocalization } from "../localization/auth-localization"
-import type { PasswordValidation } from "../types/password-validation"
-import { PasswordInput } from "../password-input"
-import { Button } from "../../ui/button"
+import { AuthUIContext } from "@/lib/auth/auth-ui-provider"
+import { cn, getLocalizedError, getPasswordSchema } from "@/lib/auth/utils"
+import type { AuthLocalization } from "@/lib/auth/localization/auth-localization"
+import type { PasswordValidation } from "@/lib/auth/types/password-validation"
+import { PasswordInput } from "../../password-input"
+import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
@@ -19,7 +19,7 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "../../ui/form"
+} from "@/components/ui/form"
 import type { AuthFormClassNames } from "../auth-form"
 
 export interface ResetPasswordFormProps {

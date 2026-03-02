@@ -4,10 +4,14 @@ title: <OrganizationInvitationsCard />
 
 The `<OrganizationInvitationsCard />` component allows organization administrators to manage invitations sent from their organization.
 
+## Installation
+
+<ShadcnInstall name="organization-invitations-card" />
+
 ## Usage
 
 ```tsx
-import { OrganizationInvitationsCard } from "better-auth-ui";
+import { OrganizationInvitationsCard } from "@/components/organization/organization-invitations-card";
 
 export function OrgSettingsPage({ orgId }: { orgId: string }) {
   return <OrganizationInvitationsCard organizationId={orgId} />;
