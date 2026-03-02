@@ -43,8 +43,8 @@
                 "drawer",
                 "skeleton",
                 "input-otp",
-                "captcha",
-                "accept-invitation-card"
+                "https://stackproviders.github.io/better-auth-ui/r/captcha.json",
+                "https://stackproviders.github.io/better-auth-ui/r/accept-invitation-card.json"
             ],
             "files": [
                 {
@@ -554,126 +554,126 @@
             "name": "change-email-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "change-password-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "delete-account-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "providers-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "sessions-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "two-factor-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "passkeys-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "update-avatar-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "update-username-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "update-name-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "update-field-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "accounts-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "api-keys-card",
             "type": "registry:component",
             "registryDependencies": [
-                "account"
+                "https://stackproviders.github.io/better-auth-ui/r/account.json"
             ]
         },
         {
             "name": "organization-members-card",
             "type": "registry:component",
             "registryDependencies": [
-                "org"
+                "https://stackproviders.github.io/better-auth-ui/r/org.json"
             ]
         },
         {
             "name": "accept-invitation-card",
             "type": "registry:component",
             "registryDependencies": [
-                "org"
+                "https://stackproviders.github.io/better-auth-ui/r/org.json"
             ]
         },
         {
             "name": "organization-invitations-card",
             "type": "registry:component",
             "registryDependencies": [
-                "org"
+                "https://stackproviders.github.io/better-auth-ui/r/org.json"
             ]
         },
         {
             "name": "organizations-card",
             "type": "registry:component",
             "registryDependencies": [
-                "org"
+                "https://stackproviders.github.io/better-auth-ui/r/org.json"
             ]
         },
         {
             "name": "user-invitations-card",
             "type": "registry:component",
             "registryDependencies": [
-                "org"
+                "https://stackproviders.github.io/better-auth-ui/r/org.json"
             ]
         },
         {

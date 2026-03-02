@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "organizations-card",
   "registryDependencies": [
-    "org"
+    "https://stackproviders.github.io/better-auth-ui/r/org.json"
   ],
   "type": "registry:component"
 }

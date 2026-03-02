@@ -43,9 +43,18 @@ function copyAndTransform() {
 
   // Clean registry source to remove stale files from previous syncs
   if (fs.existsSync(registrySourceDir)) {
-    fs.rmSync(registrySourceDir, { recursive: true });
+    const files = fs.readdirSync(registrySourceDir);
+    for (const file of files) {
+      const curPath = path.join(registrySourceDir, file);
+      try {
+        fs.rmSync(curPath, { recursive: true, force: true });
+      } catch (e) {
+        console.warn(`Could not remove ${curPath}: ${e.message}`);
+      }
+    }
+  } else {
+    fs.mkdirSync(registrySourceDir, { recursive: true });
   }
-  fs.mkdirSync(registrySourceDir, { recursive: true });
 
   filesToCopy.forEach(({ src, dest }) => {
     const fullSrcPath = path.join(srcDir, src);
