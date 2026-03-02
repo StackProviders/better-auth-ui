@@ -2,9 +2,9 @@
 
 import { MenuIcon } from "lucide-react"
 import { useContext, useEffect, useMemo } from "react"
-import { useAuthenticate } from "better-auth-ui"
-import { useCurrentOrganization } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useAuthenticate } from "@/components/auth/hooks/use-authenticate"
+import { useCurrentOrganization } from "@/components/auth/hooks/use-current-organization"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getViewByPath } from "better-auth-ui"
 import type { OrganizationViewPath } from "better-auth-ui"
 import type { AccountViewProps } from "@/components/account/account-view"

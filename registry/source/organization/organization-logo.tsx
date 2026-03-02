@@ -4,7 +4,7 @@ import type { Organization } from "better-auth/plugins/organization"
 import { BuildingIcon } from "lucide-react"
 import { type ComponentProps, useContext, useMemo } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"

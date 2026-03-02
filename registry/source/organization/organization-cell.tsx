@@ -4,7 +4,7 @@ import type { Organization } from "better-auth/plugins/organization"
 import { EllipsisIcon, Loader2, LogOutIcon, SettingsIcon } from "lucide-react"
 import { useCallback, useContext, useMemo, useState } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { SettingsCardClassNames } from "@/components/settings/shared/settings-card"

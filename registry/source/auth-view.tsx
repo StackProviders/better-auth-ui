@@ -2,8 +2,8 @@
 
 import { ArrowLeftIcon } from "lucide-react"
 import { type ReactNode, useContext, useEffect, useState } from "react"
-import { useIsHydrated } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useIsHydrated } from "@/components/auth/hooks/use-hydrated"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { socialProviders } from "better-auth-ui"
 import { cn, getViewByPath } from "better-auth-ui"
 import type { AuthViewPaths } from "better-auth-ui"

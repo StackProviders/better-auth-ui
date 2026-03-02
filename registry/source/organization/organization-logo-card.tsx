@@ -10,8 +10,8 @@ import {
     useState
 } from "react"
 
-import { useCurrentOrganization } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useCurrentOrganization } from "@/components/auth/hooks/use-current-organization"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { fileToBase64, resizeAndCropImage } from "better-auth-ui"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"

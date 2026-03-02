@@ -4,10 +4,10 @@ import {
 } from "@wojtekmaj/react-recaptcha-v3"
 import { type ReactNode, useContext, useEffect } from "react"
 
-import { useIsHydrated } from "better-auth-ui"
-import { useLang } from "better-auth-ui"
-import { useTheme } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useIsHydrated } from "@/components/auth/hooks/use-hydrated"
+import { useLang } from "@/components/auth/hooks/use-lang"
+import { useTheme } from "@/components/auth/hooks/use-theme"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 
 export function RecaptchaV3({ children }: { children: ReactNode }) {
     const isHydrated = useIsHydrated()

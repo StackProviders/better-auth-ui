@@ -3,8 +3,8 @@
 import { KeyRoundIcon } from "lucide-react"
 import { useContext, useState } from "react"
 
-import { useLang } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useLang } from "@/components/auth/hooks/use-lang"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { ApiKey } from "better-auth-ui"

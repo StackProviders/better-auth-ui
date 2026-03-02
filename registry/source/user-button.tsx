@@ -19,8 +19,8 @@ import {
     useState
 } from "react"
 
-import { useIsHydrated } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useIsHydrated } from "@/components/auth/hooks/use-hydrated"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { AnyAuthClient } from "better-auth-ui"

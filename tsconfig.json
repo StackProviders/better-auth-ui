@@ -5,6 +5,15 @@
         "paths": {
             "@/*": [
                 "./src/*"
+            ],
+            "@/components/auth/auth-ui-provider": [
+                "./src/lib/auth-ui-provider.tsx"
+            ],
+            "@/components/auth/organization-refetcher": [
+                "./src/lib/organization-refetcher.tsx"
+            ],
+            "@/components/auth/hooks/*": [
+                "./src/hooks/*"
             ]
         },
         "declaration": true,

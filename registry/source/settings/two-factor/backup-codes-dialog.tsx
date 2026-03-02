@@ -3,7 +3,7 @@
 import { CheckIcon, CopyIcon } from "lucide-react"
 import { type ComponentProps, useContext, useState } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn } from "better-auth-ui"
 import { Button } from "@/components/ui/button"
 import {

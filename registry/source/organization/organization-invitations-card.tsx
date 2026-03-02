@@ -2,8 +2,8 @@
 
 import type { Organization } from "better-auth/plugins/organization"
 import { useContext, useMemo } from "react"
-import { useCurrentOrganization } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useCurrentOrganization } from "@/components/auth/hooks/use-current-organization"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn } from "better-auth-ui"
 import type { SettingsCardProps } from "@/components/settings/shared/settings-card"
 import { SettingsCard } from "@/components/settings/shared/settings-card"

@@ -1,7 +1,7 @@
 "use client"
 
 import { useContext, useState } from "react"
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import type { AuthLocalization } from "better-auth-ui"
 import type { User } from "better-auth-ui"
 import type { SettingsCardClassNames } from "../shared/settings-card"

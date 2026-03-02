@@ -3,8 +3,8 @@
 import { CheckIcon, Loader2, XIcon } from "lucide-react"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 
-import { useAuthenticate } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useAuthenticate } from "@/components/auth/hooks/use-authenticate"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError, getSearchParam } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { SettingsCardClassNames } from "@/components/settings/shared/settings-card"

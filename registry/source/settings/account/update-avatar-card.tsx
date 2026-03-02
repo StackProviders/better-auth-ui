@@ -3,7 +3,7 @@
 import { Trash2Icon, UploadCloudIcon } from "lucide-react"
 import { type ComponentProps, useContext, useRef, useState } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { fileToBase64, resizeAndCropImage } from "better-auth-ui"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"

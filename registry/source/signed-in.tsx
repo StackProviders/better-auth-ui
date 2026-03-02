@@ -1,7 +1,7 @@
 "use client"
 
 import { type ReactNode, useContext } from "react"
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 
 /**
  * Conditionally renders content for authenticated users only

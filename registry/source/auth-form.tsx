@@ -2,7 +2,7 @@
 
 import { useContext, useEffect } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { getViewByPath } from "better-auth-ui"
 import type { AuthViewPath } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"

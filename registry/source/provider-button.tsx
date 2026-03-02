@@ -1,7 +1,7 @@
 import type { SocialProvider } from "better-auth/social-providers"
 import { useCallback, useContext } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import type { Provider } from "better-auth-ui"
 import { cn, getLocalizedError, getSearchParam } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"

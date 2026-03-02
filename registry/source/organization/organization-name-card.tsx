@@ -6,8 +6,8 @@ import { useContext, useMemo } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useCurrentOrganization } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useCurrentOrganization } from "@/components/auth/hooks/use-current-organization"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError } from "better-auth-ui"
 import {
     SettingsCard,

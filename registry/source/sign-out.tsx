@@ -3,8 +3,8 @@
 import { Loader2 } from "lucide-react"
 import { useContext, useEffect, useRef } from "react"
 
-import { useOnSuccessTransition } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useOnSuccessTransition } from "@/components/auth/hooks/use-success-transition"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 
 export function SignOut() {
     const signingOut = useRef(false)

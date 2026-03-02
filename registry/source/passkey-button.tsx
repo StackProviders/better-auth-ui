@@ -1,8 +1,8 @@
 import { FingerprintIcon } from "lucide-react"
 import { useContext } from "react"
 
-import { useOnSuccessTransition } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useOnSuccessTransition } from "@/components/auth/hooks/use-success-transition"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import { Button } from "@/components/ui/button"

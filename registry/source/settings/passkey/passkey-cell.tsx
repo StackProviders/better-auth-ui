@@ -3,7 +3,7 @@
 import { FingerprintIcon, Loader2 } from "lucide-react"
 import { useContext, useState } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import { Button } from "@/components/ui/button"

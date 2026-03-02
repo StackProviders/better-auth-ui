@@ -4,7 +4,7 @@ import { createContext, type ReactNode, useMemo } from "react"
 import { toast } from "sonner"
 
 import { RecaptchaV3 } from "@/components/captcha/recaptcha-v3"
-import { useAuthData } from "better-auth-ui"
+import { useAuthData } from "@/components/auth/hooks/use-auth-data"
 import {
     type AuthLocalization,
     authLocalization
@@ -32,7 +32,7 @@ import type {
 import type { RenderToast } from "better-auth-ui"
 import type { SignUpOptions } from "better-auth-ui"
 import type { SocialOptions } from "better-auth-ui"
-import { OrganizationRefetcher } from "better-auth-ui"
+import { OrganizationRefetcher } from "@/components/auth/organization-refetcher"
 import type { AuthViewPaths } from "better-auth-ui"
 import {
     accountViewPaths,

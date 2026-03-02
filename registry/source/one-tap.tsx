@@ -1,7 +1,7 @@
 import { useContext, useEffect, useMemo, useRef } from "react"
 
-import { useOnSuccessTransition } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useOnSuccessTransition } from "@/components/auth/hooks/use-success-transition"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 

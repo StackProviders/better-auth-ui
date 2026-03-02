@@ -29,6 +29,7 @@ const filesToCopy = [
   { src: "components/user-view.tsx", dest: "user-view.tsx" },
   { src: "lib/auth-ui-provider.tsx", dest: "auth-ui-provider.tsx" },
   { src: "lib/organization-refetcher.tsx", dest: "organization-refetcher.tsx" },
+  { src: "hooks", dest: "hooks" },
 ];
 
 function ensureDir(dir) {
@@ -105,10 +106,25 @@ function copyFile(src, dest, destCategory) {
   let content = fs.readFileSync(src, "utf8");
 
   // Transform internal imports to use the better-auth-ui package
-  // hooks, lib, types, localization are all exported from the package
+  // Transform hooks, lib, and organization refetcher to point to the local copies
   content = content.replace(
-    /from ["'](\.\/|\.\.\/)*(hooks|lib|types|localization|server|view-paths|organization-refetcher)\/?([^"']*)["']/g,
+    /from ["'](\.\/|\.\.\/)*(lib\/)?organization-refetcher["']/g,
+    'from "@/components/auth/organization-refetcher"',
+  );
+  content = content.replace(
+    /from ["'](\.\/|\.\.\/)*(lib\/)?auth-ui-provider["']/g,
+    'from "@/components/auth/auth-ui-provider"',
+  );
+
+  // Transform types, localization, server, and other lib files to point to the npm package (pure, no context)
+  content = content.replace(
+    /from ["'](\.\/|\.\.\/)*(types|localization|server|view-paths|lib)\/?([^"']*)["']/g,
     'from "better-auth-ui"',
+  );
+
+  content = content.replace(
+    /from ["'](\.\/|\.\.\/)*(hooks)\/([^"']*)["']/g,
+    'from "@/components/auth/$2/$3"',
   );
 
   // Components transformations

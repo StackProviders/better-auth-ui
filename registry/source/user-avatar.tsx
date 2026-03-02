@@ -3,7 +3,7 @@
 import { UserRoundIcon } from "lucide-react"
 import { type ComponentProps, useContext } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { getGravatarUrl } from "better-auth-ui"
 import { cn } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"

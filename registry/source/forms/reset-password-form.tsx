@@ -6,7 +6,7 @@ import { useContext, useEffect, useRef } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError, getPasswordSchema } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { PasswordValidation } from "better-auth-ui"

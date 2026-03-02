@@ -3,7 +3,7 @@
 import { CheckIcon, EllipsisIcon, Loader2, XIcon } from "lucide-react"
 import { useContext, useMemo, useState } from "react"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { SettingsCardProps } from "@/components/settings/shared/settings-card"
 import { SettingsCard } from "@/components/settings/shared/settings-card"

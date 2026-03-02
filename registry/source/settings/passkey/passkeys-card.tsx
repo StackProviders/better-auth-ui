@@ -3,7 +3,7 @@
 import { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
 
-import { AuthUIContext } from "better-auth-ui"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getLocalizedError } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import { CardContent } from "@/components/ui/card"

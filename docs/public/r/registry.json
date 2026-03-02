@@ -24,7 +24,8 @@
                 "@hcaptcha/react-hcaptcha",
                 "@marsidev/react-turnstile",
                 "@wojtekmaj/react-recaptcha-v3",
-                "react-google-recaptcha"
+                "react-google-recaptcha",
+                "react-qr-code"
             ],
             "registryDependencies": [
                 "button",
@@ -201,6 +202,46 @@
                     "path": "registry/source/organization-refetcher.tsx",
                     "type": "registry:component",
                     "target": "components/auth/organization-refetcher.tsx"
+                },
+                {
+                    "path": "registry/source/hooks/use-auth-data.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-auth-data.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-authenticate.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-authenticate.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-captcha.tsx",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-captcha.tsx"
+                },
+                {
+                    "path": "registry/source/hooks/use-current-organization.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-current-organization.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-hydrated.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-hydrated.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-lang.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-lang.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-success-transition.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-success-transition.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-theme.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-theme.ts"
                 }
             ]
         },

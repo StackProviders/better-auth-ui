@@ -2,8 +2,8 @@
 
 import { MenuIcon } from "lucide-react"
 import { useContext, useMemo } from "react"
-import { useAuthenticate } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useAuthenticate } from "@/components/auth/hooks/use-authenticate"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn, getViewByPath } from "better-auth-ui"
 import type { AuthLocalization } from "better-auth-ui"
 import type { AccountViewPath } from "better-auth-ui"

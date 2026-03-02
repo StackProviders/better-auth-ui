@@ -1,8 +1,8 @@
 import { type RefObject, useContext, useEffect } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
-import { useLang } from "better-auth-ui"
-import { useTheme } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useLang } from "@/components/auth/hooks/use-lang"
+import { useTheme } from "@/components/auth/hooks/use-theme"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import { cn } from "better-auth-ui"
 
 export function RecaptchaV2({ ref }: { ref: RefObject<ReCAPTCHA | null> }) {

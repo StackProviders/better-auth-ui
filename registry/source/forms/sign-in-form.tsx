@@ -7,10 +7,10 @@ import { useContext, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { useCaptcha } from "better-auth-ui"
-import { useIsHydrated } from "better-auth-ui"
-import { useOnSuccessTransition } from "better-auth-ui"
-import { AuthUIContext } from "better-auth-ui"
+import { useCaptcha } from "@/components/auth/hooks/use-captcha"
+import { useIsHydrated } from "@/components/auth/hooks/use-hydrated"
+import { useOnSuccessTransition } from "@/components/auth/hooks/use-success-transition"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 import {
     cn,
     getLocalizedError,

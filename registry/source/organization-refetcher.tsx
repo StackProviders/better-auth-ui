@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react"
-import { useCurrentOrganization } from "better-auth-ui"
-import { AuthUIContext } from "./auth-ui-provider"
+import { useCurrentOrganization } from "@/components/auth/hooks/use-current-organization"
+import { AuthUIContext } from "@/components/auth/auth-ui-provider"
 
 export const OrganizationRefetcher = () => {
     const {
