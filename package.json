@@ -1,7 +1,7 @@
 {
     "name": "better-auth-ui",
     "homepage": "https://stackproviders.github.io/better-auth-ui/",
-    "version": "3.2.13",
+    "version": "3.2.14",
     "description": "Plug & play shadcn/ui components for better-auth",
     "scripts": {
         "build": "pnpm build:registry && tsup --clean --dts && shx cp src/style.css dist/style.css",
