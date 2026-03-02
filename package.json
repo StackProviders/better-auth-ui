@@ -1,10 +1,12 @@
 {
     "name": "better-auth-ui",
-    "homepage": "https://better-auth-ui.com",
+    "homepage": "https://stackproviders.github.io/better-auth-ui/",
     "version": "3.2.13",
     "description": "Plug & play shadcn/ui components for better-auth",
     "scripts": {
-        "build": "tsup --clean --dts && shx cp src/style.css dist/style.css",
+        "build": "pnpm build:registry && tsup --clean --dts && shx cp src/style.css dist/style.css",
+        "build:registry": "pnpm sync:registry && pnpm dlx shadcn@latest build && shx mkdir -p docs/public/r && shx cp public/r/*.json docs/public/r/",
+        "sync:registry": "node scripts/sync-registry.js",
         "dev": "tsc-watch",
         "prepublishOnly": "shx rm -rf dist && turbo build"
     },

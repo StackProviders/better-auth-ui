@@ -1,5 +1,5 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared"
-import { CoffeeIcon, ExternalLink, Twitter } from "lucide-react"
+import { Bot, CoffeeIcon, ExternalLink, Twitter } from "lucide-react"
 
 /**
  * Shared layout configurations
@@ -34,6 +34,12 @@ export const baseOptions: BaseLayoutProps = {
         )
     },
     links: [
+        {
+            url: "/llm.txt",
+            text: "AI Documentation",
+            icon: <Bot />,
+            external: true
+        },
         {
             url: "https://newtech.dev/auth/sign-in",
             text: "Demo",

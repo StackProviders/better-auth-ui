@@ -1,0 +1,351 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "better-auth-ui",
+    "homepage": "https://stackproviders.github.io/better-auth-ui/",
+    "items": [
+        {
+            "name": "auth",
+            "type": "registry:block",
+            "description": "Comprehensive authentication components for better-auth.",
+            "dependencies": [
+                "better-auth",
+                "@better-fetch/fetch",
+                "lucide-react",
+                "zod",
+                "react-hook-form",
+                "@hookform/resolvers",
+                "clsx",
+                "tailwind-merge",
+                "tailwindcss-animate",
+                "vaul",
+                "input-otp",
+                "sonner"
+            ],
+            "registryDependencies": [
+                "button",
+                "checkbox",
+                "form",
+                "input",
+                "label",
+                "tabs",
+                "avatar",
+                "dropdown-menu",
+                "select",
+                "separator",
+                "dialog"
+            ],
+            "files": [
+                {
+                    "path": "registry/source/auth-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/auth-form.tsx"
+                },
+                {
+                    "path": "registry/source/auth-view.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/auth-view.tsx"
+                },
+                {
+                    "path": "registry/source/auth-callback.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/auth-callback.tsx"
+                },
+                {
+                    "path": "registry/source/email-otp-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/email-otp-button.tsx"
+                },
+                {
+                    "path": "registry/source/magic-link-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/magic-link-button.tsx"
+                },
+                {
+                    "path": "registry/source/one-tap.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/one-tap.tsx"
+                },
+                {
+                    "path": "registry/source/otp-input-group.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/otp-input-group.tsx"
+                },
+                {
+                    "path": "registry/source/passkey-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/passkey-button.tsx"
+                },
+                {
+                    "path": "registry/source/provider-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/provider-button.tsx"
+                },
+                {
+                    "path": "registry/source/sign-out.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/sign-out.tsx"
+                },
+                {
+                    "path": "registry/source/forms/email-otp-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/email-otp-form.tsx"
+                },
+                {
+                    "path": "registry/source/forms/forgot-password-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/forgot-password-form.tsx"
+                },
+                {
+                    "path": "registry/source/forms/magic-link-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/magic-link-form.tsx"
+                },
+                {
+                    "path": "registry/source/forms/recover-account-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/recover-account-form.tsx"
+                },
+                {
+                    "path": "registry/source/forms/reset-password-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/reset-password-form.tsx"
+                },
+                {
+                    "path": "registry/source/forms/sign-in-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/sign-in-form.tsx"
+                },
+                {
+                    "path": "registry/source/forms/sign-up-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/sign-up-form.tsx"
+                },
+                {
+                    "path": "registry/source/forms/two-factor-form.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/forms/two-factor-form.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/captcha.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/captcha/captcha.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-badge.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/captcha/recaptcha-badge.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-v2.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/captcha/recaptcha-v2.tsx"
+                },
+                {
+                    "path": "registry/source/captcha/recaptcha-v3.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/captcha/recaptcha-v3.tsx"
+                },
+                {
+                    "path": "registry/source/lib/auth-data-cache.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/auth-data-cache.ts"
+                },
+                {
+                    "path": "registry/source/lib/auth-ui-provider.tsx",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/auth-ui-provider.tsx"
+                },
+                {
+                    "path": "registry/source/lib/gravatar-utils.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/gravatar-utils.ts"
+                },
+                {
+                    "path": "registry/source/lib/image-utils.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/image-utils.ts"
+                },
+                {
+                    "path": "registry/source/lib/organization-refetcher.tsx",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/organization-refetcher.tsx"
+                },
+                {
+                    "path": "registry/source/lib/social-providers.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/social-providers.ts"
+                },
+                {
+                    "path": "registry/source/lib/utils.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/utils.ts"
+                },
+                {
+                    "path": "registry/source/lib/view-paths.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/view-paths.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-auth-data.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-auth-data.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-authenticate.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-authenticate.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-captcha.tsx",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-captcha.tsx"
+                },
+                {
+                    "path": "registry/source/hooks/use-current-organization.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-current-organization.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-hydrated.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-hydrated.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-lang.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-lang.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-success-transition.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-success-transition.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-theme.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-theme.ts"
+                },
+                {
+                    "path": "registry/source/types/password-validation.ts",
+                    "type": "registry:file",
+                    "target": "components/auth/types/password-validation.ts"
+                },
+                {
+                    "path": "registry/source/localization/auth-localization.ts",
+                    "type": "registry:file",
+                    "target": "components/auth/localization/auth-localization.ts"
+                },
+                {
+                    "path": "registry/source/auth-loading.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/auth-loading.tsx"
+                },
+                {
+                    "path": "registry/source/form-error.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/form-error.tsx"
+                },
+                {
+                    "path": "registry/source/password-input.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/password-input.tsx"
+                },
+                {
+                    "path": "registry/source/provider-icons.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/provider-icons.tsx"
+                },
+                {
+                    "path": "registry/source/redirect-to-sign-in.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/redirect-to-sign-in.tsx"
+                },
+                {
+                    "path": "registry/source/redirect-to-sign-up.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/redirect-to-sign-up.tsx"
+                },
+                {
+                    "path": "registry/source/signed-in.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/signed-in.tsx"
+                },
+                {
+                    "path": "registry/source/signed-out.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/signed-out.tsx"
+                },
+                {
+                    "path": "registry/source/user-avatar.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/user-avatar.tsx"
+                },
+                {
+                    "path": "registry/source/user-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/user-button.tsx"
+                },
+                {
+                    "path": "registry/source/user-view.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/user-view.tsx"
+                }
+            ]
+        },
+        {
+            "name": "user-button",
+            "type": "registry:component",
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "avatar",
+                "button",
+                "dropdown-menu",
+                "separator"
+            ],
+            "files": [
+                {
+                    "path": "registry/source/user-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/user-button.tsx"
+                },
+                {
+                    "path": "registry/source/user-avatar.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/user-avatar.tsx"
+                },
+                {
+                    "path": "registry/source/user-view.tsx",
+                    "type": "registry:component",
+                    "target": "components/auth/user-view.tsx"
+                },
+                {
+                    "path": "registry/source/lib/auth-ui-provider.tsx",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/auth-ui-provider.tsx"
+                },
+                {
+                    "path": "registry/source/lib/social-providers.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/social-providers.ts"
+                },
+                {
+                    "path": "registry/source/lib/utils.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/utils.ts"
+                },
+                {
+                    "path": "registry/source/lib/view-paths.ts",
+                    "type": "registry:lib",
+                    "target": "components/auth/lib/view-paths.ts"
+                },
+                {
+                    "path": "registry/source/hooks/use-current-organization.ts",
+                    "type": "registry:hook",
+                    "target": "components/auth/hooks/use-current-organization.ts"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+---
+title: Deployment
+icon: Rocket
+---
+
+`better-auth-ui` is configured to automatically deploy its documentation and shadcn registry to GitHub Pages using GitHub Actions.
+
+## Automated Deployment
+
+The deployment process is fully automated via the `.github/workflows/nextjs.yml` workflow.
+
+### How it works:
+
+1. **Trigger**: Every time you push code to the `main` branch, the deployment workflow is triggered.
+2. **Build**: The workflow builds the registry distribution and then builds the documentation site using Next.js.
+3. **Deploy**: The built files are automatically uploaded and deployed to your GitHub Pages site at `https://stackproviders.github.io/better-auth-ui/`.
+
+### Deployment Steps:
+
+To update your live site and registry, simply push your changes to the main branch:
+
+```bash
+git add .
+git commit -m "feat: your changes"
+git push origin main
+```
+
+## GitHub Repository Configuration
+
+To ensure the deployment works correctly, verify the following settings in your GitHub repository:
+
+1. Go to **Settings > Pages**.
+2. Under **Build and deployment > Source**, select **GitHub Actions**.
+3. (Optional) If you want to use a custom domain, add a secret named `GITHUB_PAGES_CUSTOM_DOMAIN` in **Settings > Secrets and variables > Actions**.
+
+## Local Build & Preview
+
+You can build and preview the registry and docs locally before pushing:
+
+### Build Registry
+
+This will sync the source files and generate the distribution JSONs.
+
+```bash
+pnpm build:registry
+```
+
+### Build Documentation
+
+This will build the static documentation site.
+
+```bash
+cd docs
+pnpm build
+```
+
+The output will be in the `docs/out` directory.

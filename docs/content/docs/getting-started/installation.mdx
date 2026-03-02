@@ -50,4 +50,29 @@ Now that you've installed `better-auth-ui`, follow one of the guides below to in
   <Card href="/integrations/react" title="React" />
 </Cards>
 </Step>
+
+<Step>
+## Manual Installation (Shadcn Registry)
+
+Alternatively, you can install the components directly into your project using the [Shadcn Registry](https://ui.shadcn.com/docs/registry). This method allows you to have full control over the code and customize it as needed.
+
+To install all authentication components:
+
+```bash
+npx shadcn@latest add https://stackproviders.github.io/better-auth-ui/r/auth.json
+```
+
+To install only the **User Button** component:
+
+```bash
+npx shadcn@latest add https://stackproviders.github.io/better-auth-ui/r/user-button.json
+```
+
+### Why use Manual Installation?
+
+- **Full Customizability**: The code is copied directly into your `components/auth` folder.
+- **No Dependencies**: You don't need to add `better-auth-ui` as a dependency in your `package.json`.
+- **Theming**: It automatically uses your existing shadcn UI components (button, input, etc.) and your tailwind theme.
+
+</Step>
 </Steps>
