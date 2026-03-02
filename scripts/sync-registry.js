@@ -6,7 +6,6 @@ const registrySourceDir = "registry/source";
 
 const filesToCopy = [
   { src: "components/auth", dest: "" },
-  { src: "components/auth/forms", dest: "forms" },
   { src: "components/organization", dest: "organization" },
   { src: "components/account", dest: "account" },
   { src: "components/settings", dest: "settings" },

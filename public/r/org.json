@@ -22,7 +22,8 @@
     "separator",
     "table",
     "badge",
-    "drawer"
+    "drawer",
+    "https://stackproviders.github.io/better-auth-ui/r/settings.json"
   ],
   "files": [
     {

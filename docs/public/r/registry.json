@@ -228,7 +228,8 @@
                 "separator",
                 "table",
                 "badge",
-                "drawer"
+                "drawer",
+                "https://stackproviders.github.io/better-auth-ui/r/settings.json"
             ],
             "files": [
                 {
@@ -375,7 +376,8 @@
                 "dialog",
                 "skeleton",
                 "table",
-                "badge"
+                "badge",
+                "https://stackproviders.github.io/better-auth-ui/r/settings.json"
             ],
             "files": [
                 {
@@ -492,56 +494,6 @@
                     "path": "registry/source/settings/providers/providers-card.tsx",
                     "type": "registry:component",
                     "target": "components/settings/providers/providers-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/shared/session-freshness-dialog.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/shared/session-freshness-dialog.tsx"
-                },
-                {
-                    "path": "registry/source/settings/shared/settings-action-button.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/shared/settings-action-button.tsx"
-                },
-                {
-                    "path": "registry/source/settings/shared/settings-card-footer.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/shared/settings-card-footer.tsx"
-                },
-                {
-                    "path": "registry/source/settings/shared/settings-card-header.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/shared/settings-card-header.tsx"
-                },
-                {
-                    "path": "registry/source/settings/shared/settings-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/shared/settings-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/skeletons/input-field-skeleton.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/skeletons/input-field-skeleton.tsx"
-                },
-                {
-                    "path": "registry/source/settings/skeletons/settings-cell-skeleton.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/skeletons/settings-cell-skeleton.tsx"
-                },
-                {
-                    "path": "registry/source/settings/two-factor/backup-codes-dialog.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/two-factor/backup-codes-dialog.tsx"
-                },
-                {
-                    "path": "registry/source/settings/two-factor/two-factor-card.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/two-factor/two-factor-card.tsx"
-                },
-                {
-                    "path": "registry/source/settings/two-factor/two-factor-password-dialog.tsx",
-                    "type": "registry:component",
-                    "target": "components/settings/two-factor/two-factor-password-dialog.tsx"
                 },
                 {
                     "path": "registry/source/account/account-view.tsx",
@@ -744,6 +696,75 @@
                     "path": "registry/source/captcha/recaptcha-v3.tsx",
                     "type": "registry:component",
                     "target": "components/captcha/recaptcha-v3.tsx"
+                }
+            ]
+        },
+        {
+            "name": "settings",
+            "type": "registry:component",
+            "description": "Shared settings components.",
+            "dependencies": [
+                "better-auth-ui",
+                "lucide-react",
+                "clsx",
+                "tailwind-merge"
+            ],
+            "registryDependencies": [
+                "button",
+                "card",
+                "dialog",
+                "skeleton"
+            ],
+            "files": [
+                {
+                    "path": "registry/source/settings/shared/session-freshness-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/session-freshness-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/settings/shared/settings-action-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/settings-action-button.tsx"
+                },
+                {
+                    "path": "registry/source/settings/shared/settings-card-footer.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/settings-card-footer.tsx"
+                },
+                {
+                    "path": "registry/source/settings/shared/settings-card-header.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/settings-card-header.tsx"
+                },
+                {
+                    "path": "registry/source/settings/shared/settings-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/shared/settings-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/skeletons/input-field-skeleton.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/skeletons/input-field-skeleton.tsx"
+                },
+                {
+                    "path": "registry/source/settings/skeletons/settings-cell-skeleton.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/skeletons/settings-cell-skeleton.tsx"
+                },
+                {
+                    "path": "registry/source/settings/two-factor/backup-codes-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/two-factor/backup-codes-dialog.tsx"
+                },
+                {
+                    "path": "registry/source/settings/two-factor/two-factor-card.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/two-factor/two-factor-card.tsx"
+                },
+                {
+                    "path": "registry/source/settings/two-factor/two-factor-password-dialog.tsx",
+                    "type": "registry:component",
+                    "target": "components/settings/two-factor/two-factor-password-dialog.tsx"
                 }
             ]
         }
