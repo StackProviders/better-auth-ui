@@ -8,7 +8,8 @@
         "build:registry": "pnpm sync:registry && pnpm dlx shadcn@latest build && shx mkdir -p docs/public/r && shx cp public/r/*.json docs/public/r/",
         "sync:registry": "node scripts/sync-registry.js",
         "dev": "tsc-watch",
-        "prepublishOnly": "shx rm -rf dist && turbo build"
+        "prepublishOnly": "shx rm -rf dist && turbo build",
+        "publish": "npm version patch && npm publish --access public"
     },
     "type": "module",
     "main": "./dist/index.cjs",
