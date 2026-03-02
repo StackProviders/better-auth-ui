@@ -61,7 +61,7 @@ export function ApiKeyCell({
                 )}
             >
                 <KeyRoundIcon
-                    className={cn("size-4 flex-shrink-0", classNames?.icon)}
+                    className={cn("size-4 shrink-0", classNames?.icon)}
                 />
 
                 <div className="flex flex-col truncate">

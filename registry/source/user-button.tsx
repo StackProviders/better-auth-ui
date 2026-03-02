@@ -206,7 +206,7 @@ export function UserButton({
                     ) : (
                         <Button
                             className={cn(
-                                "!p-2 h-fit",
+                                "p-2! h-fit",
                                 className,
                                 classNames?.trigger?.base
                             )}

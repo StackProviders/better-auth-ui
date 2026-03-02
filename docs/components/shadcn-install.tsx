@@ -23,22 +23,22 @@ export function ShadcnInstall({ name }: ShadcnInstallProps) {
     return (
         <Tabs items={["pnpm", "npm", "yarn", "bun"]}>
             <Tab value="pnpm">
-                <pre className="!bg-transparent !p-0">
+                <pre className="bg-transparent! !p-0">
                     <code className="language-bash">{commands.pnpm}</code>
                 </pre>
             </Tab>
             <Tab value="npm">
-                <pre className="!bg-transparent !p-0">
+                <pre className="bg-transparent! !p-0">
                     <code className="language-bash">{commands.npm}</code>
                 </pre>
             </Tab>
             <Tab value="yarn">
-                <pre className="!bg-transparent !p-0">
+                <pre className="bg-transparent! !p-0">
                     <code className="language-bash">{commands.yarn}</code>
                 </pre>
             </Tab>
             <Tab value="bun">
-                <pre className="!bg-transparent !p-0">
+                <pre className="bg-transparent! !p-0">
                     <code className="language-bash">{commands.bun}</code>
                 </pre>
             </Tab>

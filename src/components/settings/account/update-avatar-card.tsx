@@ -187,7 +187,7 @@ export function UpdateAvatarCard({
             </div>
 
             <SettingsCardFooter
-                className="!py-5"
+                className="py-5!"
                 instructions={localization.AVATAR_INSTRUCTIONS}
                 classNames={classNames}
                 isPending={isPending}

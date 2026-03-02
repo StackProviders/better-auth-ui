@@ -87,7 +87,7 @@ export function OrganizationLogoCard({
                 </div>
 
                 <SettingsCardFooter
-                    className="!py-5"
+                    className="py-5!"
                     instructions={localization.LOGO_INSTRUCTIONS}
                     classNames={classNames}
                     isPending
@@ -297,7 +297,7 @@ function OrganizationLogoForm({
             </div>
 
             <SettingsCardFooter
-                className="!py-5"
+                className="py-5!"
                 instructions={localization.LOGO_INSTRUCTIONS}
                 classNames={classNames}
                 isPending={isPending}

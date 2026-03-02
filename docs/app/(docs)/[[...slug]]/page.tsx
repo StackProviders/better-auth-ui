@@ -39,7 +39,7 @@ export default async function Page(props: {
         <DocsPage full={page.data.full} toc={page.data.toc}>
             <div className="flex flex-row items-center justify-between gap-4">
                 <DocsTitle>{page.data.title}</DocsTitle>
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                     <CopyAIButton content={llmText} />
                 </div>
             </div>

@@ -91,8 +91,8 @@ export function AuthView({
         socialLayout = !credentials
             ? "vertical"
             : social?.providers && social.providers.length > 2
-              ? "horizontal"
-              : "vertical"
+                ? "horizontal"
+                : "vertical"
     }
 
     const path = pathProp ?? pathname?.split("/").pop()
@@ -227,16 +227,16 @@ export function AuthView({
                                 >
                                     <Separator
                                         className={cn(
-                                            "!w-auto grow",
+                                            "w-auto! grow",
                                             classNames?.separator
                                         )}
                                     />
-                                    <span className="flex-shrink-0 text-muted-foreground text-sm">
+                                    <span className="shrink-0 text-muted-foreground text-sm">
                                         {localization.OR_CONTINUE_WITH}
                                     </span>
                                     <Separator
                                         className={cn(
-                                            "!w-auto grow",
+                                            "w-auto! grow",
                                             classNames?.separator
                                         )}
                                     />
@@ -246,61 +246,61 @@ export function AuthView({
                             <div className="grid gap-4">
                                 {(social?.providers?.length ||
                                     genericOAuth?.providers?.length) && (
-                                    <div
-                                        className={cn(
-                                            "flex w-full items-center justify-between gap-4",
-                                            socialLayout === "horizontal" &&
+                                        <div
+                                            className={cn(
+                                                "flex w-full items-center justify-between gap-4",
+                                                socialLayout === "horizontal" &&
                                                 "flex-wrap",
-                                            socialLayout === "vertical" &&
+                                                socialLayout === "vertical" &&
                                                 "flex-col",
-                                            socialLayout === "grid" &&
+                                                socialLayout === "grid" &&
                                                 "grid grid-cols-2"
-                                        )}
-                                    >
-                                        {social?.providers?.map((provider) => {
-                                            const socialProvider =
-                                                socialProviders.find(
-                                                    (socialProvider) =>
-                                                        socialProvider.provider ===
-                                                        provider
+                                            )}
+                                        >
+                                            {social?.providers?.map((provider) => {
+                                                const socialProvider =
+                                                    socialProviders.find(
+                                                        (socialProvider) =>
+                                                            socialProvider.provider ===
+                                                            provider
+                                                    )
+                                                if (!socialProvider) return null
+                                                return (
+                                                    <ProviderButton
+                                                        key={provider}
+                                                        classNames={classNames}
+                                                        callbackURL={callbackURL}
+                                                        isSubmitting={isSubmitting}
+                                                        localization={localization}
+                                                        provider={socialProvider}
+                                                        redirectTo={redirectTo}
+                                                        setIsSubmitting={
+                                                            setIsSubmitting
+                                                        }
+                                                        socialLayout={socialLayout}
+                                                    />
                                                 )
-                                            if (!socialProvider) return null
-                                            return (
-                                                <ProviderButton
-                                                    key={provider}
-                                                    classNames={classNames}
-                                                    callbackURL={callbackURL}
-                                                    isSubmitting={isSubmitting}
-                                                    localization={localization}
-                                                    provider={socialProvider}
-                                                    redirectTo={redirectTo}
-                                                    setIsSubmitting={
-                                                        setIsSubmitting
-                                                    }
-                                                    socialLayout={socialLayout}
-                                                />
-                                            )
-                                        })}
-                                        {genericOAuth?.providers?.map(
-                                            (provider) => (
-                                                <ProviderButton
-                                                    key={provider.provider}
-                                                    classNames={classNames}
-                                                    callbackURL={callbackURL}
-                                                    isSubmitting={isSubmitting}
-                                                    localization={localization}
-                                                    provider={provider}
-                                                    redirectTo={redirectTo}
-                                                    setIsSubmitting={
-                                                        setIsSubmitting
-                                                    }
-                                                    socialLayout={socialLayout}
-                                                    other
-                                                />
-                                            )
-                                        )}
-                                    </div>
-                                )}
+                                            })}
+                                            {genericOAuth?.providers?.map(
+                                                (provider) => (
+                                                    <ProviderButton
+                                                        key={provider.provider}
+                                                        classNames={classNames}
+                                                        callbackURL={callbackURL}
+                                                        isSubmitting={isSubmitting}
+                                                        localization={localization}
+                                                        provider={provider}
+                                                        redirectTo={redirectTo}
+                                                        setIsSubmitting={
+                                                            setIsSubmitting
+                                                        }
+                                                        socialLayout={socialLayout}
+                                                        other
+                                                    />
+                                                )
+                                            )}
+                                        </div>
+                                    )}
 
                                 {passkey &&
                                     [
@@ -332,8 +332,8 @@ export function AuthView({
                     )}
                 >
                     {view === "SIGN_IN" ||
-                    view === "MAGIC_LINK" ||
-                    view === "EMAIL_OTP" ? (
+                        view === "MAGIC_LINK" ||
+                        view === "EMAIL_OTP" ? (
                         localization.DONT_HAVE_AN_ACCOUNT
                     ) : view === "SIGN_UP" ? (
                         localization.ALREADY_HAVE_AN_ACCOUNT
@@ -342,17 +342,16 @@ export function AuthView({
                     )}
 
                     {view === "SIGN_IN" ||
-                    view === "MAGIC_LINK" ||
-                    view === "EMAIL_OTP" ||
-                    view === "SIGN_UP" ? (
+                        view === "MAGIC_LINK" ||
+                        view === "EMAIL_OTP" ||
+                        view === "SIGN_UP" ? (
                         <Link
                             className={cn(
                                 "text-foreground underline",
                                 classNames?.footerLink
                             )}
-                            href={`${basePath}/${viewPaths[(view === "SIGN_IN" || view === "MAGIC_LINK" || view === "EMAIL_OTP") ? "SIGN_UP" : "SIGN_IN"]}${
-                                isHydrated ? window.location.search : ""
-                            }`}
+                            href={`${basePath}/${viewPaths[(view === "SIGN_IN" || view === "MAGIC_LINK" || view === "EMAIL_OTP") ? "SIGN_UP" : "SIGN_IN"]}${isHydrated ? window.location.search : ""
+                                }`}
                         >
                             <Button
                                 variant="link"
@@ -363,8 +362,8 @@ export function AuthView({
                                 )}
                             >
                                 {view === "SIGN_IN" ||
-                                view === "MAGIC_LINK" ||
-                                view === "EMAIL_OTP"
+                                    view === "MAGIC_LINK" ||
+                                    view === "EMAIL_OTP"
                                     ? localization.SIGN_UP
                                     : localization.SIGN_IN}
                             </Button>

@@ -262,10 +262,10 @@ export function OrganizationSwitcher({
                                 {...props}
                             >
                                 {isPending ||
-                                activeOrganization ||
-                                !sessionData ||
-                                (user as User)?.isAnonymous ||
-                                hidePersonal ? (
+                                    activeOrganization ||
+                                    !sessionData ||
+                                    (user as User)?.isAnonymous ||
+                                    hidePersonal ? (
                                     <OrganizationLogo
                                         key={activeOrganization?.logo}
                                         className={cn(
@@ -295,7 +295,7 @@ export function OrganizationSwitcher({
                         ) : (
                             <Button
                                 className={cn(
-                                    "!p-2 h-fit",
+                                    "p-2! h-fit",
                                     className,
                                     classNames?.trigger?.base
                                 )}
@@ -303,10 +303,10 @@ export function OrganizationSwitcher({
                                 {...props}
                             >
                                 {isPending ||
-                                activeOrganization ||
-                                !sessionData ||
-                                (user as User)?.isAnonymous ||
-                                hidePersonal ? (
+                                    activeOrganization ||
+                                    !sessionData ||
+                                    (user as User)?.isAnonymous ||
+                                    hidePersonal ? (
                                     <OrganizationCellView
                                         classNames={
                                             classNames?.trigger?.organization
@@ -350,8 +350,8 @@ export function OrganizationSwitcher({
                         {(user && !(user as User).isAnonymous) || isPending ? (
                             <>
                                 {activeOrganizationPending ||
-                                activeOrganization ||
-                                hidePersonal ? (
+                                    activeOrganization ||
+                                    hidePersonal ? (
                                     <OrganizationCellView
                                         classNames={
                                             classNames?.content?.organization
@@ -385,7 +385,7 @@ export function OrganizationSwitcher({
                                         <Button
                                             size="icon"
                                             variant="outline"
-                                            className="!size-8 ml-auto"
+                                            className="size-8! ml-auto"
                                             onClick={() =>
                                                 setDropdownOpen(false)
                                             }
@@ -480,8 +480,8 @@ export function OrganizationSwitcher({
                         )}
 
                     {!isPending &&
-                    sessionData &&
-                    !(user as User).isAnonymous ? (
+                        sessionData &&
+                        !(user as User).isAnonymous ? (
                         <DropdownMenuItem
                             className={cn(classNames?.content?.menuItem)}
                             onClick={() => setIsCreateOrgDialogOpen(true)}
