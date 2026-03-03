@@ -25,7 +25,8 @@
                 "@marsidev/react-turnstile",
                 "@wojtekmaj/react-recaptcha-v3",
                 "react-google-recaptcha",
-                "react-qr-code"
+                "react-qr-code",
+                "ua-parser-js"
             ],
             "registryDependencies": [
                 "button",
