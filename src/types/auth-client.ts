@@ -1,6 +1,5 @@
 import {
     anonymousClient,
-    apiKeyClient,
     emailOTPClient,
     genericOAuthClient,
     magicLinkClient,
@@ -10,11 +9,11 @@ import {
     twoFactorClient,
     usernameClient
 } from "better-auth/client/plugins"
+import { apiKeyClient } from "@better-auth/api-key/client"
 import { createAuthClient } from "better-auth/react"
 
 const authClient = createAuthClient({
     plugins: [
-        apiKeyClient(),
         multiSessionClient(),
         oneTapClient({
             clientId: ""
@@ -30,11 +29,19 @@ const authClient = createAuthClient({
 })
 
 export type AuthClient = typeof authClient & {
+    apiKey: {
+        create: (opts?: any) => Promise<any>;
+        delete: (opts?: any) => Promise<any>;
+        list: (opts?: any) => Promise<any>;
+    };
     passkey: {
         addPasskey: (opts?: any) => Promise<any>;
         deletePasskey: (opts?: any) => Promise<any>;
     };
     useListPasskeys: () => { data?: any[]; isPending?: boolean; refetch?: () => void };
+    signIn: typeof authClient.signIn & {
+        passkey: (opts?: any) => Promise<any>;
+    };
 }
 
 export type Session = AuthClient["$Infer"]["Session"]["session"]

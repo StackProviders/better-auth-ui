@@ -1,7 +1,7 @@
 import {
     AuthQueryContext,
     createAuthHooks
-} from "better-auth-tanstack"
+} from "@daveyplate/better-auth-tanstack"
 import { useIsRestoring, useQueryClient } from "@tanstack/react-query"
 import { useCallback, useContext, useMemo } from "react"
 import type { AuthHooks } from "../../types/auth-hooks"
@@ -33,7 +33,7 @@ export function useTanstackOptions({
 
     const hooks = useMemo(
         () => ({
-            ...(createAuthHooks(authClient) as Partial<AuthHooks>),
+            ...(createAuthHooks(authClient) as unknown as Partial<AuthHooks>),
             useIsRestoring
         }),
         [authClient]

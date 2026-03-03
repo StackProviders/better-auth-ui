@@ -91,7 +91,7 @@ function OrganizationMembersContent({
         isPending: isPendingUpdateMember
     } = useHasPermission({
         organizationId: organization.id,
-        permission: {
+        permissions: {
             member: ["update"]
         }
     })

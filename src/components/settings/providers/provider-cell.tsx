@@ -135,7 +135,7 @@ function AccountInfo({ account }: { account: { accountId: string } }) {
     } = useContext(AuthUIContext)
 
     const { data: accountInfo, isPending } = useAccountInfo({
-        accountId: account.accountId
+        query: { accountId: account.accountId }
     })
 
     if (isPending) {

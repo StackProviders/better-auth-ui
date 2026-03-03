@@ -34,7 +34,6 @@
         "moduleResolution": "bundler"
     },
     "include": [
-        "src",
-        "registry"
+        "src"
     ]
 }

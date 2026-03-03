@@ -29,14 +29,15 @@ export function useSession({
     return {
         data: sessionData
             ? {
-                  session: sessionData.session,
-                  user: (sessionData?.user.id === user?.id
-                      ? user
-                      : sessionData.user) as User
-              }
+                session: sessionData.session,
+                user: (sessionData?.user.id === user?.id
+                    ? user
+                    : sessionData.user) as User
+            }
             : null,
-        error,
+        error: error || null,
         isPending: isPending,
-        refetch: refetch || (() => {})
+        isRefetching: false,
+        refetch: (refetch as any) || (async () => { })
     }
 }

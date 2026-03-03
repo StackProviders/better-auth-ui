@@ -76,12 +76,12 @@ export function MemberCell({
 
     const { data: organizations } = useListOrganizations()
     const organization = organizations?.find(
-        (org) => org.id === member.organizationId
+        (org: any) => org.id === member.organizationId
     )
 
     const { data: hasPermissionToUpdateMember } = useHasPermission({
         organizationId: member.organizationId,
-        permission: { member: ["update"] }
+        permissions: { member: ["update"] }
     })
 
     return (
